@@ -3,7 +3,9 @@
 
 *Updated to KIDOZ SDK version 0.1.0* 
 
-`KIDOZ SDK` is a bla bla bla...
+`KIDOZ SDK` is a bla bla bla... which wow wow wow in a simple way way way!
+KIDOZ SDK can be used on android
+For any question or assistance, please contact us at support@kidoz.net.
 
 ##Integration
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](http://www.kidoz.net).
@@ -80,6 +82,7 @@ openInterstitialViewButton.setOnClickListener(new OnClickListener()
 }
 ```
 
+#Demo
 
 The example application contains the following creative tools:
 * Interstitial  FEED ads when clicking on KIDOZ button
@@ -87,5 +90,5 @@ The example application contains the following creative tools:
 Don't forget to use your developers id and application id when initializing the SDK.
 
 
-For any question or assistance, please contact us at support@kidoz.net.
+
 
