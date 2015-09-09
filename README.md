@@ -7,8 +7,8 @@ The `KIDOZ SDK` was built with a lot of thought and caring in mind for all parti
 
 The SDK will help you generate:
  - 	<b>Monetization</b> – For each promoted content click/impression, you get paid!
- - 	```Longer session time``` – integrating the content in the right spot will result with kids spending more time in your app.
- - 	```Retention``` – By enriching your app with kids' friendly content, both parents and kids are likely to come back more often.
+ - 	<b>Longer session time</b> – integrating the content in the right spot will result with kids spending more time in your app.
+ - 	<b>Retention</b> – By enriching your app with kids' friendly content, both parents and kids are likely to come back more often.
 
 
 #Integration
