@@ -10,6 +10,8 @@ The SDK will help you generate:
  - 	<b>Longer session time</b> – integrating the content in the right spot will result with kids spending more time in your app.
  - 	<b>Retention</b> – By enriching your app with kids' friendly content, both parents and kids are likely to come back more often.
 
+#Inside your SDK
+The SDK you are about to integrate contains great tools and capabilities to help you monetize your app.
 
 #Integration
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](http://www.kidoz.net).
