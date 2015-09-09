@@ -52,9 +52,22 @@ public class MainActivity extends FragmentActivity
 }
 ```	
 
+You can add a listener if you want to be informed when the `InterstitialView` is dismissed and/or open by adding the following code:
 
+```java
+mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEventListener()
+{
+	@Override public void onDismissView()
+	{
+		// Will be called when the InterstitialView is closed
+	}
 
-
+	@Override public void onReadyToShow()
+	{
+		// Will be called when the InterstitialView is open
+	}
+});
+```
 
 
 
