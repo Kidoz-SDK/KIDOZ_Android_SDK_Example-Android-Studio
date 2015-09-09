@@ -3,9 +3,10 @@
 
 *Updated to KIDOZ SDK version 0.1.0* 
 
+The `KIDOZ SDK` was built with a lot of thought and caring in mind for all parties – the kids who consume the content, their parents who wish to have peace in mind, the advertisers who wish to get more traffic and YOU, who wants to monetize your app.
+
 `KIDOZ SDK` is a bla bla bla... which wow wow wow in a simple way way way!
-</br>KIDOZ SDK can be used on android
-</br>For any question or assistance, please contact us at support@kidoz.net.
+
 
 #Integration
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](http://www.kidoz.net).
@@ -94,3 +95,4 @@ Don't forget to use your developers id and application id when initializing the 
 
 
 
+</br>For any question or assistance, please contact us at support@kidoz.net.
