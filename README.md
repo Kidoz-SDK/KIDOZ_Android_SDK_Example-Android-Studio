@@ -3,12 +3,12 @@
 
 *Updated to KIDOZ SDK version 0.1.0* 
 
-KIDOZ SDK is a bla bla bla...
+`KIDOZ SDK` is a bla bla bla...
 
 ##Integration
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](http://www.kidoz.net).
 
-1. Include the library:
+###Include the library:
 On android studio you can include the library directly in your Gradle project:
 
  - 	Add the following to your `build.gradle`:
