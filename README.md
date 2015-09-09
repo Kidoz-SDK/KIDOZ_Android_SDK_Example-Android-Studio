@@ -14,7 +14,7 @@ The SDK will help you generate:
 The SDK you are about to integrate contains great tools and capabilities to help you monetize your app.
 
 ###Content Tool: The Feed
-[![](https://s3.amazonaws.com/sdkrelatedbucker/sdk_1.png)]
+[![](https://s3.amazonaws.com/sdkrelatedbucker/sdk_2.png)]
 
 #Integration
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](http://www.kidoz.net).
