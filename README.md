@@ -21,6 +21,7 @@ dependencies {
 	    compile 'com.github.2359media:EasyAndroidAnimations:0.8'
 }
 ``` 
+
 ###Initiate KIDOZ SDK
 
 This Android application project provides an example of the [KIDOZ][] SDK integration.
