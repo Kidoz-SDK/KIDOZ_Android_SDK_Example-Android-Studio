@@ -23,7 +23,7 @@ dependencies {
 ``` 
 
 ###Initiate the KIDOZ SDK
-When initiating the SDK, please make sure to use your given publisherID and securityToken, which can be retrieve from your account on [developers portal](http://www.kidoz.net).
+When initiating the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve from your account on [developers portal](http://www.kidoz.net).
 
  - 	Inside your main activity onCreate add the following line:
 ```java
