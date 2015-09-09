@@ -9,7 +9,7 @@ It is compiled with Android 4.0 (API level 14) and supports any device running t
 The example application contains the following creative tools:
 * Interstitial  FEED ads when clicking on KIDOZ button
 
-##Installing
+##Integration
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](http://www.kidoz.net).
 
 You can include the library directly in your Gradle project:
