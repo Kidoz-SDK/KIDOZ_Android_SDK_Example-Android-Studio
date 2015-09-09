@@ -36,7 +36,7 @@ When initiating the SDK, please make sure to use your given `publisherID` and `s
 ```
 
 ###Creating an instance of Interstitial View
--Inside your desired activity or fragment create an instance of `InterstitialView` by adding the following lines:
+ - 	Inside your desired activity or fragment create an instance of `InterstitialView` by adding the following lines:
 
 > MainActivity.java
 
@@ -70,7 +70,7 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 ```
 
 ###Launching the Interstitial View
-	-
+ - 	Launching the Interstitial View is very simple.you can use a Button click listener or other 
 
  mFeedInterstitialView.showView();
 
