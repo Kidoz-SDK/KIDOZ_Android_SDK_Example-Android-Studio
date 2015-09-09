@@ -89,6 +89,3 @@ Don't forget to use your developers id and application id when initializing the 
 
 For any question or assistance, please contact us at support@kidoz.net.
 
-[KIDOZ]: http://www.kidoz.net
-
-
