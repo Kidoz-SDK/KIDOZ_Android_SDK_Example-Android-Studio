@@ -35,8 +35,8 @@ When initiating the SDK, please make sure to use your given `publisherID` and `s
 }
 ```
 
-###Initiate the Interstitial View
- - 	Inside your desired activity or fragment create an instance of `InterstitialView` by adding the following lines:
+###Creating an instance of Interstitial View
+-Inside your desired activity or fragment create an instance of `InterstitialView` by adding the following lines:
 
 > MainActivity.java
 
@@ -69,7 +69,10 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 });
 ```
 
+###Launching the Interstitial View
+	-
 
+ mFeedInterstitialView.showView();
 
 The example application contains the following creative tools:
 * Interstitial  FEED ads when clicking on KIDOZ button
