@@ -83,6 +83,8 @@ openInterstitialViewButton.setOnClickListener(new OnClickListener()
 ```
 
 #Demo
+This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
+It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
 
 The example application contains the following creative tools:
 * Interstitial  FEED ads when clicking on KIDOZ button
