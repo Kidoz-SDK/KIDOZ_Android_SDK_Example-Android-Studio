@@ -4,7 +4,7 @@
 *Updated to KIDOZ SDK version 0.1.0* 
 
 `KIDOZ SDK` is a bla bla bla... which wow wow wow in a simple way way way!
-KIDOZ SDK can be used on android
+</br>KIDOZ SDK can be used on android
 </br>For any question or assistance, please contact us at support@kidoz.net.
 
 #Integration
