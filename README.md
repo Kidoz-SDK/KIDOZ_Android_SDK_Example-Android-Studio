@@ -35,8 +35,9 @@ When initiating the SDK, please make sure to use your given `publisherID` and `s
 }
 ```
 
-
-
+###Initiate the Interstitial  FEED ads
+ - 	Inside your desired activity or fragment add the following line:
+ - 	
 This Android application project provides an example of the [KIDOZ][] SDK integration.
 It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
 
