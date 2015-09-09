@@ -1,5 +1,5 @@
-[KIDOZ](http://www.kidoz.net) SDK Example Project
-======================================
+[KIDOZ](http://www.kidoz.net) SDK
+=================================
 
 *Updated to KIDOZ SDK version 0.1.0* 
 
