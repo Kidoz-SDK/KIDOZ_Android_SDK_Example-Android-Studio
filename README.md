@@ -70,7 +70,7 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 ```
 
 ###Launching the Interstitial View
- - 	Launching the Interstitial View is very simple. call the method bellow from anywhere you want, for example - a Button click listener:
+ - 	Launching the Interstitial View is very simple. call the method bellow from anywhere you want, for example - a button's click listener:
 
 ```java
 Button openInterstitialViewButton = findViewById(R.id.OpenInterstitialViewButton);
