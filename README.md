@@ -3,7 +3,7 @@
 
 *Updated to KIDOZ SDK version 0.1.0* 
 
-`KIDOZ SDK` is a bla bla bla...
+``KIDOZ SDK`` is a bla bla bla...
 
 ##Integration
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](http://www.kidoz.net).
