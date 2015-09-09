@@ -21,6 +21,7 @@ dependencies {
 	    compile 'com.github.2359media:EasyAndroidAnimations:0.8'
 }
 ``` 
+###Initiate KIDOZ SDK
 
 This Android application project provides an example of the [KIDOZ][] SDK integration.
 It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
