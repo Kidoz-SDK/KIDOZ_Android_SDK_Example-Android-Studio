@@ -11,9 +11,18 @@ The example application contains the following creative tools:
 
 ##Installing
 
-```
-sudo apt-get install ocaml libelf-dev
-```
+You can include the library directly in your Gradle project:
+
+ - 	Add the following to your `build.gradle`:
+ ```gradle
+repositories {
+	    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+	    compile 'com.github.2359media:EasyAndroidAnimations:0.8'
+}
+``` 
 
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](https://developers.startapp.com).
 Please also follow the integration manual which comes with the SDK.
