@@ -25,9 +25,10 @@ dependencies {
 ###Initiate the KIDOZ SDK
 Inside your main activity onCreate add the following line:
 ```java
-@Override protected void onCreate(Bundle savedInstanceState){
-	super.onCreate(savedInstanceState);
-        KidozSDK.initialize(getApplicationContext(), "1", "Nhm59VTJVYnZNJYnbCKNoU27mp7CvRg6");
+@Override protected void onCreate(Bundle savedInstanceState)
+{
+super.onCreate(savedInstanceState);
+KidozSDK.initialize(getApplicationContext(), "1", "Nhm59VTJVYnZNJYnbCKNoU27mp7CvRg6");
         // the rest of your main activity onCreate
 }
 ```
