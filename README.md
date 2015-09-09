@@ -23,6 +23,8 @@ dependencies {
 ``` 
 
 ###Initiate the KIDOZ SDK
+When initiating the SDK, please make sure to use your publisherID and securityToken, which can be retriview from your account on [developers portal](http://www.kidoz.net).
+
  - 	Inside your main activity onCreate add the following line:
 ```java
 @Override protected void onCreate(Bundle savedInstanceState)
