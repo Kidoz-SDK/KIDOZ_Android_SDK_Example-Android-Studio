@@ -8,7 +8,7 @@
 ##Integration
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](http://www.kidoz.net).
 
-###Include the library:
+###Include the library
 On android studio you can include the library directly in your Gradle project:
 
  - 	Add the following to your `build.gradle`:
