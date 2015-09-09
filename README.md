@@ -11,7 +11,7 @@ When integrating the SDK with your application, please make sure to use the late
 ###Include the library
 On android studio you can include the library directly in your Gradle project:
 
- - 	Add the following to your `build.gradle`:
+ - 	Add the following to your app's `build.gradle`:
  ```gradle
 repositories {
 	    maven { url "https://jitpack.io" }
