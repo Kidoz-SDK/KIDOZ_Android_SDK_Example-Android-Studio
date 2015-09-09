@@ -23,7 +23,7 @@ dependencies {
 ``` 
 
 ###Initiate the KIDOZ SDK
-Inside your main activity onCreate add the following line:
+ - 	Inside your main activity onCreate add the following line:
 ```java
 @Override protected void onCreate(Bundle savedInstanceState)
 {
