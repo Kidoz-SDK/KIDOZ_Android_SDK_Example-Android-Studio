@@ -29,7 +29,7 @@ Inside your main activity onCreate add the following line:
 {
 	super.onCreate(savedInstanceState);
         KidozSDK.initialize(getApplicationContext(), "1", "Nhm59VTJVYnZNJYnbCKNoU27mp7CvRg6");
-        ... the rest of your main activity onCreate
+        // the rest of your main activity onCreate
 }
 ```
 
