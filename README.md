@@ -70,9 +70,16 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 ```
 
 ###Launching the Interstitial View
- - 	Launching the Interstitial View is very simple.you can use a Button click listener or other 
+ - 	Launching the Interstitial View is very simple. call the method bellow from anywhere you want, for example - a Button click listener:
 
- mFeedInterstitialView.showView();
+```java
+Button openInterstitialViewButton = findViewById(R.id.OpenInterstitialViewButton);
+openInterstitialViewButton.setOnClickListener(new OnClickListener()
+{
+	mInterstitialView.showView();
+}
+```
+
 
 The example application contains the following creative tools:
 * Interstitial  FEED ads when clicking on KIDOZ button
