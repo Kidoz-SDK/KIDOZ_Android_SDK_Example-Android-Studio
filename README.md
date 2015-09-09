@@ -1,1 +1,1 @@
-# Kidoz SDK Example Project
+# [Kidoz][] SDK Example Project
