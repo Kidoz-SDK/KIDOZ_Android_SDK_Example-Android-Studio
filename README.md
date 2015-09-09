@@ -29,7 +29,7 @@ Inside your main activity onCreate add the following line:
 {
 	super.onCreate(savedInstanceState);
 	KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
-	...the rest of your main activity onCreate
+	//the rest of your main activity onCreate
 }
 ```
 
