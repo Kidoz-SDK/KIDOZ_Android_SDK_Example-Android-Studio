@@ -5,9 +5,9 @@
 
 `KIDOZ SDK` is a bla bla bla... which wow wow wow in a simple way way way!
 KIDOZ SDK can be used on android
-For any question or assistance, please contact us at support@kidoz.net.
+</br>For any question or assistance, please contact us at support@kidoz.net.
 
-##Integration
+#Integration
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](http://www.kidoz.net).
 
 ###Include the library
