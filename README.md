@@ -14,11 +14,11 @@ On android studio you can include the library directly in your Gradle project:
  - 	Add the following to your app's `build.gradle`:
 ```gradle
 repositories {
-	    maven { url "https://jitpack.io" }
+	    maven { url "https://dl.bintray.com/eugine/maven" }
 }
 
 dependencies {
-	    compile 'com.github.2359media:EasyAndroidAnimations:0.8'
+	    compile 'com.kidoz.sdk:KidozSDK:0.1.0'
 }
 ``` 
 
