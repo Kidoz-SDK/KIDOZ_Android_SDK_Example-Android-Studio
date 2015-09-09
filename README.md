@@ -37,6 +37,7 @@ When initiating the SDK, please make sure to use your given `publisherID` and `s
 
 ###Initiate the Interstitial View
  - 	Inside your desired activity or fragment create an instance of `InterstitialView` by adding the following lines:
+
 > MainActivity.java
 ```java
 public class MainActivity extends FragmentActivity
