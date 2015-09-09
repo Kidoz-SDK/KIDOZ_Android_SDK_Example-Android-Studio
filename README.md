@@ -12,7 +12,7 @@ When integrating the SDK with your application, please make sure to use the late
 On android studio you can include the library directly in your Gradle project:
 
  - 	Add the following to your app's `build.gradle`:
- ```gradle
+```gradle
 repositories {
 	    maven { url "https://jitpack.io" }
 }
@@ -22,7 +22,12 @@ dependencies {
 }
 ``` 
 
-###Initiate KIDOZ SDK
+###Initiate the KIDOZ SDK
+Inside your main activity's onCreate add the following line:
+
+
+
+
 
 This Android application project provides an example of the [KIDOZ][] SDK integration.
 It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
