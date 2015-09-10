@@ -18,10 +18,6 @@ On android studio you can include the library directly in your Gradle project:
 
  - 	Add the following to your app's `build.gradle`:
 ```gradle
-repositories {
-	    maven { url "https://dl.bintray.com/eugine/maven" }
-}
-
 dependencies {
 	    compile 'com.kidoz.sdk:KidozSDK:0.1.0'
 }
