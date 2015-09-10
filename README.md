@@ -77,10 +77,10 @@ You can add the ```KIDOZ button``` to your layout xml file or create a new insta
  
  ```xml
 <com.kidoz.sdk.api.KidozButtonView
-</t>android:layout_width="wrap_content"
-</t>android:layout_height="wrap_content"
-</t>android:id="@+id/kidozBtn_view"
-</t>android:layout_alignParentRight="true">
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:id="@+id/kidozBtn_view"
+	android:layout_alignParentRight="true">
 </com.kidoz.sdk.api.KidozButtonView>
 ```
 
