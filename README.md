@@ -10,14 +10,6 @@ The example application contains the following creative tools:
 * Interstitial content tool - ```The Feed```
 * KIDOZ's default button - ```The Gift Button```
 
-Don't forget to use your developers id and application id when initializing the SDK.
-
-##Inside your SDK
-The SDK you are about to integrate contains great tools and capabilities to help you monetize your app.
-
-###Content Tool: The Feed
-![](https://s3.amazonaws.com/sdkrelatedbucker/Interstitial-View.png)
-
 #Integration
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](http://www.kidoz.net).
 
