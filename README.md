@@ -75,12 +75,11 @@ You can add the ```KIDOZ button``` to your layout xml file or create a new insta
 
  - 	Add ```KIDOZ button``` inside xml:
  ```xml
-&lt;com.kidoz.sdk.api.KidozButtonView
+<com.kidoz.sdk.api.KidozButtonView
 	android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/kidozBtn_view"
-        android:layout_alignParentRight="true"&gt;
-&lt;/com.kidoz.sdk.api.KidozButtonView&gt;
+        android:layout_alignParentRight="true"/>
 ```
 
 
