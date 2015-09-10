@@ -8,6 +8,7 @@ It is compiled with Android 4.0 (API level 14) and supports any device running t
 
 The example application contains the following creative tools:
 * Interstitial content tool - ```The Feed```
+* KIDOZ's default button - ```The Gift Button```
 
 Don't forget to use your developers id and application id when initializing the SDK.
 
