@@ -70,6 +70,20 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 });
 ```
 
+###Using KIDOZ Button
+You can add the ```KIDOZ button``` to your layout xml file or create a new instance programmatically.
+
+ - 	Add ```KIDOZ button``` inside xml:
+ ```xml
+<com.kidoz.sdk.api.KidozButtonView
+	android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kidozBtn_view"
+        android:layout_alignParentRight="true">
+</com.kidoz.sdk.api.KidozButtonView>
+```
+
+
 #Launching the Feed Interstitial View
 The ```Interstitial View``` can be launched by clicking on a button or any other view with a onClick listener or depends on your own logics like when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
 </br>
