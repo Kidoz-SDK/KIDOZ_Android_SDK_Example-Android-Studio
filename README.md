@@ -7,7 +7,7 @@ This Android application project provides an example of the [KIDOZ](http://www.k
 It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
 
 The example application contains the following creative tools:
-* Interstitial  FEED ads when clicking on KIDOZ button
+* Interstitial content tool - ```The Feed```
 
 Don't forget to use your developers id and application id when initializing the SDK.
 
