@@ -74,6 +74,7 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 You can add the ```KIDOZ button``` to your layout xml file or create a new instance programmatically.
 
  - 	Add ```KIDOZ button``` inside xml:
+ 
  ```xml
 <com.kidoz.sdk.api.KidozButtonView
 	android:layout_width="wrap_content"
