@@ -1,4 +1,4 @@
-Kidoz SDK Sample App
+KIDOZ SDK Sample App
 =================================
 
 *Updated to KIDOZ SDK version 0.1.0* 
