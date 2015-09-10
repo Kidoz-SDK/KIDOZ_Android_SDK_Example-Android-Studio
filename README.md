@@ -3,12 +3,13 @@
 
 *Updated to KIDOZ SDK version 0.1.0* 
 
-The `KIDOZ SDK` was built with a lot of thought and caring in mind for all parties – the kids who consume the content, their parents who wish to have peace in mind, the advertisers who wish to get more traffic and YOU, who wants to monetize your app.
+This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
+It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
 
-The SDK will help you generate:
- - 	<b>Monetization</b> – For each promoted content click/impression, you get paid!
- - 	<b>Longer session time</b> – integrating the content in the right spot will result with kids spending more time in your app.
- - 	<b>Retention</b> – By enriching your app with kids' friendly content, both parents and kids are likely to come back more often.
+The example application contains the following creative tools:
+* Interstitial  FEED ads when clicking on KIDOZ button
+
+Don't forget to use your developers id and application id when initializing the SDK.
 
 ##Inside your SDK
 The SDK you are about to integrate contains great tools and capabilities to help you monetize your app.
@@ -91,14 +92,8 @@ openInterstitialViewButton.setOnClickListener(new OnClickListener()
 }
 ```
 
-#Demo
-This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
-It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
 
-The example application contains the following creative tools:
-* Interstitial  FEED ads when clicking on KIDOZ button
 
-Don't forget to use your developers id and application id when initializing the SDK.
 
 
 
