@@ -27,7 +27,8 @@ When initiating the SDK, please make sure to use your given `publisherID` and `s
 
  - 	Inside your main activity onCreate add the following line:
 ```java
-@Override protected void onCreate(Bundle savedInstanceState)
+@Override 
+protected void onCreate(Bundle savedInstanceState)
 {
 	super.onCreate(savedInstanceState);
 	KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
