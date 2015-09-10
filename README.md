@@ -83,6 +83,15 @@ You can add the ```KIDOZ button``` to your layout xml file or create a new insta
 	</com.kidoz.sdk.api.KidozButtonView>
 ```
 
+ - 	Add ```KIDOZ Button``` programmatically:
+
+```java
+//Inflate your root view for example a simple RelativeLayout
+RelativeLayout rootView = findViewById(R.id.YourRelativeLayoutID);
+RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+KidozButtonView openInterstitialViewButton = new KidozButtonView(context);
+rootView.addView(openInterstitialViewButton, params);
+```
 
 #Launching the Feed Interstitial View
 The ```Interstitial View``` can be launched by clicking on a button or any other view with a onClick listener or depends on your own logics like when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
