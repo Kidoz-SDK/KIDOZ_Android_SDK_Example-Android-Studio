@@ -70,7 +70,7 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 });
 ```
 
-#Opening the Feed Interstitial View
+#Launching the Feed Interstitial View
 The ```Interstitial View``` can be launched by clicking on a button or any other view with a onClick listener or depends on your own logics like when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
 </br>
 Simply launch the ```Interstitial View``` by calling the method showView() on the InterstitialView instance.
