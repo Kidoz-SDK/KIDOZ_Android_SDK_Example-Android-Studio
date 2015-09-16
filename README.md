@@ -7,8 +7,8 @@ This Android application project provides an example of the [KIDOZ](http://www.k
 It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
 
 The example application contains the following creative tools:
-* Interstitial content tool - ```The Feed```
-* KIDOZ's default button - ```The Gift Button```
+* Interstitial content tool - ```The Feed View```
+* KIDOZ's default button - ```The Gift Button View```
 
 #Integration
 
