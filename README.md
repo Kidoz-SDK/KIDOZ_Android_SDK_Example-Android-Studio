@@ -113,7 +113,6 @@ openInterstitialViewButton.setOnClickListener(new OnClickListener()
 </br>For any question or assistance, please contact us at support@kidoz.net.
 
 </br>
-</br>
 License
 --------
 
