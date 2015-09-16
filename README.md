@@ -18,7 +18,7 @@ On android studio you can include the library directly in your Gradle project:
  - 	Add the following to your app's `build.gradle`:
 ```gradle
 dependencies {
-	    compile 'com.kidoz.sdk:KidozSDK:0.1.0'
+	    compile 'com.kidoz.sdk:KidozSDK:0.1.1'
 }
 ``` 
 
@@ -71,7 +71,7 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 ```
 
 ###Using KIDOZ Button
-You can add the ```KIDOZ button``` to your layout xml file or create a new instance programmatically.
+You can add the ```KIDOZ Button``` to your layout xml file or create a new instance programmatically.
 
  - 	Add ```KIDOZ Button``` directly inside xml:
  
@@ -79,7 +79,7 @@ You can add the ```KIDOZ button``` to your layout xml file or create a new insta
 	<com.kidoz.sdk.api.KidozButtonView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:id="@+id/OpenInterstitialViewButton">
+		android:id="@+id/kidozButton">
 	</com.kidoz.sdk.api.KidozButtonView>
 ```
 
@@ -87,14 +87,14 @@ You can add the ```KIDOZ button``` to your layout xml file or create a new insta
 
 ```java
 //Inflate your root view for example a simple RelativeLayout
-RelativeLayout rootView = findViewById(R.id.YourRelativeLayoutID);
+RelativeLayout rootView = findViewById(R.id.Your_RelativeLayout_ID);
 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-KidozButtonView openInterstitialViewButton = new KidozButtonView(context);
-rootView.addView(openInterstitialViewButton, params);
+KidozButtonView kidozBtn = new KidozButtonView(context);
+rootView.addView(kidozBtn, params);
 ```
 
 #Launching the Feed Interstitial View
-The ```Interstitial View``` can be launched by clicking on a button or any other view with a onClick listener or depends on your own logics like when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
+The ```Interstitial View``` can be launched by clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
 </br>
 Simply launch the ```Interstitial View``` by calling the method showView() on the InterstitialView instance.
 ```java
