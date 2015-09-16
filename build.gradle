@@ -8,14 +8,13 @@ android {
         applicationId "com.kidoz.sdk.sample.app"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 100
+        versionName "1.0.0"
 
     }
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -23,40 +22,10 @@ android {
            debuggable true
         }
     }
-
-
-
 }
-
-repositories {
-    maven {
-        url 'https://dl.bintray.com/eugine/maven'
-    }
-
-   /* flatDir {
-        dirs 'libs'
-    }*/
-}
-
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.0.1'
-    /*compile ('com.kidoz.sdk:KidozSDK:0.1.0') {
-        changing = true;
-    }*/
-    compile project(':KidozSDK')
+    compile ('com.kidoz.sdk:KidozSDK:0.1.1')
 }
-
-
-configurations.all {
-    resolutionStrategy.cacheDynamicVersionsFor 1, 'minutes'
-}
-
-configurations.all {
-    resolutionStrategy.cacheChangingModulesFor 1, 'minutes'
-}
-
-// compile(name:'KidozSDK-release', ext:'aar')
-
-
