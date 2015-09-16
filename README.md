@@ -22,8 +22,8 @@ dependencies {
 }
 ``` 
 
-###Initiate the KIDOZ SDK
-When initiating the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve from your account on [developers portal](http://www.kidoz.net).
+###Initializing the KIDOZ SDK
+When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve from your account on [developers portal](http://www.kidoz.net).
 
  - 	Inside your main activity onCreate add the following line:
 ```java
@@ -34,6 +34,28 @@ protected void onCreate(Bundle savedInstanceState)
 	KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
 	//the rest of your main activity onCreate
 }
+```
+###Integrating the KIDOZ Button
+You can add the ```KIDOZ Button``` to your layout xml file or create a new instance programmatically.
+
+ - 	Add ```KIDOZ Button``` directly inside xml:
+ 
+ ```xml
+	<com.kidoz.sdk.api.KidozButtonView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/kidozButton">
+	</com.kidoz.sdk.api.KidozButtonView>
+```
+
+ - 	Add ```KIDOZ Button``` programmatically:
+
+```java
+//Inflate your root view for example a simple RelativeLayout
+RelativeLayout rootView = findViewById(R.id.Your_RelativeLayout_ID);
+RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+KidozButtonView kidozBtn = new KidozButtonView(context);
+rootView.addView(kidozBtn, params);
 ```
 
 ###Creating an instance of Interstitial View
@@ -68,29 +90,6 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 		// Will be called when the InterstitialView is open
 	}
 });
-```
-
-###Using KIDOZ Button
-You can add the ```KIDOZ Button``` to your layout xml file or create a new instance programmatically.
-
- - 	Add ```KIDOZ Button``` directly inside xml:
- 
- ```xml
-	<com.kidoz.sdk.api.KidozButtonView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/kidozButton">
-	</com.kidoz.sdk.api.KidozButtonView>
-```
-
- - 	Add ```KIDOZ Button``` programmatically:
-
-```java
-//Inflate your root view for example a simple RelativeLayout
-RelativeLayout rootView = findViewById(R.id.Your_RelativeLayout_ID);
-RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-KidozButtonView kidozBtn = new KidozButtonView(context);
-rootView.addView(kidozBtn, params);
 ```
 
 #Launching the Feed Interstitial View
