@@ -26,7 +26,7 @@ KIDOZ SDK - Getting Started
 ####Include the library
 On android studio you can include the library directly in your Gradle project:
 
- - 	Add the following line to your app module `build.gradle` `dependencies` section:
+ - 	Add the following line to your app's module `build.gradle` `dependencies` section:
 ```gradle
 dependencies {
 	// your app's other dependencies
