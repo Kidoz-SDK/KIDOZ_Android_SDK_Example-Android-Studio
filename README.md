@@ -1,6 +1,7 @@
 <a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="72" width="72" ></a>
 
 KIDOZ SDK Sample App
+=================================
 
 *Updated to KIDOZ SDK version 0.1.2* 
 
@@ -16,7 +17,8 @@ The example application contains the following creative tools:
 2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
 3. Once the project finished syncing click the `Run` button
 
-
+KIDOZ SDK
+=================================
 
 #Integration
 
