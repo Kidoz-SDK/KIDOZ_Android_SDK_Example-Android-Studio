@@ -13,7 +13,7 @@ The example application contains the following creative tools:
 * KIDOZ's default button - the `KIDOZ Button`
 
 ###Running the sample app
-1. Download the project (download button located on the right) and unzip the downloaded .zip file
+1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
 2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
 3. Once the project finished syncing click the `Run` button
 
