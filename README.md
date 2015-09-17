@@ -17,9 +17,9 @@ The example application contains the following creative tools:
 2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
 3. Once the project finished syncing click the `Run` button
 
-KIDOZ SDK
+KIDOZ SDK - Getting Started
 =================================
-
+ - 	Read the full KIDOZ SDK `Developer Guide` including `Best Practices` at [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf)
 #Integration
 
 ###Include the library
