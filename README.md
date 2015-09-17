@@ -82,21 +82,44 @@ public class MainActivity extends FragmentActivity
 
 You can implement `IOnInterstitialViewEventListener` interface if you want to be informed when the `InterstitialView` is dismissed and/or about to be open by adding the following lines:
 
-```java
-mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEventListener()
-{
-	@Override public void onDismissView()
-	{
-		// Will be called when the InterstitialView is closed
-		// This is a good time to resume your game
-	}
+> MainActivity.java
 
-	@Override public void onReadyToShow()
+```java
+public class MainActivity extends FragmentActivity
+{
+	//Feed View reference
+	private InterstitialView mInterstitialView;
+	
+	@Override 
+	protected void onCreate(Bundle savedInstanceState)
 	{
-		// Will be called when the InterstitialView is about to open
-		// This is a good time to pause your game
+		super.onCreate(savedInstanceState);
+		KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
+		// For a cleaner code init the InterstitialView in a saperated method
+		initInterstitialView();
+		
+		//the rest of your main activity onCreate
 	}
-});
+	
+	private void initInterstitialView()
+	{
+		mInterstitialView = new InterstitialView.Builder(MainActivity.this, getSupportFragmentManager()).build();
+		mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEventListener()
+		{
+			@Override public void onDismissView()
+			{
+				// Will be called when the InterstitialView is closed
+				// This is a good time to resume your game
+			}
+		
+			@Override public void onReadyToShow()
+			{
+				// Will be called when the InterstitialView is about to open
+				// This is a good time to pause your game
+			}
+		});
+	}
+}
 ```
 
 
