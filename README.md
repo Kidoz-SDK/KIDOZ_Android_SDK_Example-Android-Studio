@@ -171,10 +171,6 @@ You can call the `showView` method from anywhere inside your `Main Activity` dep
 
 It's recommended to use KIDOZ's default button - the `KIDOZ Button` which is a custom animatable button.
 
-clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
-</br>
-Simply launch the ```Interstitial View``` by calling the method showView() on the InterstitialView reference.
-
 </br>For any question or assistance, please contact us at SDK@kidoz.net.
 
 </br>
