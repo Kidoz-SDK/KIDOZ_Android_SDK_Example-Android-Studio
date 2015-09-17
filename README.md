@@ -77,7 +77,7 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 });
 ```
 
- - 	Your `Main Activity` should be look similar to this:
+ - 	Your `Main Activity` should be now look similar to this:
 
 > MainActivity.java
 
