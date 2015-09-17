@@ -119,6 +119,8 @@ public class MainActivity extends FragmentActivity
 }
 ```
 
+####Launching the Feed Interstitial View
+
 
 ###Integrating the KIDOZ Button
 You can add the ```KIDOZ Button``` to your layout xml file or create a new instance programmatically.
