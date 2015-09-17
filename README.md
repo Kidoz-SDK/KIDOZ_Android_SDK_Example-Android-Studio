@@ -23,6 +23,7 @@ KIDOZ SDK - Getting Started
  - 	Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) website
 
 The easiest way to use the SDK is following this 3 steps:
+
 1. Include the `KIDOZ SDK` library inside your project
 2. Init the SDK
 3. Add KIDOZ's default button - the `KIDOZ Button` to your `Main Activity`
