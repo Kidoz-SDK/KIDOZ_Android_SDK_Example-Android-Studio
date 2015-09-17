@@ -118,8 +118,13 @@ public class MainActivity extends FragmentActivity
 }
 ```
 
-####Launching the Feed Interstitial View
-The ```Interstitial View``` can be launched by clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
+####Launching the Interstitial View
+The `Feed View` can be launched by calling this method:
+```java
+mInterstitialView.showView();
+```
+
+clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
 </br>
 Simply launch the ```Interstitial View``` by calling the method showView() on the InterstitialView instance.
 ```java
