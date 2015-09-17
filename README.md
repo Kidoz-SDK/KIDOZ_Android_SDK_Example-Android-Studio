@@ -133,6 +133,8 @@ You can add the `KIDOZ Button` to your layout xml file or create a new instance 
 
  - 	Add `KIDOZ Button` directly inside xml:
  
+> main_activity_layout.xml
+
 ```xml
 	<com.kidoz.sdk.api.KidozButtonView
 		android:layout_width="wrap_content"
@@ -140,6 +142,8 @@ You can add the `KIDOZ Button` to your layout xml file or create a new instance 
 		android:id="@+id/kidozButton">
 	</com.kidoz.sdk.api.KidozButtonView>
 ```
+
+> MainActivity.java
 
 ```java
 Button openInterstitialViewButton = findViewById(R.id.OpenInterstitialViewButton);
