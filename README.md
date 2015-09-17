@@ -52,16 +52,32 @@ protected void onCreate(Bundle savedInstanceState)
 ```
 
 ####Creating an instance of the `Feed View`
- - 	Create an instance of `InterstitialView` inside your `Activity` or `Fragment` by adding the following lines:
-
-> MainActivity.java
+ - 	Inside your `Activity` or `Fragment` create an instance of `InterstitialView` by adding the following lines:
 
 ```java
-private InterstitialView mInterstitialView;
-mInterstitialView = new InterstitialView.Builder(MainActivity.this, getSupportFragmentManager()).build();	
+InterstitialView mInterstitialView = new InterstitialView.Builder(MainActivity.this, getSupportFragmentManager()).build();
 ```
 
 You can implement `IOnInterstitialViewEventListener` interface if you want to be informed when the `InterstitialView` is dismissed and/or about to be open by adding the following lines:
+
+```java
+mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEventListener()
+{
+	@Override public void onDismissView()
+	{
+		// Will be called when the InterstitialView is closed
+		// This is a good time to resume your game
+	}
+	
+	@Override public void onReadyToShow()
+	{
+		// Will be called when the InterstitialView is about to open
+		// This is a good time to pause your game
+	}
+});
+```
+
+ - 	Your `Main Activity` should be look similar to this:
 
 > MainActivity.java
 
