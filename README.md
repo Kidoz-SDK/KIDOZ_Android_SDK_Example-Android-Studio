@@ -34,8 +34,7 @@ dependencies {
 }
 ``` 
 ####Initializing the SDK
-In order to use the SDK and get promoted content and more (marketing text) - when initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve by contacting with 
-<a href="mailto:mailto@kidoz.net">SDK@kidoz.net</a>
+In order to use the SDK and get promoted content and more (marketing text) - when initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve by contacting with SDK@kidoz.net.
 
  - 	Inside your `Main Activity` onCreate add the following line:
 
@@ -120,7 +119,16 @@ public class MainActivity extends FragmentActivity
 ```
 
 ####Launching the Feed Interstitial View
-
+The ```Interstitial View``` can be launched by clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
+</br>
+Simply launch the ```Interstitial View``` by calling the method showView() on the InterstitialView instance.
+```java
+Button openInterstitialViewButton = findViewById(R.id.OpenInterstitialViewButton);
+openInterstitialViewButton.setOnClickListener(new OnClickListener()
+{
+	mInterstitialView.showView();
+}
+```
 
 ###Integrating the KIDOZ Button
 You can add the ```KIDOZ Button``` to your layout xml file or create a new instance programmatically.
@@ -147,17 +155,6 @@ rootView.addView(kidozBtn, params);
 
 	
 
-#Launching the Feed Interstitial View
-The ```Interstitial View``` can be launched by clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
-</br>
-Simply launch the ```Interstitial View``` by calling the method showView() on the InterstitialView instance.
-```java
-Button openInterstitialViewButton = findViewById(R.id.OpenInterstitialViewButton);
-openInterstitialViewButton.setOnClickListener(new OnClickListener()
-{
-	mInterstitialView.showView();
-}
-```
 
 
 
@@ -165,7 +162,8 @@ openInterstitialViewButton.setOnClickListener(new OnClickListener()
 
 
 
-</br>For any question or assistance, please contact us at support@kidoz.net.
+
+</br>For any question or assistance, please contact us at SDK@kidoz.net.
 
 </br>
 License
