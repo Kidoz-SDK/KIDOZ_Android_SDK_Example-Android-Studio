@@ -77,7 +77,7 @@ You can add the `KIDOZ Button` to your layout xml file or create a new instance 
 
 ```java
 KidozButtonView kidozButtonView = new KidozButtonView(MainActivity.this);
-mViewGroup.addView(kidozButtonView);
+yourViewGroup.addView(kidozButtonView);
 ```
 
 
