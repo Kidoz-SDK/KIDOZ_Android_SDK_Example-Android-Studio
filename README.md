@@ -10,7 +10,7 @@ The example application contains the following creative tools:
 * Interstitial content tool - the ```Feed View```
 * KIDOZ's default button - the ```KIDOZ Button```
 
-##Running the demo app
+###Running the demo app
 1. Download the project (download button located on the right) and unzip the downloaded .zip file
 2. Launch `Android Studio`, click `File` --> `Open`, find 'kidoz_sdk_sample' project and click `OK`
 3. Once the project finished syncing click the `Run` button
