@@ -84,6 +84,8 @@ yourViewGroup.addView(kidozButtonView);
 </br>
 - 	For advanced use of the `Feed View` you can get a reference to `InterstitialView` by calling this method on the `KidozButtonView` reference:
 
+> MainActivity.java
+
 ```java
 InterstitialView interstitialView = kidozButtonView.getInterstitialView();
 ```
@@ -93,11 +95,15 @@ Refer to `Advance` section for a better look on `InterstitialView` and what can 
 ####Creating an instance of the `Feed View`
  - 	Inside your `Activity` or `Fragment` create an instance of `InterstitialView` by adding the following lines:
 
+> MainActivity.java
+
 ```java
 InterstitialView mInterstitialView = new InterstitialView.Builder(MainActivity.this, getSupportFragmentManager()).build();
 ```
 
 You can implement `IOnInterstitialViewEventListener` interface if you want to be informed when the `InterstitialView` is dismissed and/or about to be open by adding the following lines:
+
+> MainActivity.java
 
 ```java
 mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEventListener()
