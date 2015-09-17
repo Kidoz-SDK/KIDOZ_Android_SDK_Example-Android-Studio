@@ -50,6 +50,34 @@ protected void onCreate(Bundle savedInstanceState)
 	//the rest of your main activity onCreate
 }
 ```
+
+####Creating an instance of the `Feed View`
+ - 	Create an instance of `InterstitialView` inside your `Activity` or `Fragment` by adding the following lines:
+
+> MainActivity.java
+
+```java
+public class MainActivity extends FragmentActivity
+{
+	//Feed View reference
+	private InterstitialView mInterstitialView;
+	
+	@Override 
+	protected void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
+		initInterstitialView();
+		//the rest of your main activity onCreate
+	}
+	
+	private void initInterstitialView()
+	{
+		mInterstitialView = new InterstitialView.Builder(MainActivity.this, getSupportFragmentManager()).build();
+	}
+}
+```
+
 ###Integrating the KIDOZ Button
 You can add the ```KIDOZ Button``` to your layout xml file or create a new instance programmatically.
 
@@ -73,22 +101,7 @@ KidozButtonView kidozBtn = new KidozButtonView(context);
 rootView.addView(kidozBtn, params);
 ```
 
-###Creating an instance of Interstitial View
- - 	Inside your desired activity or fragment create an instance of `InterstitialView` by adding the following lines:
-
-> MainActivity.java
-
-```java
-public class MainActivity extends FragmentActivity
-{
-	InterstitialView mInterstitialView;
 	
-	private void initInterstitialView()
-	{
-		mInterstitialView = new InterstitialView.Builder(MainActivity.this, getSupportFragmentManager()).build();
-	}
-}
-```	
 
 You can add a listener if you want to be informed when the `InterstitialView` is dismissed and/or open by adding the following code:
 
