@@ -1,8 +1,5 @@
 <a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="72" width="72" ></a>
 
-</br>
-</br>
-</br>
 KIDOZ SDK Sample App
 =================================
 
@@ -20,6 +17,7 @@ The example application contains the following creative tools:
 2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
 3. Once the project finished syncing click the `Run` button
 
+</br>
 KIDOZ SDK - Getting Started
 =================================
  - 	Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) site
