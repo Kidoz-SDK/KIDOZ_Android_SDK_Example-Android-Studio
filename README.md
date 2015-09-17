@@ -87,7 +87,9 @@ yourViewGroup.addView(kidozButtonView);
 ```java
 InterstitialView interstitialView = kidozButtonView.getInterstitialView();
 ```
+Refer to `Advance` section for a better look on `InterstitialView` and what can be done with it.
 
+#Advance
 ####Creating an instance of the `Feed View`
  - 	Inside your `Activity` or `Fragment` create an instance of `InterstitialView` by adding the following lines:
 
