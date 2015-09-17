@@ -119,14 +119,28 @@ public class MainActivity extends FragmentActivity
 ```
 
 ####Launching the Interstitial View
-The `Feed View` can be launched by calling this method:
+The `Feed View` can be launched by calling the method `showView` on the `InterstitialView` instance:
 ```java
 mInterstitialView.showView();
 ```
 
-clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
-</br>
-Simply launch the ```Interstitial View``` by calling the method showView() on the InterstitialView instance.
+You can call the `showView` method from anywhere inside your `Main Activity` depends on your app's flow, For example: when a game is stopped or when a user clicks a button.
+
+It's recommended to use KIDOZ's default button - the `KIDOZ Button` which is a custom animatable button.
+
+####Adding the KIDOZ Button
+You can add the `KIDOZ Button` to your layout xml file or create a new instance programmatically.
+
+ - 	Add `KIDOZ Button` directly inside xml:
+ 
+```xml
+	<com.kidoz.sdk.api.KidozButtonView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/kidozButton">
+	</com.kidoz.sdk.api.KidozButtonView>
+```
+
 ```java
 Button openInterstitialViewButton = findViewById(R.id.OpenInterstitialViewButton);
 openInterstitialViewButton.setOnClickListener(new OnClickListener()
@@ -134,6 +148,11 @@ openInterstitialViewButton.setOnClickListener(new OnClickListener()
 	mInterstitialView.showView();
 }
 ```
+
+clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
+</br>
+Simply launch the ```Interstitial View``` by calling the method showView() on the InterstitialView instance.
+
 
 ###Integrating the KIDOZ Button
 You can add the ```KIDOZ Button``` to your layout xml file or create a new instance programmatically.
