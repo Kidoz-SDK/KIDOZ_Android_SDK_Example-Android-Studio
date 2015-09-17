@@ -28,6 +28,8 @@ The easiest way to use the SDK is following this 3 steps:
 2. Init the SDK
 3. Add `KIDOZ Button` to your `Main Activity`
 
+Once the the above 3 steps correctly done the `Feed View` will be launched when the `KIDOZ Button` is clicked.
+
 ####Include the library
 On android studio you can include the library directly in your Gradle project:
 
