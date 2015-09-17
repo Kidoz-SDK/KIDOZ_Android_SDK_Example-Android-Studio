@@ -19,7 +19,9 @@ The example application contains the following creative tools:
 
 </br>
 KIDOZ SDK - Getting Started
-===========================<a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="right" height="72" width="72" ></a>
+=================================
+
+<a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="right" height="72" width="72" ></a>
  - 	Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) website
 
 The easiest way to use the SDK is following this 3 steps:
