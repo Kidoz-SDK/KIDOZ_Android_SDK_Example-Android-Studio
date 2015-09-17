@@ -1,6 +1,6 @@
-<a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="48" width="48" ></a>
+<a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="72" width="72" ></a>
 
-![App icon][]KIDOZ SDK Sample App
+KIDOZ SDK Sample App
 =================================
 
 *Updated to KIDOZ SDK version 0.1.2* 
@@ -138,5 +138,3 @@ License
     limitations under the License.
 
 
-
- [App icon]: https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png
