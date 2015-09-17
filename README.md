@@ -10,6 +10,10 @@ The example application contains the following creative tools:
 * Interstitial content tool - ```The Feed View```
 * KIDOZ's default button - ```The Gift Button View```
 
+#Running the demo app
+1. Download the project (download button located on the right) and unzip the downloaded .zip file to your desktop
+2. Launch 'Android Studio', click 'File' --> 'Open' and navigate to the project located inside folder 'kidoz_sdk_sample'
+3. 
 #Integration
 
 ###Include the library
