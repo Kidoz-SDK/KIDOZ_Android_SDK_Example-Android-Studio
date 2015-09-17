@@ -33,8 +33,8 @@ dependencies {
 	compile 'com.kidoz.sdk:KidozSDK:0.1.2'
 }
 ``` 
-####Initializing the KIDOZ SDK
-When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve from your account on [developers portal](http://www.kidoz.net).
+####Initializing `KIDOZ SDK`
+In order to use the SDK and get promoted content and more marketing text - when initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve by contacting with [KIDOZ SDK Tech Team](http://www.kidoz.net).
 
  - 	Inside your main activity onCreate add the following line:
 ```java
