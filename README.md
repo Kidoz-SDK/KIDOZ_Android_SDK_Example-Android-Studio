@@ -80,6 +80,26 @@ public class MainActivity extends FragmentActivity
 }
 ```
 
+You can implement `IOnInterstitialViewEventListener` interface if you want to be informed when the `InterstitialView` is dismissed and/or about to be open by adding the following lines:
+
+```java
+mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEventListener()
+{
+	@Override public void onDismissView()
+	{
+		// Will be called when the InterstitialView is closed
+		// This is a good time to resume your game
+	}
+
+	@Override public void onReadyToShow()
+	{
+		// Will be called when the InterstitialView is about to open
+		// This is a good time to pause your game
+	}
+});
+```
+
+
 ###Integrating the KIDOZ Button
 You can add the ```KIDOZ Button``` to your layout xml file or create a new instance programmatically.
 
@@ -104,23 +124,6 @@ rootView.addView(kidozBtn, params);
 ```
 
 	
-
-You can add a listener if you want to be informed when the `InterstitialView` is dismissed and/or open by adding the following code:
-
-```java
-mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEventListener()
-{
-	@Override public void onDismissView()
-	{
-		// Will be called when the InterstitialView is closed
-	}
-
-	@Override public void onReadyToShow()
-	{
-		// Will be called when the InterstitialView is open
-	}
-});
-```
 
 #Launching the Feed Interstitial View
 The ```Interstitial View``` can be launched by clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
