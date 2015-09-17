@@ -168,45 +168,9 @@ You can call the `showView` method from anywhere inside your `Main Activity` dep
 
 It's recommended to use KIDOZ's default button - the `KIDOZ Button` which is a custom animatable button.
 
-
-
 clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
 </br>
-Simply launch the ```Interstitial View``` by calling the method showView() on the InterstitialView instance.
-
-
-###Integrating the KIDOZ Button
-You can add the ```KIDOZ Button``` to your layout xml file or create a new instance programmatically.
-
- - 	Add ```KIDOZ Button``` directly inside xml:
- 
- ```xml
-	<com.kidoz.sdk.api.KidozButtonView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/kidozButton">
-	</com.kidoz.sdk.api.KidozButtonView>
-```
-
- - 	Add ```KIDOZ Button``` programmatically:
-
-```java
-//Inflate your root view for example a simple RelativeLayout
-RelativeLayout rootView = findViewById(R.id.Your_RelativeLayout_ID);
-RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-KidozButtonView kidozBtn = new KidozButtonView(context);
-rootView.addView(kidozBtn, params);
-```
-
-	
-
-
-
-
-
-
-
-
+Simply launch the ```Interstitial View``` by calling the method showView() on the InterstitialView reference.
 
 </br>For any question or assistance, please contact us at SDK@kidoz.net.
 
