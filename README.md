@@ -57,27 +57,8 @@ protected void onCreate(Bundle savedInstanceState)
 > MainActivity.java
 
 ```java
-public class MainActivity extends FragmentActivity
-{
-	//Feed View reference
-	private InterstitialView mInterstitialView;
-	
-	@Override 
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-		KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
-		// For a cleaner code init the InterstitialView in a saperated method
-		initInterstitialView();
-		
-		//the rest of your main activity onCreate
-	}
-	
-	private void initInterstitialView()
-	{
-		mInterstitialView = new InterstitialView.Builder(MainActivity.this, getSupportFragmentManager()).build();
-	}
-}
+private InterstitialView mInterstitialView;
+mInterstitialView = new InterstitialView.Builder(MainActivity.this, getSupportFragmentManager()).build();	
 ```
 
 You can implement `IOnInterstitialViewEventListener` interface if you want to be informed when the `InterstitialView` is dismissed and/or about to be open by adding the following lines:
