@@ -37,12 +37,16 @@ dependencies {
 In order to use the SDK and get promoted content and more (marketing text) - when initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve by contacting with 
 [KIDOZ SDK Tech Team](http://www.kidoz.net).
 
- - 	Inside your main activity onCreate add the following line:
+ - 	Inside your `Main Activity` onCreate add the following line:
+> MainActivity.java
 ```java
 @Override 
 protected void onCreate(Bundle savedInstanceState)
 {
 	super.onCreate(savedInstanceState);
+	.
+	.
+	.
 	KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
 	//the rest of your main activity onCreate
 }
