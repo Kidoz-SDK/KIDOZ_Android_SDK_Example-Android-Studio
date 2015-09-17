@@ -28,6 +28,9 @@ The easiest way to use the SDK is following this 3 steps:
 2. Init the SDK
 3. Add `KIDOZ Button` to your `Main Activity`
 
+<a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="left" height="72" width="72" ></a>
+
+
 Once the above 3 steps are correctly done the `Feed View` will be launched when the `KIDOZ Button` is clicked.
 
 ####Include the library
