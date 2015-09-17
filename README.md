@@ -23,6 +23,11 @@ KIDOZ SDK - Getting Started
  - 	Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) website
 
 ##Integration
+The easiest way to use the SDK is following this 3 steps:
+1. Include the `KIDOZ SDK` library inside your project
+2. Init the SDK
+3. Add KIDOZ's default button - the `KIDOZ Button` to your `Main Activity`
+
 ####Include the library
 On android studio you can include the library directly in your Gradle project:
 
@@ -137,20 +142,16 @@ You can add the `KIDOZ Button` to your layout xml file or create a new instance 
 
 ```xml
 	<com.kidoz.sdk.api.KidozButtonView
+		android:id="@+id/KidozButtonView"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/kidozButton">
+		android:layout_height="wrap_content">
 	</com.kidoz.sdk.api.KidozButtonView>
 ```
 
 > MainActivity.java
 
 ```java
-Button openInterstitialViewButton = findViewById(R.id.OpenInterstitialViewButton);
-openInterstitialViewButton.setOnClickListener(new OnClickListener()
-{
-	mInterstitialView.showView();
-}
+KidozButtonView kidozButtonView = findViewById(R.id.KidozButtonView);
 ```
 
 clicking on a Kidoz Button View or any other view with an onClick listener or some other way depending on your own application logics. For example when a game is stopped or anywhere else inside your app as long as your target class have a reference to the InterstitialView instance.
