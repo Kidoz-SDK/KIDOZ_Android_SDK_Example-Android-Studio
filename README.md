@@ -90,9 +90,9 @@ For advanced use of the `Feed View` you can get a reference to `InterstitialView
 ```java
 InterstitialView interstitialView = kidozButtonView.getInterstitialView();
 ```
-Refer to `Advance` section for a better look on `InterstitialView` and what can be done with it.
+Refer to the next section for a better look on `InterstitialView` and how you can call it without using a button from within your own code.
 
-#Advance
+#Calling the InterstitialView Programaticly
 ####Creating an instance of the `Feed View`
  - 	Inside your `Activity` or `Fragment` create an instance of `InterstitialView` by adding the following lines:
 
