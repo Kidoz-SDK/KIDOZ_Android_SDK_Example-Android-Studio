@@ -92,7 +92,7 @@ InterstitialView interstitialView = kidozButtonView.getInterstitialView();
 ```
 Refer to the next section for a better look on `InterstitialView` and how you can call it without using a button from within your own code.
 
-#Calling the InterstitialView Programaticly
+#Calling the InterstitialView Programmatically
 ####Creating an instance of the `Feed View`
  - 	Inside your `Activity` or `Fragment` create an instance of `InterstitialView` by adding the following lines:
 
