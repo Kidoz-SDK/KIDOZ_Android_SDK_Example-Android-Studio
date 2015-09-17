@@ -67,7 +67,9 @@ public class MainActivity extends FragmentActivity
 	{
 		super.onCreate(savedInstanceState);
 		KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
+		// For a cleaner code init the InterstitialView in a saperated method
 		initInterstitialView();
+		
 		//the rest of your main activity onCreate
 	}
 	
