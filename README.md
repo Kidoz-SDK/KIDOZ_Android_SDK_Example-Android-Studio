@@ -1,4 +1,4 @@
-KIDOZ SDK Sample App
+![App icon][]KIDOZ SDK Sample App
 =================================
 
 *Updated to KIDOZ SDK version 0.1.2* 
@@ -7,8 +7,13 @@ This Android application project provides an example of the [KIDOZ](http://www.k
 It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
 
 The example application contains the following creative tools:
-* Interstitial content tool - ```The Feed View```
-* KIDOZ's default button - ```The Gift Button View```
+* Interstitial content tool - the `Feed View`
+* KIDOZ's default button - the `KIDOZ Button`
+
+###Running the demo app
+1. Download the project (download button located on the right) and unzip the downloaded .zip file
+2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
+3. Once the project finished syncing click the `Run` button
 
 #Integration
 
