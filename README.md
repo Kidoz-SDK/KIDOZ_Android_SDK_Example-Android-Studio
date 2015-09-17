@@ -81,7 +81,7 @@ You can add the `KIDOZ Button` to your layout xml file or create a new instance 
 KidozButtonView kidozButtonView = new KidozButtonView(MainActivity.this);
 yourViewGroup.addView(kidozButtonView);
 ```
-
+</br>
 - 	For advanced use of the `Feed View` you can get a reference to `InterstitialView` by calling this method on the `KidozButtonView` reference:
 
 ```java
