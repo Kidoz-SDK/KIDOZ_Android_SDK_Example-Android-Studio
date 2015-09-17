@@ -21,7 +21,7 @@ KIDOZ SDK - Getting Started
 =================================
  - 	Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK SITE](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf)
 
-##Integration
+####Integration
 
 ###Include the library
 On android studio you can include the library directly in your Gradle project:
