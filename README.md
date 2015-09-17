@@ -18,7 +18,8 @@ The example application contains the following creative tools:
 3. Once the project finished syncing click the `Run` button
 
 </br>
-KIDOZ SDK - Getting Started
+KIDOZ SDK - Getting Started <a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="right" height="72" width="72" ></a>
+
 =================================
  - 	Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) website
 
@@ -27,9 +28,6 @@ The easiest way to use the SDK is following this 3 steps:
 1. Include the `KIDOZ SDK` library inside your project
 2. Init the SDK
 3. Add `KIDOZ Button` to your `Main Activity`
-
-<a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="left" height="72" width="72" ></a>
-
 
 Once the above 3 steps are correctly done the `Feed View` will be launched when the `KIDOZ Button` is clicked.
 
