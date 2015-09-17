@@ -171,8 +171,7 @@ You can call the `showView` method from anywhere inside your `Main Activity` dep
 
 It's recommended to use KIDOZ's default button - the `KIDOZ Button` which is a custom animatable button.
 
-</br>For any question or assistance, please contact us at SDK@kidoz.net.
-
+For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
 License
 --------
