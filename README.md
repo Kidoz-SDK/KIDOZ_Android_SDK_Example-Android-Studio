@@ -28,7 +28,7 @@ The easiest way to use the SDK is following this 3 steps:
 2. Init the SDK
 3. Add `KIDOZ Button` to your `Main Activity`
 
-Once the the above 3 steps correctly done the `Feed View` will be launched when the `KIDOZ Button` is clicked.
+Once the above 3 steps are correctly done the `Feed View` will be launched when the `KIDOZ Button` is clicked.
 
 ####Include the library
 On android studio you can include the library directly in your Gradle project:
@@ -82,6 +82,11 @@ KidozButtonView kidozButtonView = new KidozButtonView(MainActivity.this);
 yourViewGroup.addView(kidozButtonView);
 ```
 
+- 	For advanced use of the `Feed View` you can get a reference to `InterstitialView` by calling this method on the `KidozButtonView` reference:
+
+```java
+InterstitialView interstitialView = kidozButtonView.getInterstitialView();
+```
 
 ####Creating an instance of the `Feed View`
  - 	Inside your `Activity` or `Fragment` create an instance of `InterstitialView` by adding the following lines:
