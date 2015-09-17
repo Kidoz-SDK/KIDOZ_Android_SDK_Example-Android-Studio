@@ -19,7 +19,7 @@ The example application contains the following creative tools:
 
 KIDOZ SDK - Getting Started
 =================================
- - 	Read the full KIDOZ SDK `Developer Guide` including `Best Practices` at [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf)
+ - 	Read the full KIDOZ SDK decumentation and `Best Practices` at [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf)
 #Integration
 
 ###Include the library
