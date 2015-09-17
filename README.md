@@ -44,7 +44,7 @@ dependencies {
 }
 ``` 
 ####Initializing the SDK
-In order to use the SDK and get promoted content and more (marketing text) - when initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve by contacting with SDK@kidoz.net.
+When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve by contacting with SDK@kidoz.net.
 
  - 	Inside your `Main Activity` onCreate add the following line:
 
