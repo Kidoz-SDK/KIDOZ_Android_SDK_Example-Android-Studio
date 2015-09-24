@@ -17,6 +17,26 @@ The example application contains the following creative tools:
 2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
 3. Once the project finished syncing click the `Run` button
 
+####IMPORTANT
+This demo application uses `buildToolsVersion "23.0.1"`. if your `Android Studio` is not updated with this version you can follow one of this steps (or both):
+
+ - 	Update `buildToolsVersion`
+
+1. Inside `Android Studio` click the `SDK Manager` icon
+2. In the left side menu, navigate to `Appearance & Behavior` --> `System Settings` --> `Android SDK`
+3. Click the `SDK Tools` tab
+4. Check the `Android SDK Build Tools` and click `OK` 
+
+ - 	Configure the demo application `build.gradle` `android` section with your `buildToolsVersion` 
+```gradle
+android {
+	//Change this two parameters according to your buildToolsVersion 
+	//You can check which version is installed in the SDK Manager
+ 	compileSdkVersion 23 
+    	buildToolsVersion "23.0.1"
+}
+``` 
+
 </br>
 KIDOZ SDK - Getting Started
 =================================
