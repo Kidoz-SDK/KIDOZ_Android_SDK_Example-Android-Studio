@@ -32,7 +32,7 @@ This demo application uses `buildToolsVersion "23.0.1"`. if your `Android Studio
 ```gradle
 android {
 	//Change this two parameters according to your buildToolsVersion 
-	//You can check which version is installed in the SDK Manager
+	//You can check which version is installed in the SDK Manager settings
  	compileSdkVersion 23 
     	buildToolsVersion "23.0.1"
 }
