@@ -69,7 +69,7 @@ dependencies {
 ####Initializing the SDK
 The SDK should be initialized only once. 
 When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve by contacting with SDK@kidoz.net.
-If your project extends `Application` you can initialized the SDK inside Application's onCreate otherwise initialized it inside your main Activity onCreate.
+If your project extends `Application` you can initialized the SDK inside Application's onCreate otherwise initialized it inside your Main Activity's onCreate.
 
  - 	Inside your `Application` onCreate add the following line:
 
