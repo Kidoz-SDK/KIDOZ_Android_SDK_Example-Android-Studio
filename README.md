@@ -36,7 +36,7 @@ android {
 	//Change this two parameters according to your buildToolsVersion 
 	//You can check which version is installed inside the SDK Manager settings
  	compileSdkVersion 23 
-    	buildToolsVersion "23.0.1"
+ 	buildToolsVersion "23.0.1"
 }
 ``` 
 
