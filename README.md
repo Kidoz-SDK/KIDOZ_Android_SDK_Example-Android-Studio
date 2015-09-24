@@ -29,6 +29,7 @@ This demo application uses `buildToolsVersion "23.0.1"`. if your `Android Studio
 
  - 	Configure the demo application `build.gradle` `android` section with your `buildToolsVersion` 
 
+
 ```gradle
 android {
 	//Change this two parameters according to your buildToolsVersion 
