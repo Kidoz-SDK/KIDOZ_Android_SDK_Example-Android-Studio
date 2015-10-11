@@ -130,7 +130,7 @@ yourViewGroup.addView(mFeedButton);
 For advanced use of the `Feed View` you can get a reference to `FeedView` by calling this method on the `FeedButton` reference:
 
 ```java
-FeedView mFeedView = FeedView.getFeedView();
+FeedView mFeedView = mFeedButton.getFeedView();
 ```
 Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
 
@@ -177,12 +177,12 @@ public class MainActivity extends FragmentActivity
 		super.onCreate(savedInstanceState);
 		KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
 		// For a cleaner code init the InterstitialView in a saperated method
-		initInterstitialView();
-		
+		initFeedView();
 		//the rest of your main activity onCreate
+		...
 	}
 	
-	private void initInterstitialView()
+	private void initFeedView()
 	{
 		mFeedView = new FeedView.Builder(MainActivity.this).build();
 		mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
