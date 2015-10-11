@@ -3,7 +3,7 @@
 KIDOZ SDK Sample App
 =================================
 
-*Updated to KIDOZ SDK version 0.1.2* 
+*Updated to KIDOZ SDK version 0.1.3* 
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
@@ -18,7 +18,7 @@ The example application contains the following creative tools:
 3. Once the project finished syncing click the `Run` button
 
 ####IMPORTANT
-This demo application uses `buildToolsVersion "23.0.1"`. if your `Android Studio` is not updated with this version you can follow one of this steps (or both):
+This demo application uses `buildToolsVersion "22.0.1"`. if your `Android Studio` is not updated with this version you can follow one of this steps (or both):
 
  - 	Update `buildToolsVersion`
 
@@ -35,8 +35,8 @@ This demo application uses `buildToolsVersion "23.0.1"`. if your `Android Studio
 android {
 	//Change this two parameters according to your buildToolsVersion 
 	//You can check which version is installed inside the SDK Manager settings
- 	compileSdkVersion 23 
- 	buildToolsVersion "23.0.1"
+ 	compileSdkVersion 22 
+ 	buildToolsVersion "22.0.1"
 }
 ``` 
 
@@ -54,7 +54,7 @@ The easiest way to use the SDK is following this 3 steps:
 2. Init the SDK
 3. Add `KIDOZ Button` to your `Main Activity`
 
-Once the above 3 steps are correctly done the `Feed View` will be launched when the `KIDOZ Button` is clicked.
+Once the above 3 steps are correctly done the `Feed View` will be launched when the `Feed Button` is clicked.
 
 ####Include the library
 On android studio you can include the library directly in your Gradle project:
@@ -63,7 +63,7 @@ On android studio you can include the library directly in your Gradle project:
 ```gradle
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.1.2'
+	compile 'com.kidoz.sdk:KidozSDK:0.1.3'
 }
 ``` 
 ####Initializing the SDK
@@ -85,7 +85,7 @@ protected void onCreate(Bundle savedInstanceState)
 }
 ```
 
- - 	Inside your `Main Activity` onCreate add the following line:
+ - 	Inside your `Main Activity` onCreate Or The `Application` onCreate add the following line:
 
 > MainActivity.java
 
@@ -96,53 +96,68 @@ protected void onCreate(Bundle savedInstanceState)
 	super.onCreate(savedInstanceState);
 	KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
 	//the rest of your main activity onCreate
+	...
+}
+```
+
+OR
+
+```java
+public class MyApplication extends Application{
+	@Override
+	public void onCreate() {		 
+		super.onCreate();
+	 KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
+	}
+	//the rest of your main activity onCreate
+	...
 }
 ```
 
 ####Adding the KIDOZ Button
-You can add the `KIDOZ Button` to your layout xml file or create a new instance programmatically.
+You can add the `Feed Button` to your layout xml file or create a new instance programmatically.
 
- - 	Add `KIDOZ Button` directly inside xml:
+ - 	Add `Feed Button` directly inside xml:
  
 > main_activity_layout.xml
 
 ```xml
-	<com.kidoz.sdk.api.KidozButtonView
-		android:id="@+id/KidozButtonView"
+	<com.kidoz.sdk.api.FeedButton
+		android:id="@+id/kidozBtn_view"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content">
 	</com.kidoz.sdk.api.KidozButtonView>
 ```
 
- - 	Add `KIDOZ Button` programmatically:
+ - 	Add `Feed Button` programmatically:
   	
  
 > MainActivity.java
 
 ```java
-KidozButtonView kidozButtonView = new KidozButtonView(MainActivity.this);
-yourViewGroup.addView(kidozButtonView);
+FeedButton mFeedButton = new FeedButton(MainActivity.this);
+yourViewGroup.addView(mFeedButton);
 ```
 
-For advanced use of the `Feed View` you can get a reference to `InterstitialView` by calling this method on the `KidozButtonView` reference:
+For advanced use of the `Feed View` you can get a reference to `FeedView` by calling this method on the `FeedButton` reference:
 
 ```java
-InterstitialView interstitialView = kidozButtonView.getInterstitialView();
+FeedView mFeedView = FeedView.getFeedView();
 ```
-Refer to the next section for a better look on `InterstitialView` and how you can call it without using a button from within your own code.
+Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
 
 #Calling the InterstitialView Programmatically
 ####Creating an instance of the `Feed View`
- - 	Inside your `Activity` or `Fragment` create an instance of `InterstitialView` by adding the following lines:
+ - 	Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
 
 ```java
-InterstitialView mInterstitialView = new InterstitialView.Builder(MainActivity.this, getSupportFragmentManager()).build();
+FeedView mFeed = new FeedView.Builder(MainActivity.this).build();
 ```
 
-You can implement `IOnInterstitialViewEventListener` interface if you want to be informed when the `InterstitialView` is dismissed and/or about to be open by adding the following lines:
+You can implement `IOnFeedViewEventListener` interface if you want to be informed when the `FeedView` is dismissed and/or about to be open by adding the following lines:
 
 ```java
-mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEventListener()
+mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
 {
 	@Override public void onDismissView()
 	{
@@ -166,7 +181,7 @@ mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEven
 public class MainActivity extends FragmentActivity
 {
 	//Feed View reference
-	private InterstitialView mInterstitialView;
+	private FeedView mFeedView;
 	
 	@Override 
 	protected void onCreate(Bundle savedInstanceState)
@@ -181,8 +196,8 @@ public class MainActivity extends FragmentActivity
 	
 	private void initInterstitialView()
 	{
-		mInterstitialView = new InterstitialView.Builder(MainActivity.this, getSupportFragmentManager()).build();
-		mInterstitialView.setOnInterstitialViewEventListener(new IOnInterstitialViewEventListener()
+		mFeedView = new FeedView.Builder(MainActivity.this).build();
+		mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
 		{
 			@Override public void onDismissView()
 			{
@@ -201,14 +216,14 @@ public class MainActivity extends FragmentActivity
 ```
 
 ####Launching the Interstitial View
-The `Feed View` can be launched by calling the method `showView` on the `InterstitialView` instance:
+The `Feed View` can be launched by calling the method `showView` on the `FeedView` instance:
 ```java
-mInterstitialView.showView();
+mFeedView.showView();
 ```
 
 You can call the `showView` method from anywhere inside your `Main Activity` depends on your app's flow, For example: when a game is stopped or when a user clicks a button.
 
-It's recommended to use KIDOZ's default button - the `KIDOZ Button` which is a custom animatable button.
+It's recommended to use KIDOZ's default button - the `Feed Button` which is a custom animatable button.
 
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
