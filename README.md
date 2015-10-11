@@ -127,6 +127,11 @@ FeedButton mFeedButton = new FeedButton(MainActivity.this);
 yourViewGroup.addView(mFeedButton);
 ```
 
+- You can change Feed button size on runtime by using:
+```java
+ mFeedButton.setFeedButtonSize(200);
+```
+
 For advanced use of the `Feed View` you can get a reference to `FeedView` by calling this method on the `FeedButton` reference:
 
 ```java
