@@ -134,7 +134,7 @@ FeedView mFeedView = mFeedButton.getFeedView();
 ```
 Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
 
-#Calling the InterstitialView Programmatically
+#Calling the Feed View Programmatically
 ####Creating an instance of the `Feed View`
  - 	Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
 
@@ -149,13 +149,13 @@ mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
 {
 	@Override public void onDismissView()
 	{
-		// Will be called when the InterstitialView is closed
+		// Will be called when the FeedView is closed
 		// This is a good time to resume your game
 	}
 	
 	@Override public void onReadyToShow()
 	{
-		// Will be called when the InterstitialView is about to open
+		// Will be called when the FeedView is about to open
 		// This is a good time to pause your game
 	}
 });
@@ -176,7 +176,7 @@ public class MainActivity extends FragmentActivity
 	{
 		super.onCreate(savedInstanceState);
 		KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
-		// For a cleaner code init the InterstitialView in a saperated method
+		// For a cleaner code init the FeedView in a saperated method
 		initFeedView();
 		//the rest of your main activity onCreate
 		...
@@ -189,13 +189,13 @@ public class MainActivity extends FragmentActivity
 		{
 			@Override public void onDismissView()
 			{
-				// Will be called when the InterstitialView is closed
+				// Will be called when the FeedView is closed
 				// This is a good time to resume your game
 			}
 		
 			@Override public void onReadyToShow()
 			{
-				// Will be called when the InterstitialView is about to open
+				// Will be called when the FeedView is about to open
 				// This is a good time to pause your game
 			}
 		});
@@ -203,7 +203,7 @@ public class MainActivity extends FragmentActivity
 }
 ```
 
-####Launching the Interstitial View
+####Launching the Feed View
 The `Feed View` can be launched by calling the method `showView` on the `FeedView` instance:
 ```java
 mFeedView.showView();
