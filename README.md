@@ -52,7 +52,7 @@ The easiest way to use the SDK is following this 3 steps:
 
 1. Include the `KIDOZ SDK` library inside your project
 2. Init the SDK
-3. Add `KIDOZ Button` to your `Main Activity`
+3. Add `KIDOZ Feed View Button` to your `Main Activity`
 
 Once the above 3 steps are correctly done the `Feed View` will be launched when the `Feed Button` is clicked.
 
@@ -76,16 +76,18 @@ If your project extends `Application` you can initialized the SDK inside Applica
 > YourApplication.java
 
 ```java
-@Override 
-protected void onCreate(Bundle savedInstanceState)
-{
-	super.onCreate();
-	KidozSDK.initialize(this, "publisherID", "securityToken");
-	//the rest of your application onCreate
+public class MyApplication extends Application{
+   	@Override 
+	protected void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate();
+		KidozSDK.initialize(this, "publisherID", "securityToken");
+		//the rest of your application onCreate
+	}
+    ...
 }
 ```
-
- - 	Inside your `Main Activity` onCreate Or The `Application` onCreate add the following line:
+ - Inside your `Main Activity` onCreate add the following line:
 
 > MainActivity.java
 
@@ -95,20 +97,6 @@ protected void onCreate(Bundle savedInstanceState)
 {
 	super.onCreate(savedInstanceState);
 	KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
-	//the rest of your main activity onCreate
-	...
-}
-```
-
-OR
-
-```java
-public class MyApplication extends Application{
-	@Override
-	public void onCreate() {		 
-		super.onCreate();
-	 KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
-	}
 	//the rest of your main activity onCreate
 	...
 }
