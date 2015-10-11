@@ -102,10 +102,10 @@ protected void onCreate(Bundle savedInstanceState)
 }
 ```
 
-####Adding the KIDOZ Button
+####Adding the KIDOZ Feed Button
 You can add the `Feed Button` to your layout xml file or create a new instance programmatically.
 
- - 	Add `Feed Button` directly inside xml:
+ - 	Add `FeedButton` directly inside xml:
  
 > main_activity_layout.xml
 
@@ -117,7 +117,7 @@ You can add the `Feed Button` to your layout xml file or create a new instance p
 	</com.kidoz.sdk.api.KidozButtonView>
 ```
 
- - 	Add `Feed Button` programmatically:
+ - 	Add `FeedButton` programmatically:
   	
  
 > MainActivity.java
