@@ -66,6 +66,33 @@ dependencies {
 	compile 'com.kidoz.sdk:KidozSDK:0.1.3'
 }
 ``` 
+
+#### AndroidMainifest.xml  Defenitions (IMPORTANT)
+For correct flow of the SDK , add the folowing line in Your `AndroidMainifest.xml` file.For each `Activity` that uses the SDK functionality.
+```xml
+ android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
+``` 
+Example:
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="your.package.name">
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity
+            ...
+            android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
+            ...
+          >
+	</activity>
+        ...
+    </application>
+</manifest>
+``` 
+
+
 ####Initializing the SDK
 The SDK should be initialized only once. 
 When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve by contacting with SDK@kidoz.net.
