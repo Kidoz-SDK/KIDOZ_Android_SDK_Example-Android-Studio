@@ -140,8 +140,8 @@ You can add the `Feed Button` to your layout xml file or create a new instance p
 	<com.kidoz.sdk.api.FeedButton
 		android:id="@+id/kidozBtn_view"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content">
-	</com.kidoz.sdk.api.KidozButtonView>
+		android:layout_height="wrap_content"/>
+	
 ```
 
  - 	Add `FeedButton` programmatically:
@@ -157,6 +157,11 @@ yourViewGroup.addView(mFeedButton);
 - You can change Feed button size on runtime by using:
 ```java
  mFeedButton.setFeedButtonSize(200);
+```
+OR
+
+```java
+ mFeedButton.setFeedButtonSizeDp(70);
 ```
 
 For advanced use of the `Feed View` you can get a reference to `FeedView` by calling this method on the `FeedButton` reference:
