@@ -1,3 +1,5 @@
+**KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
+
 <a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="72" width="72" ></a>
 
 KIDOZ SDK Sample App
@@ -6,7 +8,6 @@ KIDOZ SDK Sample App
 *Updated to KIDOZ SDK version 0.1.5* 
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
-It is compiled with Android 4.0 (API level 14) and supports any device running this Android version or higher.
 
 The example application contains the following creative tools:
 * KIDOZ's Feed view content tool - the `Feed View`
