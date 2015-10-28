@@ -1,9 +1,9 @@
-**KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
 
 <a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="72" width="72" ></a>
 
 KIDOZ SDK Sample App
 =================================
+**KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
 
 *Updated to KIDOZ SDK version 0.1.5* 
 
@@ -11,7 +11,6 @@ This Android application project provides an example of the [KIDOZ](http://www.k
 
 The example application contains the following creative tools:
 * KIDOZ's Feed view content tool - the `Feed View`
-* KIDOZ's default button - the `Feed Button`
 
 ###Running the sample app
 1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
@@ -44,8 +43,6 @@ android {
 </br>
 KIDOZ SDK - Getting Started
 =================================
-
-<a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="right" height="96" width="96" ></a>
 
  - 	Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) website
 
@@ -130,48 +127,6 @@ protected void onCreate(Bundle savedInstanceState)
 }
 ```
 
-####Adding the KIDOZ Feed Button
-You can add the `Feed Button` to your layout xml file or create a new instance programmatically.
-
- - 	Add `FeedButton` directly inside xml:
- 
-> main_activity_layout.xml
-
-```xml
-	<com.kidoz.sdk.api.FeedButton
-		android:id="@+id/kidozBtn_view"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"/>
-	
-```
-
- - 	Add `FeedButton` programmatically:
-  	
- 
-> MainActivity.java
-
-```java
-FeedButton mFeedButton = new FeedButton(MainActivity.this);
-yourViewGroup.addView(mFeedButton);
-```
-
-- You can change Feed button size on runtime by using:
-```java
- mFeedButton.setFeedButtonSize(200);
-```
-OR
-
-```java
- mFeedButton.setFeedButtonSizeDp(70);
-```
-
-For advanced use of the `Feed View` you can get a reference to `FeedView` by calling this method on the `FeedButton` reference:
-
-```java
-FeedView mFeedView = mFeedButton.getFeedView();
-```
-Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
-
 #Calling the Feed View Programmatically
 ####Creating an instance of the `Feed View`
  - 	Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
@@ -248,6 +203,51 @@ mFeedView.showView();
 ```
 
 You can call the `showView` method from anywhere inside your `Main Activity` depends on your app's flow, For example: when a game is stopped or when a user clicks a button.
+
+#Adding the KIDOZ Feed Button
+<a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="right" height="96" width="96" ></a>
+You can also call the `Feed View` by adding the `Feed Button` - in this case the `Feed View` will be shown following a click on the `Feed Button`. 
+You can add the `Feed Button` either by adding it to your xml layout file OR by create a new instance programmatically.
+
+
+ - 	Add `FeedButton` directly inside xml:
+ 
+> main_activity_layout.xml
+
+```xml
+	<com.kidoz.sdk.api.FeedButton
+		android:id="@+id/kidozBtn_view"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"/>
+	
+```
+
+ - 	Add `FeedButton` programmatically:
+  	
+ 
+> MainActivity.java
+
+```java
+FeedButton mFeedButton = new FeedButton(MainActivity.this);
+yourViewGroup.addView(mFeedButton);
+```
+
+- You can change Feed button size on runtime by using:
+```java
+ mFeedButton.setFeedButtonSize(200);
+```
+OR
+
+```java
+ mFeedButton.setFeedButtonSizeDp(70);
+```
+
+For advanced use of the `Feed View` you can get a reference to `FeedView` by calling this method on the `FeedButton` reference:
+
+```java
+FeedView mFeedView = mFeedButton.getFeedView();
+```
+Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
 
 It's recommended to use KIDOZ's default button - the `Feed Button` which is a custom animatable button.
 
