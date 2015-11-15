@@ -5,7 +5,7 @@ KIDOZ SDK Sample App
 =================================
 **KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.1.6* 
+*Updated to KIDOZ SDK version 0.2.0* 
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 
@@ -61,7 +61,7 @@ On android studio you can include the library directly in your Gradle project:
 ```gradle
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.1.6'
+	compile 'com.kidoz.sdk:KidozSDK:0.2.0'
 }
 ``` 
 
@@ -253,6 +253,100 @@ It's recommended to use KIDOZ's default button - the `Feed Button` which is a cu
 
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
+
+
+#Adding the KIDOZ Panel View
+<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/panel_view_sample_image.png" align="right" height="121" width="200" ></a>
+
+`PaneView` is a Special view that Pops In/Out of the screen without interfering user expirience.
+The PanelView can be place on one of four sides of the activity screen and the `Handle` button can be located on 3 positions (Start,Center,End) depending of the `PaneView` initial Screen location.
+
+You can add the `PaneView` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
+
+
+ - 	Add `PaneView` directly inside xml:
+ 
+> main_activity_layout.xml
+
+```xml
+ <com.kidoz.sdk.api.PanelView
+        android:id="@+id/kidozPanel_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+	
+```
+The `PaneView` should be added on top of exising layout for correct flow.
+
+```java
+    private PanelView mPanelView;
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.user_layout);
+
+        /** Get reference to Kidoz Panel View */
+        mPanelView = (PanelView) findViewById(R.id.kidozPanel_view);
+        
+        mPanelView.setOnPanelViewEventListener(new IOnPanelViewEventListener() {
+            @Override
+            public void onPanelViewCollapsed() {
+
+            }
+
+            @Override
+            public void onPanelViewExpanded() {
+
+            }
+        });
+        ...
+``` 
+
+ - 	Add `PanelView` programmatically:
+
+> MainActivity.java
+
+```java
+PanelView mPanelView = new PanelView(MainActivity.this);
+yourViewGroup.addView(mPanelView);
+```
+
+- The `PaneView` is Added by default in the Bottom of user screen with `PANEL_TYPE.BOTTOM` configuration type, witch can be changed in run time along side with handle position.
+
+```java
+    mPanelView.setPanelConfiguration(PANEL_TYPE.BOTTOM, HANDLE_POSITION.CENTER);
+``` 
+
+- You can change Color of the pannel on runtime by using:
+```java
+  mPanelView.setPanelColor(Color.parseColor("#d95e38"));
+```
+
+For advanced use the developer can add a Custom `Handle` View to a panel and design it as desired.
+
+- Example
+
+```java
+ Button myButton = new Button(this);
+        myButton.setText("My Handle");
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mPanelView.getIsPanelViewExpanded()) {
+                    mPanelView.collapsePanelView();
+                } else {
+                    mPanelView.expandPanelView();
+                }
+            }
+        });
+
+        mPanelView.setPanelConfiguration(PANEL_TYPE.BOTTOM, HANDLE_POSITION.CENTER,myButton);
+```
+ 
+For any question or assistance, please contact us at SDK@kidoz.net.
+</br>
+
+
 License
 --------
 
