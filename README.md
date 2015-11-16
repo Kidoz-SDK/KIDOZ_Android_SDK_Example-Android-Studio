@@ -128,6 +128,8 @@ protected void onCreate(Bundle savedInstanceState)
 	...
 }
 ```
+
+
 #KIDOZ Panel
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/panel_view_sample_image.png" align="right" height="121" width="200" ></a>
 
@@ -188,6 +190,8 @@ yourViewGroup.addView(mPanelView);
 
 - The `PaneView` is Added by default in the Bottom of user screen with `PANEL_TYPE.BOTTOM` configuration type, witch can be changed in run time along side with handle position.  
 <br/>
+
+<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_panel_layout.jpg" align="right" height="250" width="221" ></a>
 
 ```java
     mPanelView.setPanelConfiguration(PANEL_TYPE.BOTTOM, HANDLE_POSITION.CENTER);
