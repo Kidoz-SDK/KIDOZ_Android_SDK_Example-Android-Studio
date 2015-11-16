@@ -10,7 +10,9 @@ KIDOZ SDK Sample App
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 
 The example application contains the following creative tools:
-* KIDOZ's Feed view content tool - the `Feed View`
+* KIDOZ's Feed view content tool - the `FeedView`
+* KIDOZ's Feed Button view content tool - the `FeedButton`
+* KIDOZ's Feed Panel content tool - the `FeedPanel`
 
 ###Running the sample app
 1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
