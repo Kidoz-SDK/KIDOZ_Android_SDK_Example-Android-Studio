@@ -364,8 +364,6 @@ It's recommended to use KIDOZ's default button - the `Feed Button` which is a cu
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
 
-For any question or assistance, please contact us at SDK@kidoz.net.
-
 License
 --------
 
