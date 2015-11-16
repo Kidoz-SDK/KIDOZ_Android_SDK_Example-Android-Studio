@@ -126,136 +126,7 @@ protected void onCreate(Bundle savedInstanceState)
 	...
 }
 ```
-
-#Calling the Feed View Programmatically
-####Creating an instance of the `Feed View`
- - 	Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
-
-```java
-FeedView mFeed = new FeedView.Builder(MainActivity.this).build();
-```
-
-You can implement `IOnFeedViewEventListener` interface if you want to be informed when the `FeedView` is dismissed and/or about to be open by adding the following lines:
-
-```java
-mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
-{
-	@Override public void onDismissView()
-	{
-		// Will be called when the FeedView is closed
-		// This is a good time to resume your game
-	}
-	
-	@Override public void onReadyToShow()
-	{
-		// Will be called when the FeedView is about to open
-		// This is a good time to pause your game
-	}
-});
-```
-
- - 	Your `Main Activity` should be now look similar to this:
-
-> MainActivity.java
-
-```java
-public class MainActivity extends FragmentActivity
-{
-	//Feed View reference
-	private FeedView mFeedView;
-	
-	@Override 
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-		KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
-		// For a cleaner code init the FeedView in a saperated method
-		initFeedView();
-		//the rest of your main activity onCreate
-		...
-	}
-	
-	private void initFeedView()
-	{
-		mFeedView = new FeedView.Builder(MainActivity.this).build();
-		mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
-		{
-			@Override public void onDismissView()
-			{
-				// Will be called when the FeedView is closed
-				// This is a good time to resume your game
-			}
-		
-			@Override public void onReadyToShow()
-			{
-				// Will be called when the FeedView is about to open
-				// This is a good time to pause your game
-			}
-		});
-	}
-}
-```
-
-####Launching the Feed View
-The `Feed View` can be launched by calling the method `showView` on the `FeedView` instance:
-```java
-mFeedView.showView();
-```
-
-You can call the `showView` method from anywhere inside your `Main Activity` depends on your app's flow, For example: when a game is stopped or when a user clicks a button.
-
-#Adding the KIDOZ Feed Button
-<a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="right" height="96" width="96" ></a>
-You can also call the `Feed View` by adding the `Feed Button` - in this case the `Feed View` will be shown following a click on the `Feed Button`. 
-You can add the `Feed Button` either by adding it to your xml layout file OR by create a new instance programmatically.
-
-
- - 	Add `FeedButton` directly inside xml:
- 
-> main_activity_layout.xml
-
-```xml
-	<com.kidoz.sdk.api.FeedButton
-		android:id="@+id/kidozBtn_view"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"/>
-	
-```
-
- - 	Add `FeedButton` programmatically:
-  	
- 
-> MainActivity.java
-
-```java
-FeedButton mFeedButton = new FeedButton(MainActivity.this);
-yourViewGroup.addView(mFeedButton);
-```
-
-- You can change Feed button size on runtime by using:
-```java
- mFeedButton.setFeedButtonSize(200);
-```
-OR
-
-```java
- mFeedButton.setFeedButtonSizeDp(70);
-```
-
-For advanced use of the `Feed View` you can get a reference to `FeedView` by calling this method on the `FeedButton` reference:
-
-```java
-FeedView mFeedView = mFeedButton.getFeedView();
-```
-Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
-
-It's recommended to use KIDOZ's default button - the `Feed Button` which is a custom animatable button.
-
-For any question or assistance, please contact us at SDK@kidoz.net.
-</br>
-
-
-#Adding the KIDOZ Panel View
+#KIDOZ Panel
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/panel_view_sample_image.png" align="right" height="121" width="200" ></a>
 
 `PaneView` is a Special view that Pops In/Out of the screen without interfering user expirience.
@@ -348,6 +219,134 @@ For advanced use the developer can add a Custom `Handle` View to a panel and des
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
 
+
+#KIDOZ Feed
+##Calling the Feed View Programmatically
+####Creating an instance of the `Feed View`
+ - 	Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
+
+```java
+FeedView mFeed = new FeedView.Builder(MainActivity.this).build();
+```
+
+You can implement `IOnFeedViewEventListener` interface if you want to be informed when the `FeedView` is dismissed and/or about to be open by adding the following lines:
+
+```java
+mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
+{
+	@Override public void onDismissView()
+	{
+		// Will be called when the FeedView is closed
+		// This is a good time to resume your game
+	}
+	
+	@Override public void onReadyToShow()
+	{
+		// Will be called when the FeedView is about to open
+		// This is a good time to pause your game
+	}
+});
+```
+
+ - 	Your `Main Activity` should be now look similar to this:
+
+> MainActivity.java
+
+```java
+public class MainActivity extends FragmentActivity
+{
+	//Feed View reference
+	private FeedView mFeedView;
+	
+	@Override 
+	protected void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
+		// For a cleaner code init the FeedView in a saperated method
+		initFeedView();
+		//the rest of your main activity onCreate
+		...
+	}
+	
+	private void initFeedView()
+	{
+		mFeedView = new FeedView.Builder(MainActivity.this).build();
+		mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
+		{
+			@Override public void onDismissView()
+			{
+				// Will be called when the FeedView is closed
+				// This is a good time to resume your game
+			}
+		
+			@Override public void onReadyToShow()
+			{
+				// Will be called when the FeedView is about to open
+				// This is a good time to pause your game
+			}
+		});
+	}
+}
+```
+
+####Launching the Feed View
+The `Feed View` can be launched by calling the method `showView` on the `FeedView` instance:
+```java
+mFeedView.showView();
+```
+
+You can call the `showView` method from anywhere inside your `Main Activity` depends on your app's flow, For example: when a game is stopped or when a user clicks a button.
+
+##Adding the KIDOZ Feed Button
+<a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="right" height="96" width="96" ></a>
+You can also call the `Feed View` by adding the `Feed Button` - in this case the `Feed View` will be shown following a click on the `Feed Button`. 
+You can add the `Feed Button` either by adding it to your xml layout file OR by create a new instance programmatically.
+
+
+ - 	Add `FeedButton` directly inside xml:
+ 
+> main_activity_layout.xml
+
+```xml
+	<com.kidoz.sdk.api.FeedButton
+		android:id="@+id/kidozBtn_view"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"/>
+	
+```
+
+ - 	Add `FeedButton` programmatically:
+  	
+ 
+> MainActivity.java
+
+```java
+FeedButton mFeedButton = new FeedButton(MainActivity.this);
+yourViewGroup.addView(mFeedButton);
+```
+
+- You can change Feed button size on runtime by using:
+```java
+ mFeedButton.setFeedButtonSize(200);
+```
+OR
+
+```java
+ mFeedButton.setFeedButtonSizeDp(70);
+```
+
+For advanced use of the `Feed View` you can get a reference to `FeedView` by calling this method on the `FeedButton` reference:
+
+```java
+FeedView mFeedView = mFeedButton.getFeedView();
+```
+Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
+
+It's recommended to use KIDOZ's default button - the `Feed Button` which is a custom animatable button.
+
+For any question or assistance, please contact us at SDK@kidoz.net.
+</br>
 
 License
 --------
