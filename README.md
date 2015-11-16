@@ -138,7 +138,7 @@ The `PanelView` can be controled via a special `Handle` button can that can be l
 You can add the `PaneView` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
 
 
- ###Add `PaneView` directly to the xml layout:
+####Add `PaneView` directly to the xml layout:
  
 > main_activity_layout.xml
 
@@ -176,7 +176,7 @@ The `PaneView` should be added on top of exising layout for correct flow.
         ...
 ``` 
 
- ###Adding the `PanelView` programmatically
+####Adding the `PanelView` programmatically
 
 > MainActivity.java
 
