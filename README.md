@@ -138,6 +138,9 @@ The `PanelView` can be place on one of four sides of the activity screen - `PANE
 </br>
 The `PanelView` can be controled via a special `Handle` button can that can be located in any of the 3 following positions -  
 `HANDLE_POSITION.START`,`HANDLE_POSITION.CENTER`,`HANDLE_POSITION.END` depending on the `PaneView` initial Screen location.
+</br>
+<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_panel_layout.jpg" align="right" height="250" width="221" ></a>
+</br>
 
 You can add the `PaneView` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
 
@@ -238,8 +241,6 @@ For advanced use the developer can add a Custom `Handle` View to a panel and des
  
 
 </br>
-<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_panel_layout.jpg" align="right" height="250" width="221" ></a>
-</br></br>
 
 #KIDOZ Feed
 ##Calling the Feed View Programmatically
