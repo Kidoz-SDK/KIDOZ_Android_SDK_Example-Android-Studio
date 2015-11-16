@@ -191,8 +191,6 @@ yourViewGroup.addView(mPanelView);
 - The `PaneView` is Added by default in the Bottom of user screen with `PANEL_TYPE.BOTTOM` configuration type, witch can be changed in run time along side with handle position.  
 <br/>
 
-<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_panel_layout.jpg" align="right" height="250" width="221" ></a>
-
 ```java
     mPanelView.setPanelConfiguration(PANEL_TYPE.BOTTOM, HANDLE_POSITION.CENTER);
 ``` 
@@ -240,7 +238,8 @@ For advanced use the developer can add a Custom `Handle` View to a panel and des
  
 
 </br>
-
+<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_panel_layout.jpg" align="right" height="250" width="221" ></a>
+</br></br>
 
 #KIDOZ Feed
 ##Calling the Feed View Programmatically
