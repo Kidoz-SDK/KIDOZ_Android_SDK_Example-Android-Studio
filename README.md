@@ -312,8 +312,7 @@ yourViewGroup.addView(mPanelView);
 ```
 
 - The `PaneView` is Added by default in the Bottom of user screen with `PANEL_TYPE.BOTTOM` configuration type, witch can be changed in run time along side with handle position.  
-<a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/sdk_panel_layout.png"  align="right" height="250" width="250" ></a>
-
+<br/>
 
 
 ```java
