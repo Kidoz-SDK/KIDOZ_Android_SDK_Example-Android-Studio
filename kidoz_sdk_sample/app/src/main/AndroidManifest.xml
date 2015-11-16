@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.kidoz.sdk.sample.app" >
+    package="com.kidoz.sdk.sample.app">
 
     <application
+        android:name="com.kidoz.sdk.sample.app.SampleApplication"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
-        android:hardwareAccelerated="true">
+        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         <activity
             android:name="com.kidoz.sdk.sample.app.SampleActivity"
-            android:label="@string/app_name"
             android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
-            >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
