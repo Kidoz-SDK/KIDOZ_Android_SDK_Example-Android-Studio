@@ -129,8 +129,10 @@ protected void onCreate(Bundle savedInstanceState)
 #KIDOZ Panel
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/panel_view_sample_image.png" align="right" height="121" width="200" ></a>
 
-`PaneView` is a Special view that Pops In/Out of the screen without interfering user expirience.
-The PanelView can be place on one of four sides of the activity screen and the `Handle` button can be located on 3 positions (Start,Center,End) depending of the `PaneView` initial Screen location.
+`PaneView` is a customized special view that can slide in/out of the screen (both in horizontal and vertical layout) with minimal interference to user experience.
+The `PanelView` can be place on one of four sides of the activity screen - `PANEL_TYPE.TOP`,`PANEL_TYPE.BOTTOM`,`PANEL_TYPE.RIGHT`,`PANEL_TYPE.LEFT`
+The `PanelView` can be controled via a special `Handle` button can that can be located in any of the 3 following positions -  
+`HANDLE_POSITION.START`,`HANDLE_POSITION.CENTER`,`HANDLE_POSITION.END` depending on the `PaneView` initial Screen location.
 
 You can add the `PaneView` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
 
