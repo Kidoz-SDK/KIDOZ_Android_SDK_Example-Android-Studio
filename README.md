@@ -137,7 +137,6 @@ The `PanelView` can be controled via a special `Handle` button can that can be l
 
 You can add the `PaneView` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
 
-
 ####Add `PaneView` directly to the xml layout:
  
 > main_activity_layout.xml
@@ -188,7 +187,6 @@ yourViewGroup.addView(mPanelView);
 - The `PaneView` is Added by default in the Bottom of user screen with `PANEL_TYPE.BOTTOM` configuration type, witch can be changed in run time along side with handle position.  
 <br/>
 
-
 ```java
     mPanelView.setPanelConfiguration(PANEL_TYPE.BOTTOM, HANDLE_POSITION.CENTER);
 ``` 
@@ -196,6 +194,21 @@ yourViewGroup.addView(mPanelView);
 - You can change Color of the pannel on runtime by using:
 ```java
   mPanelView.setPanelColor(Color.parseColor("#d95e38"));
+```
+
+- To invoke `PaneView` programmatically use:
+```java
+  mPanelView.expandPanelView();
+```
+and
+
+```java
+  mPanelView.collapsePanelView();
+```
+
+- To check the `PaneView` current view state use:
+```java
+  mPanelView.getIsPanelViewExpanded();
 ```
 
 For advanced use the developer can add a Custom `Handle` View to a panel and design it as desired.
@@ -219,7 +232,7 @@ For advanced use the developer can add a Custom `Handle` View to a panel and des
         mPanelView.setPanelConfiguration(PANEL_TYPE.BOTTOM, HANDLE_POSITION.CENTER,myButton);
 ```
  
-For any question or assistance, please contact us at SDK@kidoz.net.
+
 </br>
 
 
@@ -350,6 +363,8 @@ It's recommended to use KIDOZ's default button - the `Feed Button` which is a cu
 
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
+
+For any question or assistance, please contact us at SDK@kidoz.net.
 
 License
 --------
