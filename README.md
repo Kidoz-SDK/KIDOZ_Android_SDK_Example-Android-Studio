@@ -198,7 +198,7 @@ yourViewGroup.addView(mPanelView);
     mPanelView.setPanelConfiguration(PANEL_TYPE.BOTTOM, HANDLE_POSITION.CENTER);
 ``` 
 
-- You can change Color of the pannel on runtime by using:
+- You can change Color of the `PaneView` on runtime by using:
 ```java
   mPanelView.setPanelColor(Color.parseColor("#d95e38"));
 ```
