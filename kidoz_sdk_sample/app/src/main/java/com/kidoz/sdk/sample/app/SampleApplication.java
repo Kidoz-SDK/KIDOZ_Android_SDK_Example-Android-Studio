@@ -8,6 +8,7 @@ import com.kidoz.sdk.api.KidozSDK;
 /**
  * Created by KIDOZ.
  */
+
 public class SampleApplication extends Application {
 
     @Override
@@ -15,9 +16,9 @@ public class SampleApplication extends Application {
         super.onCreate();
 
         KidozSDK.setLoggingEnabled(true);
-
-        /** Initialize Kidoz SDK with correct publisher id and token (Publisher Id and Token provided by registering a new account via http://kidoz.net/
-         * */
+        /**
+         * Initiate kidoz sdk with valid publisher id and security token
+         */
         KidozSDK.initialize(this, "5", "i0tnrdwdtq0dm36cqcpg6uyuwupkj76s");
     }
 }
