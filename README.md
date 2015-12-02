@@ -5,7 +5,7 @@ KIDOZ SDK Sample App
 =================================
 **KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.2.1* 
+*Updated to KIDOZ SDK version 0.2.2* 
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 
@@ -63,7 +63,7 @@ On android studio you can include the library directly in your Gradle project:
 ```gradle
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.2.1+'
+	compile 'com.kidoz.sdk:KidozSDK:0.2.2+'
 }
 ``` 
 
@@ -177,6 +177,11 @@ The `PaneView` should be added on top of exising layout for correct flow.
             @Override
             public void onPanelViewExpanded() {
 
+            }
+            
+             @Override
+            public void onPanelReady() {
+                /** Function invoked when the panel is finished initiation and have beed drawn */
             }
         });
         ...
