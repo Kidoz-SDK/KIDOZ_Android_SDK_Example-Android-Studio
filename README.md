@@ -417,7 +417,14 @@ mKidozBanner.setKidozBannerListener(new KidozBannerListener() {
 });
 ```
  
-- 	To hide the banner use :
+- 	To Show the banner use :
+	
+```java
+// Efficient way to hide the banner (Don't use View.setVisibility())
+mKidozBanner.showBanner();
+``` 
+ 
+- 	To Hide the banner use :
 	
 ```java
 // Efficient way to hide the banner (Don't use View.setVisibility())
