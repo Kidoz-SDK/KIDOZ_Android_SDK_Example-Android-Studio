@@ -5,7 +5,7 @@ KIDOZ SDK Sample App
 =================================
 **KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.2.2* 
+*Updated to KIDOZ SDK version 0.3.0* 
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 
@@ -37,8 +37,8 @@ This demo application uses `buildToolsVersion "22.0.1"`. if your `Android Studio
 android {
 	//Change this two parameters according to your buildToolsVersion 
 	//You can check which version is installed inside the SDK Manager settings
- 	compileSdkVersion 22 
- 	buildToolsVersion "22.0.1"
+ 	compileSdkVersion 23 
+ 	buildToolsVersion "23.0.1"
 }
 ``` 
 
@@ -63,7 +63,7 @@ On android studio you can include the library directly in your Gradle project:
 ```gradle
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.2.2+'
+	compile 'com.kidoz.sdk:KidozSDK:0.3.0+'
 }
 ``` 
 
