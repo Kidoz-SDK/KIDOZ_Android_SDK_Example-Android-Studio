@@ -20,7 +20,7 @@ The example application contains the following creative tools:
 3. Once the project finished syncing click the `Run` button
 
 ####IMPORTANT
-This demo application uses `buildToolsVersion "22.0.1"`. if your `Android Studio` is not updated with this version you can follow one of this steps (or both):
+This demo application uses `buildToolsVersion "23.0.1"`. if your `Android Studio` is not updated with this version you can follow one of this steps (or both):
 
  - 	Update `buildToolsVersion`
 
