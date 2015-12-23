@@ -13,6 +13,7 @@ The example application contains the following creative tools:
 * KIDOZ's Feed view content tool - the `FeedView`
 * KIDOZ's Feed Button view content tool - the `FeedButton`
 * KIDOZ's Feed Panel content tool - the `FeedPanel`
+* KIDOZ's Banner content tool - the `KidozBanner`
 
 ###Running the sample app
 1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
@@ -20,7 +21,7 @@ The example application contains the following creative tools:
 3. Once the project finished syncing click the `Run` button
 
 ####IMPORTANT
-This demo application uses `buildToolsVersion "23.0.1"`. if your `Android Studio` is not updated with this version you can follow one of this steps (or both):
+This demo application uses `buildToolsVersion "23"`. if your `Android Studio` is not updated with this version you can follow one of this steps (or both):
 
  - 	Update `buildToolsVersion`
 
@@ -38,7 +39,7 @@ android {
 	//Change this two parameters according to your buildToolsVersion 
 	//You can check which version is installed inside the SDK Manager settings
  	compileSdkVersion 23 
- 	buildToolsVersion "23.0.1"
+ 	buildToolsVersion "23"
 }
 ``` 
 
@@ -317,10 +318,12 @@ public class MainActivity extends FragmentActivity
 }
 ```
 
+Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
+
 ####Launching the Feed View
 The `Feed View` can be launched by calling the method `showView` on the `FeedView` instance:
 ```java
-mFeedView.showView();
+	mFeedView.showView();
 ```
 
 You can call the `showView` method from anywhere inside your `Main Activity` depends on your app's flow, For example: when a game is stopped or when a user clicks a button.
@@ -337,9 +340,9 @@ You can add the `Feed Button` either by adding it to your xml layout file OR by 
 
 ```xml
 	<com.kidoz.sdk.api.FeedButton
-		android:id="@+id/kidozBtn_view"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"/>
+	android:id="@+id/kidozBtn_view"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"/>
 	
 ```
 
@@ -368,9 +371,95 @@ For advanced use of the `Feed View` you can get a reference to `FeedView` by cal
 ```java
 FeedView mFeedView = mFeedButton.getFeedView();
 ```
-Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
 
 It's recommended to use KIDOZ's default button - the `Feed Button` which is a custom animatable button.
+
+
+#KIDOZ Banner View
+<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_banner_preview.png" align="right" height="80" width="445" ></a>
+
+`KidozBanner` is a customized interactive banner view with standard size of `320 * 50` dp
+ 
+You can add the `KidozBanner` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
+
+ - 	Add `KidozBanner` directly inside xml:
+
+> main_activity_layout.xml
+
+```xml
+<com.kidoz.sdk.api.KidozBanner
+        android:id="@+id/kidozBanner_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" >
+</com.kidoz.sdk.api.KidozBanner>
+	
+```
+
+ - 	Add `KidozBanner` programmatically:
+  	
+```java
+KidozBanner mKidozBanner = new KidozBanner(this);
+yourViewGroup.addView(mKidozBanner);
+```
+ 
+> MainActivity.java
+
+```java
+mKidozBanner = (KidozBanner) findViewById(R.id.KidozBanner);
+mKidozBanner.setKidozBannerListener(new KidozBannerListener() {
+    @Override
+    public void onBannerReady() {
+        super.onBannerReady();
+        /** Call show banner when the view is ready */
+        mKidozBanner.showBanner();
+    }
+});
+```
+ 
+- 	To hide the banner use :
+	
+```java
+// Efficient way to hide the banner (Don't use View.setVisibility())
+mKidozBanner.hideBanner();
+```
+
+- 	To add event listeners to banner view use :
+```java 	
+ mKidozBanner.setKidozBannerListener(new KidozBannerListener() {
+                            @Override
+                            public void onBannerReady() {
+                                super.onBannerReady();
+                                
+                            }
+
+                            @Override
+                            public void onBannerShow() {
+                                super.onBannerShow();
+                                
+                            }
+
+                            @Override
+                            public void onBannerHide() {
+                                super.onBannerHide();
+
+                            }
+
+                            @Override
+                            public void onBannerContentLoaded() {
+                                super.onBannerContentLoaded();
+
+                                }
+                            }
+
+                            @Override
+                            public void onBannerContentLoadFailed() {
+                                super.onBannerContentLoadFailed();
+
+                                }
+                            }
+                        });
+```
 
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
