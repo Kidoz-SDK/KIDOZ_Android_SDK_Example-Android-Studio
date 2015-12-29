@@ -273,6 +273,12 @@ mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
 		// Will be called when the FeedView is about to open
 		// This is a good time to pause your game
 	}
+	
+	@Override public void onViewReady() 
+	{
+	       	// Will be called when the FeedView object is ready
+		// This is a good time interact with the object
+	}
 });
 ```
 
@@ -312,6 +318,12 @@ public class MainActivity extends FragmentActivity
 			{
 				// Will be called when the FeedView is about to open
 				// This is a good time to pause your game
+			}
+			
+			@Override public void onViewReady() 
+			{
+			       	// Will be called when the FeedView object is ready
+				// This is a good time interact with the object
 			}
 		});
 	}
