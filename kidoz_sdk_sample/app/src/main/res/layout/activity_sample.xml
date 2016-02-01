@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#acd4d9"
+    android:background="#520c22"
     tools:context=".SampleActivity">
 
     <com.kidoz.sdk.api.FeedButton
@@ -13,17 +13,22 @@
 
     <com.kidoz.sdk.api.PanelView
         android:id="@+id/kidozPanel_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </com.kidoz.sdk.api.PanelView>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <com.kidoz.sdk.api.KidozBanner
         android:id="@+id/kidozBanner_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
-
     </com.kidoz.sdk.api.KidozBanner>
+
+    <com.kidoz.sdk.api.FlexiView
+        android:id="@+id/kidozFlexi_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+    </com.kidoz.sdk.api.FlexiView>
+
 
 </RelativeLayout>
