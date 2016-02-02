@@ -138,13 +138,13 @@ protected void onCreate(Bundle savedInstanceState)
 `PaneView` is a customized special view that can slide in/out of the screen (both in horizontal and vertical layout) with minimal interference to user experience.
 The `PanelView` can be place on one of four sides of the activity screen - `PANEL_TYPE.TOP`,`PANEL_TYPE.BOTTOM`,`PANEL_TYPE.RIGHT`,`PANEL_TYPE.LEFT` 
 </br>
-The `PanelView` can be controled via a special `Handle` button can that can be located in any of the 3 following positions -  
-`HANDLE_POSITION.START`,`HANDLE_POSITION.CENTER`,`HANDLE_POSITION.END` depending on the `PaneView` initial Screen location.
+The `PanelView` can controled by a special `Handle` button that can be located in any of the 3 following positions -  
+`HANDLE_POSITION.START`,`HANDLE_POSITION.CENTER`,`HANDLE_POSITION.END` depending on the `PaneView` initial screen location.
 </br>
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_panel_layout.jpg" align="center" height="500" width="433" ></a>
 </br>
 
-You can add the `PaneView` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
+You can add the `PaneView` either by adding it to your xml layout file OR by creating a new instance programmatically and add it to the Main layout view.
 
 ####Add `PaneView` directly to the xml layout:
  
@@ -157,7 +157,7 @@ You can add the `PaneView` either by adding it to your xml layout file OR by cre
         android:layout_height="match_parent" />
 	
 ```
-The `PaneView` should be added on top of exising layout for correct flow.
+The `PaneView` should be added on top of exising layout for the correct flow.
 
 ```java
     private PanelView mPanelView;
@@ -173,12 +173,12 @@ The `PaneView` should be added on top of exising layout for correct flow.
         mPanelView.setOnPanelViewEventListener(new IOnPanelViewEventListener() {
             @Override
             public void onPanelViewCollapsed() {
-
+		/** Function invoked when the panel view is collapsed */
             }
 
             @Override
             public void onPanelViewExpanded() {
-
+		/** Function invoked when the panel view is expanded */
             }
             
              @Override
@@ -198,7 +198,7 @@ PanelView mPanelView = new PanelView(MainActivity.this);
 yourViewGroup.addView(mPanelView);
 ```
 
-- The `PaneView` is Added by default in the Bottom of user screen with `PANEL_TYPE.BOTTOM` configuration type, witch can be changed in run time along side with handle position.  
+- The `PaneView` is Added by default in the Bottom of user screen with `PANEL_TYPE.BOTTOM` configuration type, witch can be changed in runtime along side with handle position.  
 <br/>
 
 ```java
@@ -225,31 +225,11 @@ and
   mPanelView.getIsPanelViewExpanded();
 ```
 
-For advanced use the developer can add a Custom `Handle` View to a panel and design it as desired.
-
-- Example
-
-```java
- Button myButton = new Button(this);
-        myButton.setText("My Handle");
-        myButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mPanelView.getIsPanelViewExpanded()) {
-                    mPanelView.collapsePanelView();
-                } else {
-                    mPanelView.expandPanelView();
-                }
-            }
-        });
-
-        mPanelView.setPanelConfiguration(PANEL_TYPE.BOTTOM, HANDLE_POSITION.CENTER,myButton);
-```
- 
-
 </br>
 
 #KIDOZ Feed
+
+`Kidoz Feed View` is view that opened on full screen.
 ##Calling the Feed View Programmatically
 ####Creating an instance of the `Feed View`
  - 	Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
