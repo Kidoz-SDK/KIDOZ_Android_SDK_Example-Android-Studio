@@ -462,7 +462,7 @@ mKidozBanner.hideBanner();
 
 #Flexi Point View
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/flexi_sample_preview.png" align="right" height="300" width="300" ></a>
-`FlexiView` is a small intractable single content view , that hovers over the screen content.  
+`FlexiView` is a small interactable single content view , that hovers over the screen content.  
 
 You can add the `FlexiView` either by adding it to your xml layout file OR by creating a new instance Programmatically and adding it to the Main layout view.
 
@@ -483,7 +483,7 @@ You can add the `FlexiView` either by adding it to your xml layout file OR by cr
   	
 ```java
 FlexiView mFlexiView = new FlexiView(this);
-yourViewGroup.addView(mKidozBanner);
+yourViewGroup.addView(mFlexiView);
 ```
  
 > MainActivity.java
@@ -495,7 +495,7 @@ mFlexiView = (FlexiView) findViewById(R.id.kidozFlexi_view);
 - 	To show Flexi view as soon as its become ready add folowing line:
 ```java
 // Auto show Flexi View on View initiation ready
-mFlexiView..setAutoShow(true);
+mFlexiView.setAutoShow(true);
 ``` 
  
 - 	To set Flexi view initial anchor position add the folowing line:
@@ -515,7 +515,7 @@ flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
  
 - 	To add event listeners to Flexi View use :
 ```java 	
- mFlexiView..setOnFlexiViewEventListener(new FlexiViewListener() {
+ mFlexiView.setOnFlexiViewEventListener(new FlexiViewListener() {
             @Override
             public void onViewReady() {
                 super.onViewReady();
