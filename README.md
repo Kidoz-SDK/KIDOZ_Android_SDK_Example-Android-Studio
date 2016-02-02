@@ -398,7 +398,7 @@ yourViewGroup.addView(mKidozBanner);
 > MainActivity.java
 
 ```java
-mKidozBanner = (KidozBanner) findViewById(R.id.KidozBanner);
+mKidozBanner = (KidozBanner) findViewById(R.id.kidozBanner_view);
 mKidozBanner.setKidozBannerListener(new KidozBannerListener() {
     @Override
     public void onBannerReady() {
@@ -464,7 +464,81 @@ mKidozBanner.hideBanner();
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/flexi_sample_preview.png" align="right" height="300" width="300" ></a>
 `FlexiView` is a small intractable single content view , that hovers over the screen content.  
 
+You can add the `FlexiView` either by adding it to your xml layout file OR by creating a new instance Programmatically and adding it to the Main layout view.
 
+ - 	Add `FlexiView` directly inside xml:
+
+> main_activity_layout.xml
+
+```xml
+    <com.kidoz.sdk.api.FlexiView
+        android:id="@+id/kidozFlexi_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.kidoz.sdk.api.FlexiView>
+	
+```
+
+ - 	Add `FlexiView` programmatically:
+  	
+```java
+FlexiView mFlexiView = new FlexiView(this);
+yourViewGroup.addView(mKidozBanner);
+```
+ 
+> MainActivity.java
+
+```java
+mFlexiView = (FlexiView) findViewById(R.id.kidozFlexi_view);
+```
+ 
+- 	To show Flexi view as soon as its become ready add folowing line:
+```java
+// Auto show Flexi View on View initiation ready
+mFlexiView..setAutoShow(true);
+``` 
+ 
+- 	To set Flexi view initial anchor position add the folowing line:
+```java
+// Set flexi view initial anchor position
+flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
+```
+
+- 	To Show/Hide Flexi view use the folowing lines:
+```java
+ // Show flexi view
+ flexiView.showFlexiView();
+ 
+ // Hide flexi view
+ flexiView.hideFlexiView();
+```
+ 
+- 	To add event listeners to Flexi View use :
+```java 	
+ mFlexiView..setOnFlexiViewEventListener(new FlexiViewListener() {
+            @Override
+            public void onViewReady() {
+                super.onViewReady();
+		// Will be called when the FlexiView object is ready
+		// This is a good time interact with the object , show it or hide it
+            }
+
+            @Override
+            public void onViewHidden() {
+                super.onViewHidden();
+
+                // Will be called when the FlexiView become INVISIBLE
+                // On User or code actions
+            }
+
+            @Override
+            public void onViewVisible() {
+                super.onViewVisible();
+
+                // Will be called when the FlexiView become VISIBLE
+            }
+        });
+```
 
 
 For any question or assistance, please contact us at SDK@kidoz.net.
