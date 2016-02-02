@@ -1,19 +1,20 @@
 
 <a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="72" width="72" ></a>
 
-KIDOZ SDK Sample App
+KIDOZ SDK + Sample App
 =================================
 **KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.3.0* 
+*Updated to KIDOZ SDK version 0.4.0* 
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 
 The example application contains the following creative tools:
 * KIDOZ's Feed view content tool - the `FeedView`
 * KIDOZ's Feed Button view content tool - the `FeedButton`
-* KIDOZ's Feed Panel content tool - the `FeedPanel`
+* KIDOZ's Feed Panel content tool - the `PanelView`
 * KIDOZ's Banner content tool - the `KidozBanner`
+* KIDOZ's Flexi Point content tool - the `FlexiView`
 
 ###Running the sample app
 1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
@@ -39,7 +40,7 @@ android {
 	//Change this two parameters according to your buildToolsVersion 
 	//You can check which version is installed inside the SDK Manager settings
  	compileSdkVersion 23 
- 	buildToolsVersion "23"
+ 	buildToolsVersion "23.0.2"
 }
 ``` 
 
@@ -52,7 +53,7 @@ KIDOZ SDK - Getting Started
 The easiest way to use the SDK is following this 3 steps:
 
 1. Include the `KIDOZ SDK` library inside your project
-2. Init the SDK
+2. Initiate the SDK
 3. Add `KIDOZ Feed View Button` to your `Main Activity`
 
 Once the above 3 steps are correctly done the `Feed View` will be launched when the `Feed Button` is clicked.
@@ -64,12 +65,12 @@ On android studio you can include the library directly in your Gradle project:
 ```gradle
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.3.0+'
+	compile 'com.kidoz.sdk:KidozSDK:0.4.0+'
 }
 ``` 
 
 #### AndroidMainifest.xml  Defenitions (IMPORTANT)
-For correct flow of the SDK , add the folowing line in Your `AndroidMainifest.xml` file.For each `Activity` that uses the SDK functionality.
+For correct flow of the SDK , add the folowing line in Your `AndroidMainifest.xml` file, For each `Activity` that uses the SDK functionality.
 ```xml
  android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
 ``` 
@@ -96,7 +97,7 @@ Example:
 
 ####Initializing the SDK
 The SDK should be initialized only once. 
-When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`, which can be retrieve by contacting with SDK@kidoz.net.
+When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`,to receive the credentials please contact SDK@kidoz.net.
 If your project extends `Application` you can initialized the SDK inside Application's onCreate otherwise initialized it inside your Main Activity's onCreate.
 
  - 	Inside your `Application` onCreate add the following line:
