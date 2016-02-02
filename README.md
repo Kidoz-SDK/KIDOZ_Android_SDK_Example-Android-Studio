@@ -516,29 +516,29 @@ flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
 - 	To add event listeners to Flexi View use :
 ```java 	
  mFlexiView.setOnFlexiViewEventListener(new FlexiViewListener() {
-            @Override
-            public void onViewReady() {
-                super.onViewReady();
-                
-		// Will be called when the FlexiView object is ready
-		// This is a good time interact with the object , show it or hide it
-            }
+    @Override
+    public void onViewReady() {
+        super.onViewReady();
+        
+        // Will be called when the FlexiView object is ready
+        // This is a good time interact with the object , show it or hide it
+    }
 
-            @Override
-            public void onViewHidden() {
-                super.onViewHidden();
+    @Override
+    public void onViewHidden() {
+        super.onViewHidden();
 
-                // Will be called when the FlexiView become INVISIBLE
-                // On User or code actions
-            }
+        // Will be called when the FlexiView become INVISIBLE
+        // On User or code actions
+    }
 
-            @Override
-            public void onViewVisible() {
-                super.onViewVisible();
+    @Override
+    public void onViewVisible() {
+        super.onViewVisible();
 
-                // Will be called when the FlexiView become VISIBLE
-            }
-        });
+        // Will be called when the FlexiView become VISIBLE
+    }
+});
 ```
 
 
