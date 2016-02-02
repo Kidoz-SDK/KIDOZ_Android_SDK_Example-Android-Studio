@@ -230,15 +230,17 @@ and
 #KIDOZ Feed
 
 `Kidoz Feed View` is view that opened on full screen.
-##Calling the Feed View Programmatically
-####Creating an instance of the `Feed View`
+ 
+####Calling Feed View Programmatically  
+
+Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
  - 	Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
 
 ```java
 FeedView mFeed = new FeedView.Builder(MainActivity.this).build();
 ```
 
-You can implement `IOnFeedViewEventListener` interface if you want to be informed when the `FeedView` is dismissed and/or about to be open by adding the following lines:
+You can implement `IOnFeedViewEventListener` interface if you want to be informed about `FeedView` events  by adding the following lines:
 
 ```java
 mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
@@ -311,8 +313,6 @@ public class MainActivity extends FragmentActivity
 }
 ```
 
-Refer to the next section for a better look on `FeedView` and how you can call it without using a button from within your own code.
-
 ####Launching the Feed View
 The `Feed View` can be launched by calling the method `showView` on the `FeedView` instance:
 ```java
@@ -324,7 +324,7 @@ You can call the `showView` method from anywhere inside your `Main Activity` dep
 ##Adding the KIDOZ Feed Button
 <a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="right" height="96" width="96" ></a>
 You can also call the `Feed View` by adding the `Feed Button` - in this case the `Feed View` will be shown following a click on the `Feed Button`. 
-You can add the `Feed Button` either by adding it to your xml layout file OR by create a new instance programmatically.
+You can add the `Feed Button` either by adding it to your xml layout file OR by creating a new instance programmatically.
 
 
  - 	Add `FeedButton` directly inside xml:
