@@ -519,6 +519,7 @@ flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
             @Override
             public void onViewReady() {
                 super.onViewReady();
+                
 		// Will be called when the FlexiView object is ready
 		// This is a good time interact with the object , show it or hide it
             }
