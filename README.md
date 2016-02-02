@@ -34,7 +34,6 @@ This demo application uses `buildToolsVersion "23"`. if your `Android Studio` is
 </br>
  - 	Configure the demo application `build.gradle` `android` section with your `buildToolsVersion` 
 
-
 ```gradle
 android {
 	//Change this two parameters according to your buildToolsVersion 
@@ -410,14 +409,14 @@ mKidozBanner.setKidozBannerListener(new KidozBannerListener() {
 });
 ```
  
-- 	To Show the banner use :
+- 	To Show banner use folowing line:
 	
 ```java
 // Efficient way to hide the banner (Don't use View.setVisibility())
 mKidozBanner.showBanner();
 ``` 
  
-- 	To Hide the banner use :
+- 	To Hide banner use folowing line:
 	
 ```java
 // Efficient way to hide the banner (Don't use View.setVisibility())
@@ -460,6 +459,13 @@ mKidozBanner.hideBanner();
                             }
                         });
 ```
+
+#Flexi Point View
+<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/flexi_sample_preview.png" align="right" height="300" width="300" ></a>
+`FlexiView` is a small intractable single content view , that hovers over the screen content.  
+
+
+
 
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
