@@ -460,7 +460,7 @@ mKidozBanner.hideBanner();
                         });
 ```
 
-#Flexi Point View
+#KIDOZ Flexi Point View
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/flexi_sample_preview.png" align="right" height="300" width="300" ></a>
 `FlexiView` is a small interactable single content view , that hovers over the screen content.  
 
