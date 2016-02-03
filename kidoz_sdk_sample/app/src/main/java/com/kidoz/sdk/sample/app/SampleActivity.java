@@ -12,6 +12,7 @@ import com.kidoz.sdk.api.PanelView;
 import com.kidoz.sdk.api.interfaces.FlexiViewListener;
 import com.kidoz.sdk.api.interfaces.IOnFeedViewEventListener;
 import com.kidoz.sdk.api.interfaces.IOnPanelViewEventListener;
+import com.kidoz.sdk.api.interfaces.KidozPlayerListener;
 import com.kidoz.sdk.api.ui_views.flexi_view.FLEXI_POSITION;
 import com.kidoz.sdk.api.ui_views.kidoz_banner.KidozBannerListener;
 
@@ -101,6 +102,29 @@ public class SampleActivity extends Activity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        /**
+         * Add view listener for general events of player opene/closed
+         * can be added to each Widget type (View) separetly
+         * */
+       feedView.setKidozPlayerListener(new KidozPlayerListener() {
+           @Override
+           public void onPlayerOpen() {
+               super.onPlayerOpen();
+
+               Toast.makeText(SampleActivity.this, "Player Opened",
+                       Toast.LENGTH_SHORT).show();
+           }
+
+           @Override
+           public void onPlayerClose() {
+               super.onPlayerClose();
+
+               Toast.makeText(SampleActivity.this, "Player Closed",
+                       Toast.LENGTH_SHORT).show();
+           }
+       });
     }
 
     /**
