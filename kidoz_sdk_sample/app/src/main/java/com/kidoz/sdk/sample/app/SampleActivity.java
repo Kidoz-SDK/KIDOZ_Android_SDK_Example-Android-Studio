@@ -105,8 +105,8 @@ public class SampleActivity extends Activity {
 
 
         /**
-         * Add view listener for general events of player opene/closed
-         * can be added to each Widget type (View) separetly
+         * Add view listener for general events of player opened/closed
+         * can be added to each Widget type (View) separately
          * */
        feedView.setKidozPlayerListener(new KidozPlayerListener() {
            @Override
