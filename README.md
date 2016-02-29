@@ -5,7 +5,7 @@ KIDOZ SDK + Sample App
 =================================
 **KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.4.0* 
+*Updated to KIDOZ SDK version 0.4.2* 
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 
@@ -64,7 +64,7 @@ On android studio you can include the library directly in your Gradle project:
 ```gradle
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.4.0+'
+	compile 'com.kidoz.sdk:KidozSDK:0.4.2'
 }
 ``` 
 
@@ -138,7 +138,7 @@ protected void onCreate(Bundle savedInstanceState)
 The `PanelView` can be place on one of four sides of the activity screen - `PANEL_TYPE.TOP`,`PANEL_TYPE.BOTTOM`,`PANEL_TYPE.RIGHT`,`PANEL_TYPE.LEFT` 
 </br>
 The `PanelView` can controled by a special `Handle` button that can be located in any of the 3 following positions -  
-`HANDLE_POSITION.START`,`HANDLE_POSITION.CENTER`,`HANDLE_POSITION.END` depending on the `PaneView` initial screen location.
+`HANDLE_POSITION.START`,`HANDLE_POSITION.CENTER`,`HANDLE_POSITION.END` or `HANDLE_POSITION.NONE` for no handle at all, depending on the `PaneView` initial screen location.
 </br>
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_panel_layout.jpg" align="center" height="500" width="433" ></a>
 </br>
@@ -503,6 +503,15 @@ mFlexiView.setAutoShow(true);
 // Set flexi view initial anchor position
 flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
 ```
+
+	Flexi view can be adjusted by:
+```java
+// Set flexi view can be dragged/moved by user
+flexiView.setDraggable(true);
+
+// Set flexi view can be dissmised by user
+flexiView.setClosable(true);
+
 
 - 	To Show/Hide Flexi view use the folowing lines:
 ```java
