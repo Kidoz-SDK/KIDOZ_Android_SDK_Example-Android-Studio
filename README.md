@@ -368,6 +368,7 @@ It's recommended to use KIDOZ's default button - the `Feed Button` which is a cu
 
 
 #KIDOZ Banner View
+<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_banner_preview.png" align="right" height="80" width="445" ></a>
 `KidozBanner` is a customized interactive banner view with standard size of `320 * 50` dp
  
 You can add the `KidozBanner` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
