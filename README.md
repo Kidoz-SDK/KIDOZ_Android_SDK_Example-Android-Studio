@@ -559,6 +559,11 @@ flexiView.setClosable(true);
 });
 ```
 
+#KIDOZ Interstitial View
+`KidozInterstitial` is a full screen single add unit.
+
+
+
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
 
