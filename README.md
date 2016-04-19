@@ -8,13 +8,12 @@ KIDOZ SDK + Sample App
 *Updated to KIDOZ SDK version 0.4.2* 
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
-
 The example application contains the following creative tools:
-* KIDOZ's Feed view content tool - the `FeedView`
-* KIDOZ's Feed Button view content tool - the `FeedButton`
-* KIDOZ's Feed Panel content tool - the `PanelView`
-* KIDOZ's Banner content tool - the `KidozBanner`
-* KIDOZ's Flexi Point content tool - the `FlexiView`
++ KIDOZ's Feed view content tool - the `FeedView`
++ KIDOZ's Feed Button view content tool - the `FeedButton`
++ KIDOZ's Feed Panel content tool - the `PanelView`
++ KIDOZ's Banner content tool - the `KidozBanner`
++ KIDOZ's Flexi Point content tool - the `FlexiView`
 
 ###Running the sample app
 1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
@@ -31,10 +30,9 @@ This demo application uses `buildToolsVersion "23"`. if your `Android Studio` is
 3. Click the `SDK Tools` tab
 4. Check the `Android SDK Build Tools` and click `OK` 
 
-</br>
  - 	Configure the demo application `build.gradle` `android` section with your `buildToolsVersion` 
 
-```gradle
+```groovy
 android {
 	//Change this two parameters according to your buildToolsVersion 
 	//You can check which version is installed inside the SDK Manager settings
@@ -53,15 +51,15 @@ The easiest way to use the SDK is following this 3 steps:
 
 1. Include the `KIDOZ SDK` library inside your project
 2. Initiate the SDK
-3. Add `KIDOZ Feed View Button` to your `Main Activity`
+3. Add KIDOZ `FeedButton` to your Main Activity
 
-Once the above 3 steps are correctly done the `Feed View` will be launched when the `Feed Button` is clicked.
+Once the above 3 steps are correctly done the `FeedView` will be launched when the `FeedButton` is clicked.
 
 ####Include the library
 On android studio you can include the library directly in your Gradle project:
 
- - 	Add the following line to your app's module `build.gradle` `dependencies` section:
-```gradle
+ - 	Add the following line to your app's module `build.gradle` dependencies section:
+```groovy
 dependencies {
 	// your app's other dependencies
 	compile 'com.kidoz.sdk:KidozSDK:0.4.2'
@@ -69,10 +67,18 @@ dependencies {
 ``` 
 
 #### AndroidMainifest.xml  Defenitions (IMPORTANT)
-For correct flow of the SDK , add the folowing line in Your `AndroidMainifest.xml` file, For each `Activity` that uses the SDK functionality.
-```xml
+For correct flow of the SDK , add the folowing linea in Your `AndroidMainifest.xml` file, For each `Activity` that uses the SDK functionality.
+```groovy
  android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
 ``` 
+
+Also add the following permissions:
+
+```xml
+ <uses-permission android:name="android.permission.INTERNET" />
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+``` 
+
 Example:
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
