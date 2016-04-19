@@ -102,11 +102,11 @@ Example:
 
 ###Initializing the SDK
 The SDK should be initialized only once. 
-When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`. To receive the credentials please sign up here #### [SIGN UP](http://accounts.kidoz.net/publishers/register?utm_source=&utm_content=&utm_campaign=&utm_medium=)
+When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`. To receive the credentials please sign up HERE](http://accounts.kidoz.net/publishers/register?utm_source=&utm_content=&utm_campaign=&utm_medium=).
 </br>
 If your project extends `Application` you can initialized the SDK inside Application's onCreate otherwise initialized it inside your Main Activity's onCreate.
 
- - 	Inside your `Application` onCreate add the following line:
+ - 	Inside your Application `onCreate` add the following line:
 
 > YourApplication.java
 
@@ -122,7 +122,7 @@ public class MyApplication extends Application{
     ...
 }
 ```
- - Inside your `Main Activity` onCreate add the following line:
+ - Inside your Main Activity `onCreate` add the following line:
 
 > MainActivity.java
 
@@ -142,7 +142,12 @@ protected void onCreate(Bundle savedInstanceState)
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/panel_view_sample_image.png" align="right" height="121" width="200" ></a>
 
 `PaneView` is a customized special view that can slide in/out of the screen (both in horizontal and vertical layout) with minimal interference to user experience.
-The `PanelView` can be place on one of four sides of the activity screen - `PANEL_TYPE.TOP`,`PANEL_TYPE.BOTTOM`,`PANEL_TYPE.RIGHT`,`PANEL_TYPE.LEFT` 
+The `PanelView` can be place on one of four sides of the activity screen: 
+</br>
++ PANEL_TYPE.TOP
++ PANEL_TYPE.BOTTOM
++ PANEL_TYPE.RIGHT
++ PANEL_TYPE.LEFT` 
 </br>
 The `PanelView` can controled by a special `Handle` button that can be located in any of the 3 following positions -  
 `HANDLE_POSITION.START`,`HANDLE_POSITION.CENTER`,`HANDLE_POSITION.END` or `HANDLE_POSITION.NONE` for no handle at all, depending on the `PaneView` initial screen location.
