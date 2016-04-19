@@ -149,7 +149,9 @@ The `PanelView` can be place on one of four sides of the activity screen:
 + PANEL_TYPE.RIGHT
 + PANEL_TYPE.LEFT
 </br>
+
 The `PanelView` can be controled by a special `Handle` button that can be located in one of the 3 following positions,depending on the `PaneView` initial screen location.
+
 </br>
 + HANDLE_POSITION.START
 + HANDLE_POSITION.CENTER
