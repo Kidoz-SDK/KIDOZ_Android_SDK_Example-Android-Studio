@@ -560,9 +560,41 @@ flexiView.setClosable(true);
 ```
 
 #KIDOZ Interstitial View
-`KidozInterstitial` is a full screen single add unit.
+`KidozInterstitial` is a full screen single ad unit.
 
+#### Using Interstitial
+To show interstitial ad inside your `Activity` or `Fragment` create an instance of `KidozInterstitial` by adding the following lines:
 
+```java
+KidozInterstitial mInterstitial = new KidozInterstitial(this);
+```
+
+You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if you want to be informed about `KidozInterstitial` events  by adding the following lines:
+
+```java
+ mInterstitial.setOnInterstitialEventListener(new  BaseInterstitial.IOnInterstitialEventListener()
+    {
+        @Override
+        public void onClosed()
+        {
+	   //Informs when interstitial ad view has been close	
+        }
+
+        @Override
+        public void onOpened()
+        {
+            //Informs when interstitial ad view has been opened	
+        }
+    });
+```
+
+####Launching the Interstitial View
+```java
+mInterstitial.show();
+```
+
+You can call the `show()` method from anywhere inside your Activity depends on your app's flow, and the add will be show as sson as its ready.
+ 
 
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
