@@ -569,6 +569,28 @@ To show interstitial ad inside your `Activity` or `Fragment` create an instance 
 KidozInterstitial mInterstitial = new KidozInterstitial(this);
 ```
 
+For correct work of interstitial view, add the following lines to a `AndroidMainifest.xml`  file (MUST):
+
+```xml
+ <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"
+                  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+``` 
+
+Example:
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="your.package.name">
+    ...
+    <application>
+       <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"
+                  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        ...
+    </application>
+</manifest>
+``` 
+
 You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if you want to be informed about `KidozInterstitial` events  by adding the following lines:
 
 ```java
