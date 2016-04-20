@@ -593,7 +593,7 @@ You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if 
 mInterstitial.show();
 ```
 
-You can call the `show()` method from anywhere inside your Activity depends on your app's flow, and the add will be show as sson as its ready.
+You can call the `show()` method from anywhere inside your Activity depends on your app's flow, and the ad will be shown as soon as its ready.
  
 
 For any question or assistance, please contact us at SDK@kidoz.net.
