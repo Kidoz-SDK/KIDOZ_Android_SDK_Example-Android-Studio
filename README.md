@@ -5,7 +5,7 @@ KIDOZ SDK + Sample App
 =================================
 **KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.4.2* 
+*Updated to KIDOZ SDK version 0.5.4* 
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 The example application contains the following creative tools:
@@ -21,7 +21,7 @@ The example application contains the following creative tools:
 3. Once the project finished syncing click the `Run` button
 
 ####IMPORTANT
-This demo application uses `buildToolsVersion "23"`. if your `Android Studio` is not updated with this version you can follow one of this steps (or both):
+This demo application uses `buildToolsVersion "23.0.2"`. if your `Android Studio` is not updated with this version you can follow one of this steps (or both):
 
  - 	Update `buildToolsVersion`
 
@@ -62,7 +62,7 @@ On android studio you can include the library directly in your Gradle project:
 ```groovy
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.4.2'
+	compile 'com.kidoz.sdk:KidozSDK:0.5.4'
 }
 ``` 
 
@@ -76,7 +76,13 @@ Also add the following permissions:
 
 ```xml
  <uses-permission android:name="android.permission.INTERNET" />
- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="22"/>
+ <!-- android:maxSdkVersion="22" is used to avoid permission handling in Android 6.0 and above  -->  
+``` 
+
+###### IMPORTANT: Hardware Acceleration must be turned ON!
+```groovy
+ <application android:hardwareAccelerated="true">
 ``` 
 
 Example:
@@ -85,9 +91,10 @@ Example:
     package="your.package.name">
     
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="22"/>
+    <!-- android:maxSdkVersion="22" is used to avoid permission handling in Android 6.0 and above  -->  
 
-    <application>
+    <application android:hardwareAccelerated="true">
         <activity
             ...
             android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
@@ -189,7 +196,8 @@ The `PaneView` should be added on top of exising layout for the correct flow.
 
         /** Get reference to Kidoz Panel View */
         mPanelView = (PanelView) findViewById(R.id.kidozPanel_view);
-        
+        //mPanelView.setPanelConfiguration(PANEL_TYPE.TOP, HANDLE_POSITION.START);
+         
         mPanelView.setOnPanelViewEventListener(new IOnPanelViewEventListener() {
             @Override
             public void onPanelViewCollapsed() {
@@ -594,7 +602,7 @@ Example:
 You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if you want to be informed about `KidozInterstitial` events  by adding the following lines:
 
 ```java
- mInterstitial.setOnInterstitialEventListener(new  BaseInterstitial.IOnInterstitialEventListener()
+ mInterstitial.setOnInterstitialEventListener(new BaseInterstitial.IOnInterstitialEventListener()
     {
         @Override
         public void onClosed()
