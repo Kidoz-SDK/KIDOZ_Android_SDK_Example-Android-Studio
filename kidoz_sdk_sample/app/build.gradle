@@ -10,11 +10,12 @@ android {
         targetSdkVersion 22
         versionCode 100
         versionName "1.0.0"
-
     }
+
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -24,13 +25,16 @@ android {
     }
 }
 
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
-    compile('com.kidoz.sdk:KidozSDK:0.4.2') {
+    compile ('com.kidoz.sdk:KidozSDK:0.5.4') {
         changing = true;
     }
 }
+
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 1, 'minutes'
+}
+
 
 

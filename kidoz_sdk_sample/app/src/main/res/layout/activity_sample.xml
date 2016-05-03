@@ -1,20 +1,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#520c22"
-    tools:context=".SampleActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#520c22"
+                tools:context=".SampleActivity">
 
     <com.kidoz.sdk.api.FeedButton
         android:id="@+id/kidozBtn_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true" />
-
-    <com.kidoz.sdk.api.PanelView
-        android:id="@+id/kidozPanel_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_alignParentRight="true"/>
 
     <com.kidoz.sdk.api.KidozBanner
         android:id="@+id/kidozBanner_view"
@@ -23,11 +18,27 @@
         android:layout_centerInParent="true">
     </com.kidoz.sdk.api.KidozBanner>
 
-    <com.kidoz.sdk.api.FlexiView
-        android:id="@+id/kidozFlexi_view"
+    <ImageView
+        android:id="@+id/interstitialBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_below="@+id/kidozBanner_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/btn"/>
+
+    <com.kidoz.sdk.api.PanelView
+        android:id="@+id/kidozPanel_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <com.kidoz.sdk.api.FlexiView
+        android:id="@+id/kidozFlexi_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     </com.kidoz.sdk.api.FlexiView>
 
 
