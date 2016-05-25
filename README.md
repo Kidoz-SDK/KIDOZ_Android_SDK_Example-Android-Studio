@@ -5,7 +5,7 @@ KIDOZ SDK + Sample App
 =================================
 **KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.5.4* 
+*Updated to KIDOZ SDK version 0.5.6* 
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 The example application contains the following creative tools:
@@ -62,7 +62,7 @@ On android studio you can include the library directly in your Gradle project:
 ```groovy
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.5.4'
+	compile 'com.kidoz.sdk:KidozSDK:0.5.6'
 }
 ``` 
 
@@ -153,6 +153,11 @@ The `PanelView` can be place on one of four sides of the activity screen:
 </br>
 + PANEL_TYPE.TOP
 + PANEL_TYPE.BOTTOM
+
+Only for `None Family` PanelView
++ PANEL_TYPE.LEFT 
++ PANEL_TYPE.RIGHT 
+
 </br>
 
 The `PanelView` can be controled by a special `Handle` button that can be located in one of the 3 following positions,depending on the `PaneView` initial screen location.
@@ -611,17 +616,29 @@ You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if 
         {
             //Informs when interstitial ad view has been opened	
         }
+        
+        @Override
+        public void onReady()
+        {
+          //Lounch Interstitial when ready if needed
+          //mKidozInterstitial.show();
+        }
     });
 ```
 
 ####Launching the Interstitial View
 ```java
-mInterstitial.show();
+ if (mKidozInterstitial.isLoaded() == false)
+ {
+    mKidozInterstitial.loadAd();
+ } else
+ {
+    mKidozInterstitial.show();
+ }
 ```
 
-You can call the `show()` method from anywhere inside your Activity depends on your app's flow, and the ad will be shown as soon as its ready.
+Call `loadAd()` to load curent ad instance, and then call `show()` as soon as its ready.  
  
-
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
 
