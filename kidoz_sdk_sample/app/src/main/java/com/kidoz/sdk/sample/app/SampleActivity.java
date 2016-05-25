@@ -16,6 +16,7 @@ import com.kidoz.sdk.api.interfaces.IOnFeedViewEventListener;
 import com.kidoz.sdk.api.interfaces.IOnPanelViewEventListener;
 import com.kidoz.sdk.api.interfaces.KidozPlayerListener;
 import com.kidoz.sdk.api.ui_views.flexi_view.FLEXI_POSITION;
+import com.kidoz.sdk.api.ui_views.interstitial.BaseInterstitial;
 import com.kidoz.sdk.api.ui_views.kidoz_banner.KidozBannerListener;
 
 /**
@@ -76,8 +77,14 @@ public class SampleActivity extends Activity
             @Override
             public void onClick(View v)
             {
-                mKidozInterstitial.show();
-                Toast.makeText(SampleActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
+                if (mKidozInterstitial.isLoaded() == false)
+                {
+                    mKidozInterstitial.loadAd();
+                    Toast.makeText(SampleActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
+                } else
+                {
+                    mKidozInterstitial.show();
+                }
             }
         });
     }
@@ -100,7 +107,6 @@ public class SampleActivity extends Activity
             @Override
             public void onDismissView()
             {
-
                 /** View has been dismissed by user or action */
                 Toast.makeText(SampleActivity.this, "Feed View is dismissed",
                         Toast.LENGTH_SHORT).show();
@@ -109,7 +115,6 @@ public class SampleActivity extends Activity
             @Override
             public void onReadyToShow()
             {
-
                 /**
                  * Event is launched moment before the view is opened, This
                  * allows the developer to stop some process currently running
@@ -257,5 +262,27 @@ public class SampleActivity extends Activity
     private void initInterstitial()
     {
         mKidozInterstitial = new KidozInterstitial(this);
+        mKidozInterstitial.setOnInterstitialEventListener(new BaseInterstitial.IOnInterstitialEventListener()
+        {
+            @Override
+            public void onClosed()
+            {
+                Toast.makeText(SampleActivity.this, "Interstitial Closed",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onOpened()
+            {
+                Toast.makeText(SampleActivity.this, "Interstitial Opened",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onReady()
+            {
+                mKidozInterstitial.show();
+            }
+        });
     }
 }
