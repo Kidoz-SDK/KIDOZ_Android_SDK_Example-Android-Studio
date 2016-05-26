@@ -7,7 +7,7 @@ KIDOZ SDK + Sample App
 
 *Updated to KIDOZ SDK version 0.5.6* 
 
-### [API Javadoc](https://s3.amazonaws.com/kidoz-cdn/sdk/APIDocumentation/Android/StandardAndroid/html/annotated.html)
+### [API Javadoc](https://s3.amazonaws.com/kidoz-cdn/sdk/APIDocumentation/Android/StandardAndroid/0.5.6/html/annotated.html)
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 The example application contains the following creative tools:
