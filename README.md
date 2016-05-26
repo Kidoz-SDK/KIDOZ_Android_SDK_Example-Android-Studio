@@ -16,6 +16,7 @@ The example application contains the following creative tools:
 + KIDOZ's Feed Panel content tool - the `PanelView`
 + KIDOZ's Banner content tool - the `KidozBanner`
 + KIDOZ's Flexi Point content tool - the `FlexiView`
++ KIDOZ's Interstitial View content tool - the `KidozInterstitial`
 
 ###Running the sample app
 1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
@@ -156,7 +157,7 @@ The `PanelView` can be place on one of four sides of the activity screen:
 + PANEL_TYPE.TOP
 + PANEL_TYPE.BOTTOM
 
-Only for `None Family` PanelView
+Only for `NoNe Family` PanelView
 + PANEL_TYPE.LEFT 
 + PANEL_TYPE.RIGHT 
 
@@ -585,7 +586,7 @@ For correct work of interstitial view, add the following lines to a `AndroidMain
 ```xml
  <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+                  />
 ``` 
 
 Example:
@@ -596,7 +597,7 @@ Example:
     <application>
        <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+                  />
         ...
     </application>
 </manifest>
