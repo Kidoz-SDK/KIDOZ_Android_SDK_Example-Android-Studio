@@ -11,20 +11,20 @@ KIDOZ SDK + Sample App
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 The example application contains the following creative tools:
-+ KIDOZ's Feed view content tool - the `FeedView`
-+ KIDOZ's Feed Button view content tool - the `FeedButton`
-+ KIDOZ's Feed Panel content tool - the `PanelView`
-+ KIDOZ's Banner content tool - the `KidozBanner`
-+ KIDOZ's Flexi Point content tool - the `FlexiView`
-+ KIDOZ's Interstitial View content tool - the `KidozInterstitial`
++ KIDOZ Feed view content tool - the `FeedView`
++ KIDOZ Feed Button view content tool - the `FeedButton`
++ KIDOZ Feed Panel content tool - the `PanelView`
++ KIDOZ Banner content tool - the `KidozBanner`
++ KIDOZ Flexi Point content tool - the `FlexiView`
++ KIDOZ Interstitial View content tool - the `KidozInterstitial`
 
 ###Running the sample app
 1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
 2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
-3. Once the project finished syncing click the `Run` button
+3. Once the project has finished syncing click the `Run` button
 
 ####IMPORTANT
-This demo application uses `buildToolsVersion "23.0.2"`. if your `Android Studio` is not updated with this version you can follow one of this steps (or both):
+This demo application uses `buildToolsVersion "23.0.2"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
 
  - 	Update `buildToolsVersion`
 
@@ -50,7 +50,7 @@ KIDOZ SDK - Getting Started
 
  - 	Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) website
 
-The easiest way to use the SDK is following this 3 steps:
+The easiest way to use the SDK is following these 3 steps:
 
 1. Include the `KIDOZ SDK` library inside your project
 2. Initiate the SDK
@@ -69,8 +69,8 @@ dependencies {
 }
 ``` 
 
-#### AndroidMainifest.xml  Defenitions (IMPORTANT)
-For correct flow of the SDK , add the folowing linea in Your `AndroidMainifest.xml` file, For each `Activity` that uses the SDK functionality.
+#### AndroidMainifest.xml  Definitions (IMPORTANT)
+For correct flow of the SDK , add the folowing line in your `AndroidMainifest.xml` file, for each `Activity` that uses the SDK functionality.
 ```groovy
  android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
 ``` 
@@ -110,8 +110,8 @@ Example:
 ``` 
 
 
-###Initializing the SDK
-The SDK should be initialized only once. 
+###initialize the SDK
+The SDK should be initialize only once. 
 When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`. To receive the credentials please sign up [HERE](http://accounts.kidoz.net/publishers/register?utm_source=&utm_content=&utm_campaign=&utm_medium=).
 </br>
 If your project extends `Application` you can initialized the SDK inside Application's onCreate otherwise initialized it inside your Main Activity's onCreate.
@@ -151,7 +151,7 @@ protected void onCreate(Bundle savedInstanceState)
 #KIDOZ Panel
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/panel_view_sample_image.png" align="right" height="121" width="200" ></a>
 
-`PaneView` is a customized special view that can slide in/out of the screen  with minimal interference to user experience.
+`PanelView` is a customized special view that can slide in/out of the screen  with minimal interference to user experience.
 The `PanelView` can be place on one of four sides of the activity screen: 
 </br>
 + PANEL_TYPE.TOP
@@ -163,7 +163,7 @@ Only for `NoNe Family` PanelView
 
 </br>
 
-The `PanelView` can be controled by a special `Handle` button that can be located in one of the 3 following positions,depending on the `PaneView` initial screen location.
+The `PanelView` can be controlled by a special `Handle` button that can be located in one of the 3 following positions, depending on the `PanelView` initial screen location.
 
 </br>
 + HANDLE_POSITION.START
@@ -175,9 +175,9 @@ For NO handle at all use:
  
 <!--<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_panel_layout.jpg" align="center" height="500" width="433" ></a>-->
 
-`PaneView` can be added either by adding it to your xml layout file OR by creating a new instance programmatically and add it to the Main layout view.
+`PanelView` can be added either by adding it to your xml layout file OR by creating a new instance programmatically and added it to the Main layout view.
 
-####Add `PaneView` directly to the xml layout:
+####Add `PanelView` directly to the xml layout:
  
 > main_activity_layout.xml
 
@@ -188,7 +188,7 @@ For NO handle at all use:
         android:layout_height="match_parent" />
 	
 ```
-The `PaneView` should be added on top of exising layout for the correct flow.
+The `PanelView` should be added on top of existing layout for the correct flow.
 
 ```java
     private PanelView mPanelView;
@@ -230,7 +230,7 @@ PanelView mPanelView = new PanelView(MainActivity.this);
 yourViewGroup.addView(mPanelView);
 ```
 
-- The `PaneView` is Added by default in the Bottom of user screen with `PANEL_TYPE.BOTTOM` configuration type, witch can be changed in runtime along side with handle position.  
+- The `PanelView` is Added by default in the Bottom of user screen with `PANEL_TYPE.BOTTOM` configuration type, witch can be changed in runtime along side with handle position.  
 <br/>
 
 ```java
