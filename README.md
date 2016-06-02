@@ -3,7 +3,7 @@
 
 KIDOZ SDK + Sample App
 =================================
-**KIDOZ SDK and the sample App is compatible with Android 4.0 (API level 14) and above.**
+**KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
 
 *Updated to KIDOZ SDK version 0.5.6* 
 
@@ -18,7 +18,7 @@ The example application contains the following creative tools:
 + KIDOZ Flexi Point content tool - the `FlexiView`
 + KIDOZ Interstitial View content tool - the `KidozInterstitial`
 
-###Running the sample app
+###Running the Sample App
 1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
 2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
 3. Once the project has finished syncing click the `Run` button
@@ -59,7 +59,7 @@ The easiest way to use the SDK is following these 3 steps:
 Once the above 3 steps are correctly done the `FeedView` will be launched when the `FeedButton` is clicked.
 
 ####Include the library
-On android studio you can include the library directly in your Gradle project:
+On Android Studio you can include the library directly in your Gradle project:
 
  - 	Add the following line to your app's module `build.gradle` dependencies section:
 ```groovy
@@ -70,7 +70,7 @@ dependencies {
 ``` 
 
 #### AndroidMainifest.xml  Definitions (IMPORTANT)
-For correct flow of the SDK , add the following line in your `AndroidMainifest.xml` file, for each `Activity` that uses the SDK functionality.
+For correct flow of the SDK, add the following line in your `AndroidMainifest.xml` file, for each `Activity` that uses the SDK functionality.
 ```groovy
  android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
 ``` 
@@ -111,10 +111,10 @@ Example:
 
 
 ###initialize the SDK
-The SDK should be initialize only once. 
+The SDK should be initialized only once. 
 When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`. To receive the credentials please sign up [HERE](http://accounts.kidoz.net/publishers/register?utm_source=&utm_content=&utm_campaign=&utm_medium=).
 </br>
-If your project extends `Application` you can initialized the SDK inside Application's onCreate otherwise initialized it inside your Main Activity's onCreate.
+If your project extends `Application` you can initialize the SDK inside Application's onCreate otherwise initialize it inside your Main Activity's onCreate.
 
  - 	Inside your Application `onCreate` add the following line:
 
@@ -151,8 +151,8 @@ protected void onCreate(Bundle savedInstanceState)
 #KIDOZ Panel
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/panel_view_sample_image.png" align="right" height="121" width="200" ></a>
 
-`PanelView` is a customized special view that can slide in/out of the screen  with minimal interference to user experience.
-The `PanelView` can be place on one of four sides of the activity screen: 
+`PanelView` is a customized special view that can slide in/out of the screen with minimal interference to user experience.
+The `PanelView` can be placed on one of four sides of the activity screen: 
 </br>
 + PANEL_TYPE.TOP
 + PANEL_TYPE.BOTTOM
@@ -175,7 +175,7 @@ For NO handle at all use:
  
 <!--<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_panel_layout.jpg" align="center" height="500" width="433" ></a>-->
 
-`PanelView` can be added either by adding it to your xml layout file OR by creating a new instance programmatically and added it to the Main layout view.
+`PanelView` can be added either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
 
 ####Add `PanelView` directly to the xml layout:
  
@@ -188,7 +188,7 @@ For NO handle at all use:
         android:layout_height="match_parent" />
 	
 ```
-The `PanelView` should be added on top of existing layout for the correct flow.
+The `PanelView` should be added on top of the existing layout for the correct flow.
 
 ```java
     private PanelView mPanelView;
@@ -230,7 +230,7 @@ PanelView mPanelView = new PanelView(MainActivity.this);
 yourViewGroup.addView(mPanelView);
 ```
 
-- The `PanelView` is added by default in the bottom of user screen with `PANEL_TYPE.BOTTOM` configuration type, which can be changed in runtime alongside handle position.  
+- The `PanelView` is added by default in the bottom of the user screen with `PANEL_TYPE.BOTTOM` configuration type, which can be changed in runtime alongside handle position.  
 <br/>
 
 ```java
@@ -246,7 +246,7 @@ yourViewGroup.addView(mPanelView);
   
   mPanelView.collapsePanelView();
 ```
-- To check the `PaneView` current view state use:
+- To check the `PanelView` current view state use:
 ```java
   mPanelView.getIsPanelViewExpanded();
 ```
@@ -254,7 +254,7 @@ yourViewGroup.addView(mPanelView);
 
 #KIDOZ Feed
 
-Kidoz `FeedView` is a view that is opened full screen.
+KIDOZ `FeedView` is a view that is opened full screen.
  
 ###Calling FeedView Programmatically  
 
@@ -290,7 +290,7 @@ mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
 });
 ```
 
- - Your Main Activity should be now look similar to this:
+ - Your Main Activity should now look similar to this:
 
 > MainActivity.java
 
@@ -344,7 +344,7 @@ The `FeedView` can be launched by calling the method `showView()` on the `FeedVi
 	mFeedView.showView();
 ```
 
-You can call the `showView()` method from anywhere inside your Main Activity depends on your app's flow, For example: when a game is stopped or when a user clicks a button.
+You can call the `showView()` method from anywhere inside your Main Activity depending on your app's flow,for example: when a game is stopped or when a user clicks a button.
 
 ##Adding the KIDOZ FeedButton
 <a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="right" height="96" width="96" ></a>
@@ -387,11 +387,11 @@ For advanced use of the `FeedView` you can get a reference to `FeedView` class b
 FeedView mFeedView = mFeedButton.getFeedView();
 ```
 
-It's recommended to use KIDOZ default button - the `FeedButton` which is a custom animatable button.
+We recommend using KIDOZ default button - the `FeedButton` - which is a customizable animated button.
 
 #KIDOZ Banner View
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_banner_preview.png" align="right" height="80" width="445" ></a>
-`KidozBanner` is a customized interactive banner view with standard size of `320 * 50` dp
+`KidozBanner` is a customized interactive banner view with a standard size of `320 * 50` dp
  
 You can add the `KidozBanner` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
 
@@ -430,21 +430,21 @@ mKidozBanner.setKidozBannerListener(new KidozBannerListener() {
 });
 ```
  
-- To Show banner use following line (Don't use `View.setVisibility()`):
+- To Show banner use the following line (Don't use `View.setVisibility()`):
 	
 ```java
 // Efficient way to hide the banner (Don't use View.setVisibility())
 mKidozBanner.showBanner();
 ``` 
  
-- To Hide banner use following line (Don't use `View.setVisibility()`) : 
+- To Hide banner use the following line (Don't use `View.setVisibility()`): 
 	
 ```java
 // Efficient way to hide the banner (Don't use View.setVisibility())
 mKidozBanner.hideBanner();
 ```
 
-- To add event listeners to banner view use :
+- To add event listeners to banner view use:
 ```java 	
  mKidozBanner.setKidozBannerListener(new KidozBannerListener() {
                             @Override
@@ -513,7 +513,7 @@ yourViewGroup.addView(mFlexiView);
 mFlexiView = (FlexiView) findViewById(R.id.kidozFlexi_view);
 ```
  
-- To show Flexi view automatically as soon as its becomes ready add following line:
+- To show Flexi view automatically as soon as it becomes ready add the following line:
 ```java
 // Auto show Flexi View on View initiation ready
 mFlexiView.setAutoShow(true);
@@ -543,7 +543,7 @@ flexiView.setClosable(true);
  flexiView.hideFlexiView();
 ```
  
-- To add event listeners to Flexi View use :
+- To add event listeners to Flexi View use:
 ```java 	
  mFlexiView.setOnFlexiViewEventListener(new FlexiViewListener() {
     @Override
@@ -575,13 +575,13 @@ flexiView.setClosable(true);
 `KidozInterstitial` is a full screen single ad unit.
 
 #### Using Interstitial
-To show interstitial ad inside your `Activity` or `Fragment` create an instance of `KidozInterstitial` by adding the following lines:
+To show interstitial ads inside your `Activity` or `Fragment` create an instance of `KidozInterstitial` by adding the following lines:
 
 ```java
 KidozInterstitial mInterstitial = new KidozInterstitial(this);
 ```
 
-For correct work of interstitial view, add the following lines to a `AndroidMainifest.xml`  file (MUST):
+For interstitial view to work correctly, add the following lines to `AndroidMainifest.xml`  file (MUST):
 
 ```xml
  <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"
@@ -603,7 +603,7 @@ Example:
 </manifest>
 ``` 
 
-You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if you want to be informed about `KidozInterstitial` events  by adding the following lines:
+You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if you want to be informed about `KidozInterstitial` events by adding the following lines:
 
 ```java
  mInterstitial.setOnInterstitialEventListener(new BaseInterstitial.IOnInterstitialEventListener()
