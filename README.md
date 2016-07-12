@@ -5,7 +5,7 @@ KIDOZ SDK + Sample App
 =================================
 **KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.5.6* 
+*Updated to KIDOZ SDK version 0.5.8* 
 
 ### [API Javadoc](https://s3.amazonaws.com/kidoz-cdn/sdk/APIDocumentation/Android/StandardAndroid/0.5.6/html/annotated.html)
 
@@ -24,7 +24,7 @@ The example application contains the following creative tools:
 3. Once the project has finished syncing click the `Run` button
 
 ####IMPORTANT
-This demo application uses `buildToolsVersion "23.0.2"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
+This demo application uses `buildToolsVersion "23.0.3"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
 
  - 	Update `buildToolsVersion`
 
@@ -40,7 +40,7 @@ android {
 	//Change this two parameters according to your buildToolsVersion 
 	//You can check which version is installed inside the SDK Manager settings
  	compileSdkVersion 23 
- 	buildToolsVersion "23.0.2"
+ 	buildToolsVersion "23.0.3"
 }
 ``` 
 
@@ -65,7 +65,7 @@ On Android Studio you can include the library directly in your Gradle project:
 ```groovy
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.5.6'
+	compile 'com.kidoz.sdk:KidozSDK:0.5.8'
 }
 ``` 
 
@@ -623,8 +623,14 @@ You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if 
         @Override
         public void onReady()
         {
-          //Lounch Interstitial when ready if needed
-          //mKidozInterstitial.show();
+            //Lounch Interstitial when ready if needed
+            //mKidozInterstitial.show();
+        }
+        
+        @Override
+        public void onLoadFailed()
+        {
+            //Informs when interstitial ad view has failed to load	
         }
     });
 ```
