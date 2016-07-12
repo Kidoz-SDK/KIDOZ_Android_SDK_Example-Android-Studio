@@ -283,6 +283,13 @@ public class SampleActivity extends Activity
             {
                 mKidozInterstitial.show();
             }
+
+            @Override
+            public void onLoadFailed()
+            {
+                Toast.makeText(SampleActivity.this, "Interstitial Failed to load",
+                        Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }
