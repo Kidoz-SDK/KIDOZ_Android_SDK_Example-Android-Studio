@@ -104,6 +104,13 @@ Example:
             ...
           >
 	</activity>
+	
+	 <receiver android:name="com.kidoz.sdk.api.receivers.SdkReceiver" android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
         ...
     </application>
 </manifest>
