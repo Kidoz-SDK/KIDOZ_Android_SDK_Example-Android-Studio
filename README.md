@@ -5,7 +5,7 @@ KIDOZ SDK + Sample App
 =================================
 **KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.5.8* 
+*Updated to KIDOZ SDK version 0.5.9* 
 
 ### [API Javadoc](https://s3.amazonaws.com/kidoz-cdn/sdk/APIDocumentation/Android/StandardAndroid/0.5.8/html/annotated.html)
 
@@ -65,7 +65,7 @@ On Android Studio you can include the library directly in your Gradle project:
 ```groovy
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.5.8'
+	compile 'com.kidoz.sdk:KidozSDK:0.5.9'
 }
 ``` 
 
