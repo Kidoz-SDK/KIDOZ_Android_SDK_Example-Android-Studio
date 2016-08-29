@@ -14,7 +14,6 @@ The example application contains the following creative tools:
 + KIDOZ Feed view content tool - the `FeedView`
 + KIDOZ Feed Button view content tool - the `FeedButton`
 + KIDOZ Feed Panel content tool - the `PanelView`
-+ KIDOZ Banner content tool - the `KidozBanner`
 + KIDOZ Flexi Point content tool - the `FlexiView`
 + KIDOZ Interstitial View content tool - the `KidozInterstitial`
 
@@ -396,97 +395,6 @@ FeedView mFeedView = mFeedButton.getFeedView();
 
 We recommend using KIDOZ default button - the `FeedButton` - which is a customizable animated button.
 
-#KIDOZ Banner View
-<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_banner_preview.png" align="right" height="80" width="445" ></a>
-`KidozBanner` is a customized interactive banner view with a standard size of `320 * 50` dp
- 
-You can add the `KidozBanner` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
-
- - Add `KidozBanner` directly inside xml:
-
-> main_activity_layout.xml
-
-```xml
-<com.kidoz.sdk.api.KidozBanner
-        android:id="@+id/kidozBanner_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true" >
-</com.kidoz.sdk.api.KidozBanner>
-	
-```
-
- - Add `KidozBanner` programmatically:
-  	
-```java
-KidozBanner mKidozBanner = new KidozBanner(this);
-yourViewGroup.addView(mKidozBanner);
-```
- 
-> MainActivity.java
-
-```java
-mKidozBanner = (KidozBanner) findViewById(R.id.kidozBanner_view);
-mKidozBanner.setKidozBannerListener(new KidozBannerListener() {
-    @Override
-    public void onBannerReady() {
-        super.onBannerReady();
-        /** Call show banner when the view is ready */
-        mKidozBanner.showBanner();
-    }
-});
-```
- 
-- To Show banner use the following line (Don't use `View.setVisibility()`):
-	
-```java
-// Efficient way to hide the banner (Don't use View.setVisibility())
-mKidozBanner.showBanner();
-``` 
- 
-- To Hide banner use the following line (Don't use `View.setVisibility()`): 
-	
-```java
-// Efficient way to hide the banner (Don't use View.setVisibility())
-mKidozBanner.hideBanner();
-```
-
-- To add event listeners to banner view use:
-```java 	
- mKidozBanner.setKidozBannerListener(new KidozBannerListener() {
-                            @Override
-                            public void onBannerReady() {
-                                super.onBannerReady();
-                                
-                            }
-
-                            @Override
-                            public void onBannerShow() {
-                                super.onBannerShow();
-                                
-                            }
-
-                            @Override
-                            public void onBannerHide() {
-                                super.onBannerHide();
-
-                            }
-
-                            @Override
-                            public void onBannerContentLoaded() {
-                                super.onBannerContentLoaded();
-
-                                }
-                            }
-
-                            @Override
-                            public void onBannerContentLoadFailed() {
-                                super.onBannerContentLoadFailed();
-
-                                }
-                            }
-                        });
-```
 
 #KIDOZ Flexi Point View
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/flexi_sample_preview.png" align="right" height="300" width="300" ></a>
