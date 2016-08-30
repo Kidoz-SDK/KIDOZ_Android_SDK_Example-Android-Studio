@@ -1,7 +1,7 @@
 
 <a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="72" width="72" ></a>
 
-[![Demo CountPages alpha](https://kidoz-cdn.s3.amazonaws.com/wordpress/kidoz_small.gif)](https://www.youtube.com/watch?v=-ljFjRn7jeM)
+[<img src="https://kidoz-cdn.s3.amazonaws.com/wordpress/kidoz_small.gif" width="533px" height="300px">](https://www.youtube.com/watch?v=-ljFjRn7jeM)
 
 KIDOZ SDK + Sample App
 =================================
