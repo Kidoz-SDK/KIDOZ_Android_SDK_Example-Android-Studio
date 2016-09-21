@@ -8,7 +8,6 @@ import android.widget.Toast;
 import com.kidoz.sdk.api.FeedButton;
 import com.kidoz.sdk.api.FeedView;
 import com.kidoz.sdk.api.FlexiView;
-import com.kidoz.sdk.api.KidozBanner;
 import com.kidoz.sdk.api.KidozInterstitial;
 import com.kidoz.sdk.api.PanelView;
 import com.kidoz.sdk.api.interfaces.FlexiViewListener;
@@ -17,7 +16,6 @@ import com.kidoz.sdk.api.interfaces.IOnPanelViewEventListener;
 import com.kidoz.sdk.api.interfaces.KidozPlayerListener;
 import com.kidoz.sdk.api.ui_views.flexi_view.FLEXI_POSITION;
 import com.kidoz.sdk.api.ui_views.interstitial.BaseInterstitial;
-import com.kidoz.sdk.api.ui_views.kidoz_banner.KidozBannerListener;
 
 /**
  * Created by KIDOZ.
@@ -33,11 +31,6 @@ public class SampleActivity extends Activity
      * Kidoz Panel instance
      */
     private PanelView mPanelView;
-
-    /**
-     * Kidoz Panel instance
-     */
-    private KidozBanner mKidozBanner;
 
     /**
      * Flexi View instance
@@ -62,9 +55,6 @@ public class SampleActivity extends Activity
 
         /** Initiate Panel view */
         initFeedPanel();
-
-        /** Initiate Banner view */
-        initBannerView();
 
         /** Flexi Point view */
         initFlexiView();
@@ -201,23 +191,6 @@ public class SampleActivity extends Activity
 
         /** Set panel configuration to a different layout style */
 
-    }
-
-    /**
-     * Initiate Banner view
-     */
-    private void initBannerView()
-    {
-        mKidozBanner = (KidozBanner) findViewById(R.id.kidozBanner_view);
-        mKidozBanner.setKidozBannerListener(new KidozBannerListener()
-        {
-            @Override
-            public void onBannerReady()
-            {
-                super.onBannerReady();
-                mKidozBanner.showBanner();
-            }
-        });
     }
 
     /**

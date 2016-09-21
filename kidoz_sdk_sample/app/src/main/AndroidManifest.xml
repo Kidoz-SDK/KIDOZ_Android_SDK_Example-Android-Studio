@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kidoz.sdk.sample.app">
 
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="22"/>
-	
     <application
         android:name="com.kidoz.sdk.sample.app.SampleApplication"
         android:hardwareAccelerated="true"
