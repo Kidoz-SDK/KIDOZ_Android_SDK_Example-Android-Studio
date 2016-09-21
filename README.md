@@ -7,7 +7,7 @@ KIDOZ SDK + Sample App
 =================================
 **KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.5.9* 
+*Updated to KIDOZ SDK version 0.6.0* 
 
 ### [API Javadoc](https://s3.amazonaws.com/kidoz-cdn/sdk/APIDocumentation/Android/StandardAndroid/0.5.8/html/annotated.html)
 
@@ -66,7 +66,7 @@ On Android Studio you can include the library directly in your Gradle project:
 ```groovy
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.5.9'
+	compile 'com.kidoz.sdk:KidozSDK:0.6.0'
 }
 ``` 
 
@@ -244,10 +244,7 @@ yourViewGroup.addView(mPanelView);
 ```java
     mPanelView.setPanelConfiguration(PANEL_TYPE.BOTTOM, HANDLE_POSITION.CENTER);
 ``` 
-- You can change Color of the `PanelView` on runtime by using:
-```java
-  mPanelView.setPanelColor(Color.parseColor("#d95e38"));
-```
+ 
 - To invoke `PaneView` programmatically use:
 ```java
   mPanelView.expandPanelView();
@@ -379,16 +376,6 @@ FeedButton mFeedButton = new FeedButton(MainActivity.this);
 yourViewGroup.addView(mFeedButton);
 ```
 
-- You can change Feed button size on runtime by using:
-```java
- mFeedButton.setFeedButtonSize(200);
-```
-OR
-
-```java
- mFeedButton.setFeedButtonSizeDp(70);
-```
-
 For advanced use of the `FeedView` you can get a reference to `FeedView` class by calling this method on the `FeedButton` reference:
 
 ```java
@@ -440,15 +427,6 @@ mFlexiView.setAutoShow(true);
 ```java
 // Set flexi view initial anchor position
 flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
-```
-
-- Flexi view can be adjusted by:
-```java
-// Set flexi view can be dragged/moved by user
-flexiView.setDraggable(true);
-
-// Set flexi view can be dissmised by user
-flexiView.setClosable(true);
 ```
 
 - To Show/Hide Flexi view use the following lines:
