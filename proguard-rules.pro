@@ -73,7 +73,10 @@
 -keep public class pl.droidsonroids.gif.GifIOException{<init>(int);}
 -keep class pl.droidsonroids.gif.GifInfoHandle{<init>(long,int,int,int);}
 
-
+-dontwarn android.webkit.**
+-keep public class android.net.http.SslError
+-keep public class android.webkit.WebViewClient
+-keep public class android.webkit.WebView
 
 
 
