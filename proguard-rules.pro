@@ -8,28 +8,17 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
-
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
-#-dontskipnonpubliclibraryclassmembers
-#-keepattributes SourceFile,LineNumberTable
+#-keepattribute InnerClasses
 
 -verbose
 -optimizationpasses 5
 -dontusemixedcaseclassnames
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
--keepattributes
 
 -dontwarn android.support.**
 -keepattributes *Annotation*
 -keepattributes Signature,RuntimeVisibleAnnotations,AnnotationDefault
--keepattribute InnerClasses
 
--dontwarn okio.**
 
 -keepclassmembers class ** {
     @org.greenrobot.eventbus.Subscribe <methods>;
@@ -61,7 +50,7 @@
 
 
 -keepclassmembers class fqcn.of.javascript.interface.for.webview {
-   public *;
+    public *;
  }
 
 -keepclassmembers class * {
@@ -69,6 +58,10 @@
  }
 -keepattributes JavascriptInterface
 
+-dontwarn okio.**
+-keep class com.squareup.okhttp3.** {*;}
+-dontwarn com.squareup.okhttp3.**
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
 
 -keep public class pl.droidsonroids.gif.GifIOException{<init>(int);}
 -keep class pl.droidsonroids.gif.GifInfoHandle{<init>(long,int,int,int);}
@@ -77,11 +70,3 @@
 -keep public class android.net.http.SslError
 -keep public class android.webkit.WebViewClient
 -keep public class android.webkit.WebView
-
-
-
-
-
-
-
-
