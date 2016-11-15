@@ -93,7 +93,8 @@ add `WRITE_EXTERNAL_STORAGE` permission in the following format in your applicat
  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  tools:node="replace"/>
  <!--  tools:node="replace" is used to replace default libray defenition--> 
 ``` 
-To use `tools:node="replace"` add `xmlns:tools="http://schemas.android.com/tools"` in the <manifest ...  > tag of `AndroidMainifest.xml` file.
+To use `tools:node="replace"` add `xmlns:tools="http://schemas.android.com/tools"` in the `<manifest ...  >` tag of `AndroidMainifest.xml` file.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
