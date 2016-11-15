@@ -18,7 +18,7 @@
         android:layout_centerInParent="true">
     </com.kidoz.sdk.api.KidozBanner>
 
-    <ImageView
+    <ImageButton
         android:id="@+id/interstitialBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +26,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="200dp"
         android:layout_marginTop="50dp"
-        android:src="@drawable/btn"/>
+        android:src="@drawable/btn_selector"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"/>
 
     <com.kidoz.sdk.api.PanelView
         android:id="@+id/kidozPanel_view"
@@ -37,7 +39,9 @@
     <com.kidoz.sdk.api.FlexiView
         android:id="@+id/kidozFlexi_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/kidozBtn_view" android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
     </com.kidoz.sdk.api.FlexiView>
 

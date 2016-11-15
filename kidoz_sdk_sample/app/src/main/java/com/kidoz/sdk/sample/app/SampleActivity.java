@@ -69,7 +69,11 @@ public class SampleActivity extends Activity
             {
                 if (mKidozInterstitial.isLoaded() == false)
                 {
-                    mKidozInterstitial.loadAd();
+                    mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL);
+
+                    /** Invoke to load rewarded video interstitial */
+                    //mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.REWARDED_VIDEO);
+
                     Toast.makeText(SampleActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
                 } else
                 {
@@ -125,8 +129,8 @@ public class SampleActivity extends Activity
         });
 
         /**
-         * Add view listener for general events of player opene/closed
-         * can be added to each Widget type (View) separetly
+         * Add view listener for general events of player opened/closed
+         * can be added to each Widget type (View) separately
          * */
         feedView.setKidozPlayerListener(new KidozPlayerListener()
         {
@@ -144,8 +148,7 @@ public class SampleActivity extends Activity
             {
                 super.onPlayerClose();
 
-                Toast.makeText(SampleActivity.this, "Player Closed",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(SampleActivity.this, "Player Closed", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -261,6 +264,26 @@ public class SampleActivity extends Activity
             public void onLoadFailed()
             {
                 Toast.makeText(SampleActivity.this, "Interstitial Failed to load",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        /**
+         * Events that invoked for Rewarded  Video Interstitial
+         */
+        mKidozInterstitial.setOnInterstitialRewardedEventListener(new BaseInterstitial.IOnInterstitialRewardedEventListener()
+        {
+            @Override
+            public void onRewarded()
+            {
+                Toast.makeText(SampleActivity.this, "On Rewarded Event",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRewardedVideoStarted()
+            {
+                Toast.makeText(SampleActivity.this, "Rewarded video started",
                         Toast.LENGTH_SHORT).show();
             }
         });
