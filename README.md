@@ -7,7 +7,7 @@ KIDOZ SDK + Sample App
 =================================
 **IMPORTANT !!! KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version* [ ![Download](https://api.bintray.com/packages/kidoz/maven/kidoz-sdk/images/download.svg?version=0.7.0) ](https://bintray.com/kidoz/maven/kidoz-sdk/0.7.0/link)
+**Updated to KIDOZ SDK version** [ ![Download](https://api.bintray.com/packages/kidoz/maven/kidoz-sdk/images/download.svg?version=0.7.0) ](https://bintray.com/kidoz/maven/kidoz-sdk/0.7.0/link)
 
 ### [API Javadoc](https://s3.amazonaws.com/kidoz-cdn/sdk/APIDocumentation/Android/StandardAndroid/0.5.8/html/annotated.html)
 
@@ -89,6 +89,7 @@ Also add the following permissions:
 ###### NOTICE!!!
 In case external SD access is needed and requiered to apply/handle `Android 6.0` Permissions request flow,
 add `WRITE_EXTERNAL_STORAGE` permission in the following format in your application `AndroidMainifest.xml` file:
+
 ```xml
  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  tools:node="replace"/>
  <!--  tools:node="replace" is used to replace default libray defenition--> 
@@ -204,7 +205,6 @@ The `PanelView` can be controlled by a special `Handle` button that can be locat
 For NO handle at all use:
 + HANDLE_POSITION.NONE
  
-<!--<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/sdk_panel_layout.jpg" align="center" height="500" width="433" ></a>-->
 
 `PanelView` can be added either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
 
