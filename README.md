@@ -7,7 +7,7 @@ KIDOZ SDK + Sample App
 =================================
 **KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
 
-*Updated to KIDOZ SDK version 0.6.0* 
+*Updated to KIDOZ SDK version* [ ![Download](https://api.bintray.com/packages/kidoz/maven/kidoz-sdk/images/download.svg?version=0.7.0) ](https://bintray.com/kidoz/maven/kidoz-sdk/0.7.0/link)
 
 ### [API Javadoc](https://s3.amazonaws.com/kidoz-cdn/sdk/APIDocumentation/Android/StandardAndroid/0.5.8/html/annotated.html)
 
