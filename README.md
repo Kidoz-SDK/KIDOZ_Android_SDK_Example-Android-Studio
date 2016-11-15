@@ -187,15 +187,10 @@ protected void onCreate(Bundle savedInstanceState)
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/panel_view_sample_image.png" align="right" height="121" width="200" ></a>
 
 `PanelView` is a customized special view that can slide in/out of the screen with minimal interference to user experience.
-The `PanelView` can be placed on one of four sides of the activity screen: 
+The `PanelView` can be placed on Top or Bottom of the activity screen: 
 </br>
 + PANEL_TYPE.TOP
 + PANEL_TYPE.BOTTOM
-
-Only for `NoNe Family` PanelView
-+ PANEL_TYPE.LEFT 
-+ PANEL_TYPE.RIGHT 
-
 </br>
 
 The `PanelView` can be controlled by a special `Handle` button that can be located in one of the 3 following positions, depending on the `PanelView` initial screen location.
@@ -496,8 +491,8 @@ flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
 #KIDOZ Interstitial View
 `KidozInterstitial` is a full screen single ad unit.
 
-#### Using Interstitial
-To show interstitial ads inside your `Activity` or `Fragment` create an instance of `KidozInterstitial` by adding the following lines:
+#### Using Interstitial And Rewarded Video Ads
+To show interstitial\rewarded video ads inside your `Activity` or `Fragment` create an instance of `KidozInterstitial` by adding the following lines:
 
 ```java
 KidozInterstitial mInterstitial = new KidozInterstitial(this);
@@ -557,18 +552,74 @@ You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if 
     });
 ```
 
-####Launching the Interstitial View
+####Launching the Interstitial/Rewarded Video View
 ```java
  if (mKidozInterstitial.isLoaded() == false)
  {
-    mKidozInterstitial.loadAd();
+    mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL);
  } else
  {
     mKidozInterstitial.show();
  }
 ```
 
-Call `loadAd()` to load current ad instance, and then call `show()` as soon as it's ready.  
+You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if you want to be informed about `KidozInterstitial` events by adding the following lines:
+
+```java
+ mInterstitial.setOnInterstitialEventListener(new BaseInterstitial.IOnInterstitialEventListener()
+    {
+        @Override
+        public void onClosed()
+        {
+	   //Informs when interstitial ad view has been close	
+        }
+
+        @Override
+        public void onOpened()
+        {
+            //Informs when interstitial ad view has been opened	
+        }
+        
+        @Override
+        public void onReady()
+        {
+            //Lounch Interstitial when ready if needed
+            //mKidozInterstitial.show();
+        }
+        
+        @Override
+        public void onLoadFailed()
+        {
+            //Informs when interstitial ad view has failed to load	
+        }
+    });
+```
+
+```java
+ /**
+ * Events that invoked for Rewarded Video Interstitial
+ */
+mKidozInterstitial.setOnInterstitialRewardedEventListener(new BaseInterstitial.IOnInterstitialRewardedEventListener()
+{
+    @Override
+    public void onRewarded()
+    {
+	Toast.makeText(SampleActivity.this, "On Rewarded Event",
+		Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRewardedVideoStarted()
+    {
+	Toast.makeText(SampleActivity.this, "Rewarded video started",
+		Toast.LENGTH_SHORT).show();
+    }
+});
+```
+
+Call `loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL)` to load Interstitial Ad instance, or `loadAd(KidozInterstitial.AD_TYPE.REWARDED_VIDEO)` to load Rewarded Video Ad instance  
+
+Call `show()` as soon as it's ready.  
  
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
