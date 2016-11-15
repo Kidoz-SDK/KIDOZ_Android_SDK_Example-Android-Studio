@@ -5,7 +5,7 @@
 
 KIDOZ SDK + Sample App
 =================================
-**KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
+**IMPORTANT !!! KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
 
 *Updated to KIDOZ SDK version* [ ![Download](https://api.bintray.com/packages/kidoz/maven/kidoz-sdk/images/download.svg?version=0.7.0) ](https://bintray.com/kidoz/maven/kidoz-sdk/0.7.0/link)
 
@@ -13,7 +13,7 @@ KIDOZ SDK + Sample App
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 The example application contains the following creative tools:
-+ KIDOZ Feed view content tool - the `FeedView`
++ KIDOZ Feed View content tool - the `FeedView`
 + KIDOZ Feed Button view content tool - the `FeedButton`
 + KIDOZ Feed Panel content tool - the `PanelView`
 + KIDOZ Flexi Point content tool - the `FlexiView`
@@ -25,7 +25,7 @@ The example application contains the following creative tools:
 3. Once the project has finished syncing click the `Run` button
 
 ####IMPORTANT
-This demo application uses `buildToolsVersion "23.0.3"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
+This demo application uses `buildToolsVersion "24.0.0"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
 
  - 	Update `buildToolsVersion`
 
@@ -40,8 +40,8 @@ This demo application uses `buildToolsVersion "23.0.3"`. If your `Android Studio
 android {
 	//Change this two parameters according to your buildToolsVersion 
 	//You can check which version is installed inside the SDK Manager settings
- 	compileSdkVersion 23 
- 	buildToolsVersion "23.0.3"
+ 	compileSdkVersion 24 
+ 	buildToolsVersion "24.0.0"
 }
 ``` 
 
@@ -54,7 +54,7 @@ KIDOZ SDK - Getting Started
 The easiest way to use the SDK is following these 3 steps:
 
 1. Include the `KIDOZ SDK` library inside your project
-2. Initiate the SDK
+2. Initiate the `SDK`
 3. Add KIDOZ `FeedButton` to your Main Activity
 
 Once the above 3 steps are correctly done the `FeedView` will be launched when the `FeedButton` is clicked.
@@ -66,7 +66,7 @@ On Android Studio you can include the library directly in your Gradle project:
 ```groovy
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.6.0'
+	compile 'com.kidoz.sdk:KidozSDK:0.7.0'
 }
 ``` 
 
@@ -80,9 +80,30 @@ Also add the following permissions:
 
 ```xml
  <uses-permission android:name="android.permission.INTERNET" />
+ 
+ <!-- android:maxSdkVersion="19" is used to AVOID permission handling in Android 6.0 and above  -->  
  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="19"/>
- <!-- android:maxSdkVersion="22" is used to avoid permission handling in Android 6.0 and above  -->  
+ 
 ``` 
+
+###### NOTICE!!!
+In case external SD access is needed and requiered to apply/handle `Android 6.0` Permissions request flow,
+add `WRITE_EXTERNAL_STORAGE` permission in the following format in your application `AndroidMainifest.xml` file:
+```xml
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  tools:node="replace"/>
+ <!--  tools:node="replace" is used to replace default libray defenition--> 
+``` 
+To use `tools:node="replace"` add `xmlns:tools="http://schemas.android.com/tools"` in the <manifest ...  > tag of `AndroidMainifest.xml` file.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.your.package"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:versionCode="1"
+    android:versionName="1">
+``` 
+
 
 ###### IMPORTANT: Hardware Acceleration must be turned ON!
 ```groovy
@@ -92,11 +113,17 @@ Also add the following permissions:
 Example:
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="your.package.name">
     
     <uses-permission android:name="android.permission.INTERNET" />
+    
+     <!-- android:maxSdkVersion="19" is used to AVOID permission handling in Android 6.0 and above  --> 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="19"/>
-    <!-- android:maxSdkVersion="19" is used to avoid permission handling in Android 6.0 and above  -->  
+   
+    <!-- I case needed to handle android 6.0 permissions nad access to SD
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  tools:node="replace"/>
+    -->
 
     <application android:hardwareAccelerated="true">
         <activity
