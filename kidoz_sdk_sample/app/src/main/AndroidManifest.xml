@@ -6,7 +6,7 @@
         android:name="com.kidoz.sdk.sample.app.SampleApplication"
         android:hardwareAccelerated="true"
         android:label="@string/app_name"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app_icon_android"
         android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         <activity
             android:name="com.kidoz.sdk.sample.app.SampleActivity"
