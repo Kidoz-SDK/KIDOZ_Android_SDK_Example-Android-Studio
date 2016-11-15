@@ -552,49 +552,6 @@ You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if 
     });
 ```
 
-####Launching the Interstitial/Rewarded Video View
-```java
- if (mKidozInterstitial.isLoaded() == false)
- {
-    mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL);
- } else
- {
-    mKidozInterstitial.show();
- }
-```
-
-You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if you want to be informed about `KidozInterstitial` events by adding the following lines:
-
-```java
- mInterstitial.setOnInterstitialEventListener(new BaseInterstitial.IOnInterstitialEventListener()
-    {
-        @Override
-        public void onClosed()
-        {
-	   //Informs when interstitial ad view has been close	
-        }
-
-        @Override
-        public void onOpened()
-        {
-            //Informs when interstitial ad view has been opened	
-        }
-        
-        @Override
-        public void onReady()
-        {
-            //Lounch Interstitial when ready if needed
-            //mKidozInterstitial.show();
-        }
-        
-        @Override
-        public void onLoadFailed()
-        {
-            //Informs when interstitial ad view has failed to load	
-        }
-    });
-```
-
 ```java
  /**
  * Events that invoked for Rewarded Video Interstitial
@@ -620,6 +577,28 @@ mKidozInterstitial.setOnInterstitialRewardedEventListener(new BaseInterstitial.I
 Call `loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL)` to load Interstitial Ad instance, or `loadAd(KidozInterstitial.AD_TYPE.REWARDED_VIDEO)` to load Rewarded Video Ad instance  
 
 Call `show()` as soon as it's ready.  
+
+####Launching the Interstitial View
+```java
+ if (mKidozInterstitial.isLoaded() == false)
+ {
+    mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL);
+ } else
+ {
+    mKidozInterstitial.show();
+ }
+```
+
+####Launching the Rewarded Video Interstitial View
+```java
+ if (mKidozInterstitial.isLoaded() == false)
+ {
+    mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.REWARDED_VIDEO);
+ } else
+ {
+    mKidozInterstitial.show();
+ }
+```
  
 For any question or assistance, please contact us at SDK@kidoz.net.
 </br>
