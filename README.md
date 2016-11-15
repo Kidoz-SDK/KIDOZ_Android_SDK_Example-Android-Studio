@@ -561,15 +561,13 @@ mKidozInterstitial.setOnInterstitialRewardedEventListener(new BaseInterstitial.I
     @Override
     public void onRewarded()
     {
-	Toast.makeText(SampleActivity.this, "On Rewarded Event",
-		Toast.LENGTH_SHORT).show();
+    	//Informs when interstitial rewarded event is invoked (Rewarded video is completed)	
     }
 
     @Override
     public void onRewardedVideoStarted()
     {
-	Toast.makeText(SampleActivity.this, "Rewarded video started",
-		Toast.LENGTH_SHORT).show();
+    	//Informs when interstitial rewarded video started event
     }
 });
 ```
