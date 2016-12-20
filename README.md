@@ -7,7 +7,7 @@ KIDOZ SDK + Sample App
 =================================
 **IMPORTANT !!! KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
 
-**Updated to KIDOZ SDK version** [ ![Download](https://api.bintray.com/packages/kidoz/maven/kidoz-sdk/images/download.svg?version=0.7.0) ](https://bintray.com/kidoz/maven/kidoz-sdk/0.7.0/link)
+**Updated to KIDOZ SDK version** [ ![Download](https://api.bintray.com/packages/kidoz/maven/kidoz-sdk/images/download.svg?version=0.7.1) ](https://bintray.com/kidoz/maven/kidoz-sdk/0.7.1/link)
 
 ### [API Javadoc](https://s3.amazonaws.com/kidoz-cdn/sdk/APIDocumentation/Android/StandardAndroid/0.5.8/html/annotated.html)
 
@@ -25,7 +25,7 @@ The example application contains the following creative tools:
 3. Once the project has finished syncing click the `Run` button
 
 ####IMPORTANT
-This demo application uses `buildToolsVersion "24.0.0"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
+This demo application uses `buildToolsVersion "23.0.3"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
 
  - 	Update `buildToolsVersion`
 
@@ -40,8 +40,8 @@ This demo application uses `buildToolsVersion "24.0.0"`. If your `Android Studio
 android {
 	//Change this two parameters according to your buildToolsVersion 
 	//You can check which version is installed inside the SDK Manager settings
- 	compileSdkVersion 24 
- 	buildToolsVersion "24.0.0"
+ 	compileSdkVersion 23 
+ 	buildToolsVersion "23.0.3"
 }
 ``` 
 
@@ -66,7 +66,7 @@ On Android Studio you can include the library directly in your Gradle project:
 ```groovy
 dependencies {
 	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.7.0'
+	compile 'com.kidoz.sdk:KidozSDK:0.7.1'
 }
 ``` 
 
