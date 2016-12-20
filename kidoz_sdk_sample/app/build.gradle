@@ -27,7 +27,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile ('com.kidoz.sdk:KidozSDK:0.7.0') {
+    compile ('com.kidoz.sdk:KidozSDK:0.7.1') {
         changing = true;
     }
 }
