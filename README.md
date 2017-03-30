@@ -13,18 +13,24 @@ KIDOZ SDK + Sample App
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 The example application contains the following creative tools:
-+ KIDOZ Feed View content tool - the `FeedView`
-+ KIDOZ Feed Button view content tool - the `FeedButton`
-+ KIDOZ Feed Panel content tool - the `PanelView`
-+ KIDOZ Flexi Point content tool - the `FlexiView`
-+ KIDOZ Interstitial View content tool - the `KidozInterstitial`
 
-###Running the Sample App
+_Recommended units_:
++ KIDOZ Panel content tool - the `PanelView`
++ KIDOZ Interstitial View/Rewarded View content tool - the `KidozInterstitial`/`KidozRewarded`
+
+** Note that you need to select either Interstital OR Rewarded during application lifetime.
+
+_Deprecated units_:
++ KIDOZ Feed View content tool - the `FeedView`
++ KIDOZ Flexi Point content tool - the `FlexiView`
+
+
+### Running the Sample App
 1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
 2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
 3. Once the project has finished syncing click the `Run` button
 
-####IMPORTANT
+#### IMPORTANT
 This demo application uses `buildToolsVersion "23.0.3"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
 
  - 	Update `buildToolsVersion`
@@ -59,7 +65,7 @@ The easiest way to use the SDK is following these 3 steps:
 
 Once the above 3 steps are correctly done the `FeedView` will be launched when the `FeedButton` is clicked.
 
-####Include the library
+#### Include the library
 On Android Studio you can include the library directly in your Gradle project:
 
  - 	Add the following line to your app's module `build.gradle` dependencies section:
@@ -147,7 +153,7 @@ Example:
 ``` 
 
 
-###initialize the SDK
+### Initialize the SDK
 The SDK should be initialized only once. 
 When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`. To receive the credentials please sign up [HERE](http://accounts.kidoz.net/publishers/register?utm_source=&utm_content=&utm_campaign=&utm_medium=).
 </br>
@@ -185,8 +191,8 @@ protected void onCreate(Bundle savedInstanceState)
 ```
 
 
-#KIDOZ Panel
-<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/panel_view_sample_image.png" align="right" height="121" width="200" ></a>
+# KIDOZ Panel
+<a href="url"><img src="http://kidoz-cdn.s3.amazonaws.com/media/Panel%20Github.jpeg" align="right" height="121" width="200" ></a>
 
 `PanelView` is a customized special view that can slide in/out of the screen with minimal interference to user experience.
 The `PanelView` can be placed on Top or Bottom of the activity screen: 
@@ -208,7 +214,7 @@ For NO handle at all use:
 
 `PanelView` can be added either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
 
-####Add `PanelView` directly to the xml layout:
+#### Add `PanelView` directly to the xml layout:
  
 > main_activity_layout.xml
 
@@ -252,7 +258,7 @@ The `PanelView` should be added on top of the existing layout for the correct fl
         ...
 ``` 
 
-####Adding the `PanelView` programmatically
+#### Adding the `PanelView` programmatically
 
 > MainActivity.java
 
@@ -280,11 +286,11 @@ yourViewGroup.addView(mPanelView);
 ```
 </br>
 
-#KIDOZ Feed
+# KIDOZ Feed
 
 KIDOZ `FeedView` is a view that is opened full screen.
  
-###Calling FeedView Programmatically  
+### Calling FeedView Programmatically  
 
 Refer to the next section for a better look at `FeedView` and how you can call it without using a button from within your own code.
  - Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
@@ -366,7 +372,7 @@ public class MainActivity extends FragmentActivity
 }
 ```
 
-####Launching the Feed View
+#### Launching the Feed View
 The `FeedView` can be launched by calling the method `showView()` on the `FeedView` instance:
 ```java
 	mFeedView.showView();
@@ -408,7 +414,7 @@ FeedView mFeedView = mFeedButton.getFeedView();
 We recommend using KIDOZ default button - the `FeedButton` - which is a customizable animated button.
 
 
-#KIDOZ Flexi Point View
+# KIDOZ Flexi Point View
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/flexi_sample_preview.png" align="right" height="300" width="300" ></a>
 `FlexiView` is a small interactable single content view, which hovers over the screen content.  
 
@@ -489,7 +495,7 @@ flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
 });
 ```
 
-#KIDOZ Interstitial View
+# KIDOZ Interstitial View
 `KidozInterstitial` is a full screen single ad unit.
 
 #### Using Interstitial And Rewarded Video Ads
@@ -577,7 +583,7 @@ Call `loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL)` to load Interstitial Ad in
 
 Call `show()` as soon as it's ready.  
 
-####Launching the Interstitial View
+#### Launching the Interstitial View
 ```java
  if (mKidozInterstitial.isLoaded() == false)
  {
@@ -588,7 +594,7 @@ Call `show()` as soon as it's ready.
  }
 ```
 
-####Launching the Rewarded Video Interstitial View
+#### Launching the Rewarded Video Interstitial View
 ```java
  if (mKidozInterstitial.isLoaded() == false)
  {
