@@ -126,12 +126,11 @@ Example:
     
     <uses-permission android:name="android.permission.INTERNET" />
     
-     <!-- android:maxSdkVersion="19" is used to AVOID permission handling in Android 6.0 and above  --> 
+     <!-- android:maxSdkVersion="19" is used to avoid permission handling in Android 6.0 and above. Note that as of version 19, this permission is not required to perform Kidoz relevant calls. --> 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="19"/>
    
-    <!-- I case needed to handle android 6.0 permissions nad access to SD
+    <!-- If you need to handle Android 6.0 permissions and access SD storage -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  tools:node="replace"/>
-    -->
 
     <application android:hardwareAccelerated="true">
         <activity
