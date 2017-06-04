@@ -13,12 +13,20 @@ KIDOZ SDK + Sample App
 - Kidoz SDK and the sample App are compatible with Android 4.0 (API level 14) and above.
 - Kidoz SDK version 0.8.0 is available for download through this Github page using the Download button above.
 
+
+
+
+### Running the Sample App
+1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
+2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
+3. Once the project has finished syncing click the `Run` button
+
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 The example application contains the following creative tools:
 
 _Recommended units_:
 + KIDOZ Panel content tool - the `PanelView`
-+ KIDOZ Interstitial View content tool - the `KidozInterstitial`content tool - the `KidozInterstitial`
++ KIDOZ Interstitial View content tool - the `KidozInterstitial`content tool
 + KIDOZ Rewarded View content tool - the `KidozRewarded`
 
 ** Note that you need to select either Interstital OR Rewarded during application lifetime.
@@ -26,12 +34,6 @@ _Recommended units_:
 _Deprecated units_:
 + KIDOZ Feed View content tool - the `FeedView`
 + KIDOZ Flexi Point content tool - the `FlexiView`
-
-
-### Running the Sample App
-1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
-2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
-3. Once the project has finished syncing click the `Run` button
 
 #### IMPORTANT
 This demo application uses `buildToolsVersion "23.0.3"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
