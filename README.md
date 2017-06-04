@@ -83,6 +83,8 @@ dependencies {
 ``` 
 
 #### AndroidMainifest.xml  Definitions (IMPORTANT)
+Here are the things that should be added to the AndroidManifest.xml (make sure you add the permissions, receiver and activities bellow):
+
 For correct flow of the SDK, add the following line in your `AndroidMainifest.xml` file, for each `Activity` that uses the SDK functionality.
 ```groovy
  android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
