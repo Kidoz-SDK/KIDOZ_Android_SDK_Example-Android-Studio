@@ -5,18 +5,21 @@
 
 KIDOZ SDK + Sample App
 =================================
-**IMPORTANT !!! KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
-
-**Updated to KIDOZ SDK version 0.7.4** [ ![Download](https://api.bintray.com/packages/kidoz/maven/kidoz-sdk/images/download.svg?version=0.7.4) ](https://bintray.com/kidoz/maven/kidoz-sdk/0.7.4/link)
-
-### [API Javadoc](https://s3.amazonaws.com/kidoz-cdn/sdk/APIDocumentation/Android/StandardAndroid/0.5.8/html/annotated.html)
+**General Notes**
+- The Folowing version of Kidoz SDK contains a few small integration breaking changes:
+  - Kidoz API now requires you to supply an Activity argument instead of a Context argument. Please make sure any Context 'this' argument you provide Kidoz is of the Activity type.
+  - Kidoz Interstitial widget now requires you to determine if it's Rewarded or non-rewarded interstitial in constructor instead of in the loadAd() method.
+- The Kidoz SDK now provide sdk initialization callbacks, providing information on whether the SDK initialized succesfully or, if failed, for what reason.
+- Kidoz SDK and the sample App are compatible with Android 4.0 (API level 14) and above.
+- Kidoz SDK version 0.8.0 is available for download through this Github page using the Download button above.
 
 This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
 The example application contains the following creative tools:
 
 _Recommended units_:
 + KIDOZ Panel content tool - the `PanelView`
-+ KIDOZ Interstitial View/Rewarded View content tool - the `KidozInterstitial`/`KidozRewarded`
++ KIDOZ Interstitial View content tool - the `KidozInterstitial`content tool - the `KidozInterstitial`
++ KIDOZ Rewarded View content tool - the `KidozRewarded`
 
 ** Note that you need to select either Interstital OR Rewarded during application lifetime.
 
@@ -52,6 +55,7 @@ android {
 ``` 
 
 </br>
+
 KIDOZ SDK - Getting Started
 =================================
 
@@ -66,13 +70,12 @@ The easiest way to use the SDK is following these 3 steps:
 Once the above 3 steps are correctly done the `FeedView` will be launched when the `FeedButton` is clicked.
 
 #### Include the library
-On Android Studio you can include the library directly in your Gradle project:
+1. Add the Kidoz library jar you downloaded to your projects libs folder.
+2. If not present allready please include the following line to your 'build.gradle' dependencies section:
 
- - 	Add the following line to your app's module `build.gradle` dependencies section:
 ```groovy
 dependencies {
-	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.7.1'
+	compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 ``` 
 
@@ -168,7 +171,21 @@ public class MyApplication extends Application{
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate();
-		KidozSDK.initialize(this, "publisherID", "securityToken");
+		KidozSDK.setSDKListener(new SDKEventListener()
+		{
+		    @Override
+		    public void onInitSuccess()
+		    {
+			//SDK Init | Success().
+		    }
+
+		    @Override
+		    public void onInitError(String error)
+		    {
+			//SDK Init | Error
+		    }
+		});
+		KidozSDK.initialize(this, <publisherID>, <securityToken>);
 		//the rest of your application onCreate
 	}
     ...
@@ -183,7 +200,7 @@ public class MyApplication extends Application{
 protected void onCreate(Bundle savedInstanceState)
 {
 	super.onCreate(savedInstanceState);
-	KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
+	KidozSDK.initialize(this, <publisherID>, <securityToken>);
 	//the rest of your main activity onCreate
 	...
 }
@@ -501,15 +518,15 @@ flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
 To show interstitial\rewarded video ads inside your `Activity` or `Fragment` create an instance of `KidozInterstitial` by adding the following lines:
 
 ```java
-KidozInterstitial mInterstitial = new KidozInterstitial(this);
+KidozInterstitial mInterstitial = new KidozInterstitial(this, <AD_TYPE>);
+AD_TYPE = {KidozInterstitial.AD_TYPE.INTERSTITIAL, KidozInterstitial.AD_TYPE.REWARDED_VIDEO}
 ```
 
-For interstitial view to work correctly, add the following lines to `AndroidMainifest.xml`  file (MUST):
+For interstitial/rewarded view to work correctly, add the following lines to `AndroidMainifest.xml`  file (MUST):
 
 ```xml
- <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"
-                  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-                  />
+ <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"                  	android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+ />
 ``` 
 
 Example:
@@ -558,35 +575,34 @@ You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if 
     });
 ```
 
+Additional events that get invoked for the Rewarded Video Interstitial
 ```java
- /**
- * Events that invoked for Rewarded Video Interstitial
- */
 mKidozInterstitial.setOnInterstitialRewardedEventListener(new BaseInterstitial.IOnInterstitialRewardedEventListener()
 {
     @Override
-    public void onRewarded()
+    public void onRewardReceived()
     {
     	//Informs when interstitial rewarded event is invoked (Rewarded video is completed)	
     }
 
     @Override
-    public void onRewardedVideoStarted()
+    public void onRewardedStarted()
     {
     	//Informs when interstitial rewarded video started event
     }
 });
 ```
 
-Call `loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL)` to load Interstitial Ad instance, or `loadAd(KidozInterstitial.AD_TYPE.REWARDED_VIDEO)` to load Rewarded Video Ad instance  
+Call `loadAd()` to load Interstitial/Rewarded Ad instance  
 
-Call `show()` as soon as it's ready.  
+Call `show()` as soon as it's ready.
+
 
 #### Launching the Interstitial View
 ```java
- if (mKidozInterstitial.isLoaded() == false)
+ if (!mKidozInterstitial.isLoaded())
  {
-    mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL);
+    mKidozInterstitial.loadAd();
  } else
  {
     mKidozInterstitial.show();
@@ -595,9 +611,9 @@ Call `show()` as soon as it's ready.
 
 #### Launching the Rewarded Video Interstitial View
 ```java
- if (mKidozInterstitial.isLoaded() == false)
+ if (!mKidozInterstitial.isLoaded())
  {
-    mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.REWARDED_VIDEO);
+    mKidozInterstitial.loadAd();
  } else
  {
     mKidozInterstitial.show();
