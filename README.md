@@ -166,19 +166,16 @@ Example:
 The SDK should be initialized only once. 
 When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`. To receive the credentials please sign up [HERE](http://accounts.kidoz.net/publishers/register?utm_source=&utm_content=&utm_campaign=&utm_medium=).
 </br>
-If your project extends `Application` you can initialize the SDK inside Application's onCreate otherwise initialize it inside your Main Activity's onCreate.
+Initialize the SDK inside your Main Activity's onCreate.
 
- - 	Inside your Application `onCreate` add the following line:
-
-> YourApplication.java
+> MainActivity.java
 
 ```java
-public class MyApplication extends Application{
-   	@Override 
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate();
-		KidozSDK.setSDKListener(new SDKEventListener()
+@Override 
+protected void onCreate(Bundle savedInstanceState)
+{
+	super.onCreate(savedInstanceState);
+	KidozSDK.setSDKListener(new SDKEventListener()
 		{
 		    @Override
 		    public void onInitSuccess()
@@ -193,20 +190,7 @@ public class MyApplication extends Application{
 		    }
 		});
 		KidozSDK.initialize(this, <publisherID>, <securityToken>);
-		//the rest of your application onCreate
-	}
-    ...
-}
-```
- - Inside your Main Activity `onCreate` add the following line:
-
-> MainActivity.java
-
-```java
-@Override 
-protected void onCreate(Bundle savedInstanceState)
-{
-	super.onCreate(savedInstanceState);
+		
 	KidozSDK.initialize(this, <publisherID>, <securityToken>);
 	//the rest of your main activity onCreate
 	...
