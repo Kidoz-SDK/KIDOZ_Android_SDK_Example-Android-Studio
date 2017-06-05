@@ -74,7 +74,7 @@ Once the above 3 steps are correctly done the `FeedView` will be launched when t
 
 #### Include the library
 1. Add the Kidoz library jar you downloaded to your projects libs folder.
-2. If not present allready please include the following line to your 'build.gradle' dependencies section:
+2. If not present allready please include the following lines to your 'build.gradle' dependencies section:
 
 ```groovy
 dependencies {
