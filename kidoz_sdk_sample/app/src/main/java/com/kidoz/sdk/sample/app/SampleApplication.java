@@ -16,9 +16,5 @@ public class SampleApplication extends Application {
         super.onCreate();
 
         KidozSDK.setLoggingEnabled(true);
-        /**
-         * Initiate kidoz sdk with valid publisher id and security token
-         */
-        KidozSDK.initialize(this, "5", "i0tnrdwdtq0dm36cqcpg6uyuwupkj76s");
     }
 }

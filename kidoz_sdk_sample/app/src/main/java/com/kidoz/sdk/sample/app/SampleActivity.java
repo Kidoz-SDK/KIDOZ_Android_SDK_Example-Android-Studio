@@ -9,11 +9,13 @@ import com.kidoz.sdk.api.FeedButton;
 import com.kidoz.sdk.api.FeedView;
 import com.kidoz.sdk.api.FlexiView;
 import com.kidoz.sdk.api.KidozInterstitial;
+import com.kidoz.sdk.api.KidozSDK;
 import com.kidoz.sdk.api.PanelView;
 import com.kidoz.sdk.api.interfaces.FlexiViewListener;
 import com.kidoz.sdk.api.interfaces.IOnFeedViewEventListener;
 import com.kidoz.sdk.api.interfaces.IOnPanelViewEventListener;
 import com.kidoz.sdk.api.interfaces.KidozPlayerListener;
+import com.kidoz.sdk.api.interfaces.SDKEventListener;
 import com.kidoz.sdk.api.ui_views.flexi_view.FLEXI_POSITION;
 import com.kidoz.sdk.api.ui_views.interstitial.BaseInterstitial;
 
@@ -50,6 +52,11 @@ public class SampleActivity extends Activity
         /** Set main view layout containing Kidoz Feed View Button */
         setContentView(R.layout.activity_sample);
 
+        /**
+         * Initiate kidoz sdk with valid publisher id and security token
+         */
+        initKidozSDK();
+
         /** Initiate Button view */
         initFeedButton();
 
@@ -69,10 +76,7 @@ public class SampleActivity extends Activity
             {
                 if (mKidozInterstitial.isLoaded() == false)
                 {
-                    mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL);
-
-                    /** Invoke to load rewarded video interstitial */
-                    //mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.REWARDED_VIDEO);
+                    mKidozInterstitial.loadAd();
 
                     Toast.makeText(SampleActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
                 } else
@@ -81,6 +85,26 @@ public class SampleActivity extends Activity
                 }
             }
         });
+    }
+
+    private void initKidozSDK()
+    {
+        KidozSDK.setSDKListener(new SDKEventListener()
+        {
+            @Override
+            public void onInitSuccess()
+            {
+                //SDK Init | Success().
+            }
+
+            @Override
+            public void onInitError(String error)
+            {
+                //SDK Init | Error
+            }
+        });
+
+        KidozSDK.initialize(this, "5", "i0tnrdwdtq0dm36cqcpg6uyuwupkj76s");
     }
 
     /**
@@ -237,7 +261,11 @@ public class SampleActivity extends Activity
      */
     private void initInterstitial()
     {
-        mKidozInterstitial = new KidozInterstitial(this);
+        mKidozInterstitial = new KidozInterstitial(this, KidozInterstitial.AD_TYPE.INTERSTITIAL);
+
+        /** Invoke to load rewarded video interstitial */
+        // mKidozInterstitial = new KidozInterstitial(this, KidozInterstitial.AD_TYPE.REWARDED_VIDEO);
+
         mKidozInterstitial.setOnInterstitialEventListener(new BaseInterstitial.IOnInterstitialEventListener()
         {
             @Override
@@ -266,6 +294,13 @@ public class SampleActivity extends Activity
                 Toast.makeText(SampleActivity.this, "Interstitial Failed to load",
                         Toast.LENGTH_SHORT).show();
             }
+
+            @Override
+            public void onNoOffers()
+            {
+                Toast.makeText(SampleActivity.this, "Interstitial No Offers",
+                        Toast.LENGTH_SHORT).show();
+            }
         });
 
         /**
@@ -274,16 +309,16 @@ public class SampleActivity extends Activity
         mKidozInterstitial.setOnInterstitialRewardedEventListener(new BaseInterstitial.IOnInterstitialRewardedEventListener()
         {
             @Override
-            public void onRewarded()
+            public void onRewardReceived()
             {
-                Toast.makeText(SampleActivity.this, "On Rewarded Event",
+                Toast.makeText(SampleActivity.this, "Reward Received",
                         Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onRewardedVideoStarted()
+            public void onRewardedStarted()
             {
-                Toast.makeText(SampleActivity.this, "Rewarded video started",
+                Toast.makeText(SampleActivity.this, "Rewarded Video Started",
                         Toast.LENGTH_SHORT).show();
             }
         });
