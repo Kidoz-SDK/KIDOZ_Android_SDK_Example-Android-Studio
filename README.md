@@ -1,30 +1,42 @@
+KIDOZ SDK + Sample App
+=================================
 
 <a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="72" width="72" ></a>
 
 [<img src="https://kidoz-cdn.s3.amazonaws.com/wordpress/kidoz_small.gif" width="533px" height="300px">](https://www.youtube.com/watch?v=-ljFjRn7jeM)
 
-KIDOZ SDK + Sample App
-=================================
-**IMPORTANT !!! KIDOZ SDK and the sample App are compatible with Android 4.0 (API level 14) and above.**
 
-**Updated to KIDOZ SDK version** [ ![Download](https://api.bintray.com/packages/kidoz/maven/kidoz-sdk/images/download.svg?version=0.7.2) ](https://bintray.com/kidoz/maven/kidoz-sdk/0.7.2/link)
+**General Notes**
+- The Folowing version of Kidoz SDK contains a few small integration breaking changes:
+  - Kidoz API now requires you to supply an Activity argument instead of a Context argument. Please make sure any Context 'this' argument you provide Kidoz is of the Activity type.
+  - Kidoz Interstitial widget now requires you to determine if it's Rewarded or non-rewarded interstitial in constructor instead of in the loadAd() method.
+- The Kidoz SDK now provide sdk initialization callbacks, providing information on whether the SDK initialized succesfully or, if failed, for what reason.
+- Kidoz SDK and the sample App are compatible with Android 4.0 (API level 14) and above.
+- Kidoz SDK version 0.8.0 is available for download through this Github page using the Download button above.
 
-### [API Javadoc](https://s3.amazonaws.com/kidoz-cdn/sdk/APIDocumentation/Android/StandardAndroid/0.5.8/html/annotated.html)
 
-This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
-The example application contains the following creative tools:
-+ KIDOZ Feed View content tool - the `FeedView`
-+ KIDOZ Feed Button view content tool - the `FeedButton`
-+ KIDOZ Feed Panel content tool - the `PanelView`
-+ KIDOZ Flexi Point content tool - the `FlexiView`
-+ KIDOZ Interstitial View content tool - the `KidozInterstitial`
 
-###Running the Sample App
+
+### Running the Sample App
 1. Clone (or Download) the project (download button located on the right) and unzip the downloaded .zip file
 2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
 3. Once the project has finished syncing click the `Run` button
 
-####IMPORTANT
+This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
+The example application contains the following creative tools:
+
+_Recommended units_:
++ KIDOZ Panel content tool - the `PanelView`
++ KIDOZ Interstitial View content tool - the `KidozInterstitial`content tool
++ KIDOZ Rewarded View content tool - the `KidozRewarded`
+
+** Note that you need to select either Interstital OR Rewarded during application lifetime.
+
+_Deprecated units_:
++ KIDOZ Feed View content tool - the `FeedView`
++ KIDOZ Flexi Point content tool - the `FlexiView`
+
+#### IMPORTANT
 This demo application uses `buildToolsVersion "23.0.3"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
 
  - 	Update `buildToolsVersion`
@@ -46,6 +58,7 @@ android {
 ``` 
 
 </br>
+
 KIDOZ SDK - Getting Started
 =================================
 
@@ -59,18 +72,21 @@ The easiest way to use the SDK is following these 3 steps:
 
 Once the above 3 steps are correctly done the `FeedView` will be launched when the `FeedButton` is clicked.
 
-####Include the library
-On Android Studio you can include the library directly in your Gradle project:
+#### Include the library
+1. Add the Kidoz library jar you downloaded to your projects libs folder.
+2. If not present allready please include the following lines to your 'build.gradle' dependencies section:
 
- - 	Add the following line to your app's module `build.gradle` dependencies section:
 ```groovy
 dependencies {
-	// your app's other dependencies
-	compile 'com.kidoz.sdk:KidozSDK:0.7.1'
+    compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
+    compile 'com.android.support:support-v4:23.0.+'
+    compile 'com.kidoz.sdk:KidozSDK:0.8.0.0@aar'
 }
 ``` 
 
 #### AndroidMainifest.xml  Definitions (IMPORTANT)
+Here are the things that should be added to the AndroidManifest.xml (make sure you add the permissions, receiver and activities bellow):
+
 For correct flow of the SDK, add the following line in your `AndroidMainifest.xml` file, for each `Activity` that uses the SDK functionality.
 ```groovy
  android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
@@ -120,12 +136,11 @@ Example:
     
     <uses-permission android:name="android.permission.INTERNET" />
     
-     <!-- android:maxSdkVersion="19" is used to AVOID permission handling in Android 6.0 and above  --> 
+     <!-- android:maxSdkVersion="19" is used to avoid permission handling in Android 6.0 and above. Note that as of version 19, this permission is not required to perform Kidoz relevant calls. --> 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="19"/>
    
-    <!-- I case needed to handle android 6.0 permissions nad access to SD
+    <!-- If you need to handle Android 6.0 permissions and access SD storage -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  tools:node="replace"/>
-    -->
 
     <application android:hardwareAccelerated="true">
         <activity
@@ -147,29 +162,11 @@ Example:
 ``` 
 
 
-###initialize the SDK
+### Initialize the SDK
 The SDK should be initialized only once. 
 When initializing the SDK, please make sure to use your given `publisherID` and `securityToken`. To receive the credentials please sign up [HERE](http://accounts.kidoz.net/publishers/register?utm_source=&utm_content=&utm_campaign=&utm_medium=).
 </br>
-If your project extends `Application` you can initialize the SDK inside Application's onCreate otherwise initialize it inside your Main Activity's onCreate.
-
- - 	Inside your Application `onCreate` add the following line:
-
-> YourApplication.java
-
-```java
-public class MyApplication extends Application{
-   	@Override 
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate();
-		KidozSDK.initialize(this, "publisherID", "securityToken");
-		//the rest of your application onCreate
-	}
-    ...
-}
-```
- - Inside your Main Activity `onCreate` add the following line:
+Initialize the SDK inside your Main Activity's onCreate.
 
 > MainActivity.java
 
@@ -178,15 +175,31 @@ public class MyApplication extends Application{
 protected void onCreate(Bundle savedInstanceState)
 {
 	super.onCreate(savedInstanceState);
-	KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
+	KidozSDK.setSDKListener(new SDKEventListener()
+		{
+		    @Override
+		    public void onInitSuccess()
+		    {
+			//SDK Init | Success().
+		    }
+
+		    @Override
+		    public void onInitError(String error)
+		    {
+			//SDK Init | Error
+		    }
+		});
+		KidozSDK.initialize(this, <publisherID>, <securityToken>);
+		
+	KidozSDK.initialize(this, <publisherID>, <securityToken>);
 	//the rest of your main activity onCreate
 	...
 }
 ```
 
 
-#KIDOZ Panel
-<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/panel_view_sample_image.png" align="right" height="121" width="200" ></a>
+# KIDOZ Panel
+<a href="url"><img src="http://kidoz-cdn.s3.amazonaws.com/media/Panel%20Github.jpeg" align="right" height="121" width="200" ></a>
 
 `PanelView` is a customized special view that can slide in/out of the screen with minimal interference to user experience.
 The `PanelView` can be placed on Top or Bottom of the activity screen: 
@@ -208,7 +221,7 @@ For NO handle at all use:
 
 `PanelView` can be added either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
 
-####Add `PanelView` directly to the xml layout:
+#### Add `PanelView` directly to the xml layout:
  
 > main_activity_layout.xml
 
@@ -252,7 +265,7 @@ The `PanelView` should be added on top of the existing layout for the correct fl
         ...
 ``` 
 
-####Adding the `PanelView` programmatically
+#### Adding the `PanelView` programmatically
 
 > MainActivity.java
 
@@ -280,11 +293,11 @@ yourViewGroup.addView(mPanelView);
 ```
 </br>
 
-#KIDOZ Feed
+# KIDOZ Feed
 
 KIDOZ `FeedView` is a view that is opened full screen.
  
-###Calling FeedView Programmatically  
+### Calling FeedView Programmatically  
 
 Refer to the next section for a better look at `FeedView` and how you can call it without using a button from within your own code.
  - Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
@@ -366,7 +379,7 @@ public class MainActivity extends FragmentActivity
 }
 ```
 
-####Launching the Feed View
+#### Launching the Feed View
 The `FeedView` can be launched by calling the method `showView()` on the `FeedView` instance:
 ```java
 	mFeedView.showView();
@@ -408,7 +421,7 @@ FeedView mFeedView = mFeedButton.getFeedView();
 We recommend using KIDOZ default button - the `FeedButton` - which is a customizable animated button.
 
 
-#KIDOZ Flexi Point View
+# KIDOZ Flexi Point View
 <a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/flexi_sample_preview.png" align="right" height="300" width="300" ></a>
 `FlexiView` is a small interactable single content view, which hovers over the screen content.  
 
@@ -489,22 +502,22 @@ flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
 });
 ```
 
-#KIDOZ Interstitial View
+# KIDOZ Interstitial View
 `KidozInterstitial` is a full screen single ad unit.
 
 #### Using Interstitial And Rewarded Video Ads
 To show interstitial\rewarded video ads inside your `Activity` or `Fragment` create an instance of `KidozInterstitial` by adding the following lines:
 
 ```java
-KidozInterstitial mInterstitial = new KidozInterstitial(this);
+KidozInterstitial mInterstitial = new KidozInterstitial(this, <AD_TYPE>);
+AD_TYPE = {KidozInterstitial.AD_TYPE.INTERSTITIAL, KidozInterstitial.AD_TYPE.REWARDED_VIDEO}
 ```
 
-For interstitial view to work correctly, add the following lines to `AndroidMainifest.xml`  file (MUST):
+For interstitial/rewarded view to work correctly, add the following lines to `AndroidMainifest.xml`  file (MUST):
 
 ```xml
- <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"
-                  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-                  />
+ <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"                  	android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+ />
 ``` 
 
 Example:
@@ -553,46 +566,45 @@ You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if 
     });
 ```
 
+Additional events that get invoked for the Rewarded Video Interstitial
 ```java
- /**
- * Events that invoked for Rewarded Video Interstitial
- */
 mKidozInterstitial.setOnInterstitialRewardedEventListener(new BaseInterstitial.IOnInterstitialRewardedEventListener()
 {
     @Override
-    public void onRewarded()
+    public void onRewardReceived()
     {
     	//Informs when interstitial rewarded event is invoked (Rewarded video is completed)	
     }
 
     @Override
-    public void onRewardedVideoStarted()
+    public void onRewardedStarted()
     {
     	//Informs when interstitial rewarded video started event
     }
 });
 ```
 
-Call `loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL)` to load Interstitial Ad instance, or `loadAd(KidozInterstitial.AD_TYPE.REWARDED_VIDEO)` to load Rewarded Video Ad instance  
+Call `loadAd()` to load Interstitial/Rewarded Ad instance  
 
-Call `show()` as soon as it's ready.  
+Call `show()` as soon as it's ready.
 
-####Launching the Interstitial View
+
+#### Launching the Interstitial View
 ```java
- if (mKidozInterstitial.isLoaded() == false)
+ if (!mKidozInterstitial.isLoaded())
  {
-    mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.INTERSTITIAL);
+    mKidozInterstitial.loadAd();
  } else
  {
     mKidozInterstitial.show();
  }
 ```
 
-####Launching the Rewarded Video Interstitial View
+#### Launching the Rewarded Video Interstitial View
 ```java
- if (mKidozInterstitial.isLoaded() == false)
+ if (!mKidozInterstitial.isLoaded())
  {
-    mKidozInterstitial.loadAd(KidozInterstitial.AD_TYPE.REWARDED_VIDEO);
+    mKidozInterstitial.loadAd();
  } else
  {
     mKidozInterstitial.show();
