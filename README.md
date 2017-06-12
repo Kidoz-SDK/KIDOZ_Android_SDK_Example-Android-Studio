@@ -30,7 +30,7 @@ _Recommended units_:
 + KIDOZ Interstitial View content tool - the `KidozInterstitial`content tool
 + KIDOZ Rewarded View content tool - the `KidozRewarded`
 
-** Note that you need to select either Interstital OR Rewarded during application lifetime.
+** Up to version 0.8.0.0: You need to select either Interstital OR Rewarded during application lifetime. From version 0.8.0.0 (included): You can use both Interstital AND Rewarded during application lifetime.
 
 _Deprecated units_:
 + KIDOZ Feed View content tool - the `FeedView`
