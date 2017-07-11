@@ -237,7 +237,7 @@ kidozBannerView.setKidozBannerListener(new KidozBannerListener()
             @Override
             public void onBannerClose()
             {
-                onBannerClose
+                //onBannerClose
             }
         }); 
 ```
