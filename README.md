@@ -203,7 +203,9 @@ protected void onCreate(Bundle savedInstanceState)
 ### Calling KidozBannerView Programmatically
 
 * Get a KidozBannerView instance from KidozSDK access point:
-``` KidozBannerView kidozBannerView = KidozSDK.getKidozBanner(<Activity>); ```
+```java
+KidozBannerView kidozBannerView = KidozSDK.getKidozBanner(<Activity>); 
+```
 
 * Set banner position:
 ``` kidozBannerView.setBannerPosition(BANNER_POSITION.TOP / BOTTOM); ```
