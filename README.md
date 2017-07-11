@@ -209,7 +209,7 @@ protected void onCreate(Bundle savedInstanceState)
 ``` kidozBannerView.setBannerPosition(BANNER_POSITION.TOP / BOTTOM); ```
 
 * Set banner listener:
-``` kidozBannerView.setKidozBannerListener(new KidozBannerListener()
+```java kidozBannerView.setKidozBannerListener(new KidozBannerListener()
         {
             @Override
             public void onBannerViewAdded()
@@ -237,27 +237,29 @@ protected void onCreate(Bundle savedInstanceState)
         }); ```
 
 * Call banner load before showing:
-``` kidozBannerView.load(); ```
+```java kidozBannerView.load(); ```
 
 * Call banner show (banner needs to be ready before showing):
 
-``` kidozBannerView.show(); ```
+```java kidozBannerView.show(); ```
 
 * To hide banner:
-``` kidozBannerView.hide(); ```
+```java kidozBannerView.hide(); ```
 
-### Showing KidozBannerView in view hierarchy
+### Showing KidozBannerView in View Hierarchy
 * Add KidozBannerView to your layout (in xml):
+```xml
             <com.kidoz.sdk.api.ui_views.new_kidoz_banner.KidozBannerView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/<YOUR_ID_NAME>"/>
-		
+```	
+
 * Find KidozBannerView instance in your layout by id:
-``` final KidozBannerView kidozBannerView = (KidozBannerView) findViewById(<your banner id>); ```
+```java final KidozBannerView kidozBannerView = (KidozBannerView) findViewById(<your banner id>); ```
 
 * Set banner listener:
-``` kidozBannerView.setKidozBannerListener(new KidozBannerListener()
+```java kidozBannerView.setKidozBannerListener(new KidozBannerListener()
         {
             @Override
             public void onBannerViewAdded()
@@ -285,17 +287,17 @@ protected void onCreate(Bundle savedInstanceState)
         }); ```
 
 * Required (atm) - Set banner to not show on layout():
-``` kidozBannerView.setLayoutWithoutShowing(); ```
+```java kidozBannerView.setLayoutWithoutShowing(); ```
 
 * Call banner load before showing:
-``` kidozBannerView.load(); ```
+```java kidozBannerView.load(); ```
 
 * Call banner show (banner needs to be ready before showing):
 
-``` kidozBannerView.show(); ```
+```java kidozBannerView.show(); ```
 
 * To hide banner:
-``` kidozBannerView.hide(); ```
+```java kidozBannerView.hide(); ```
 
 # KIDOZ Panel
 <a href="url"><img src="http://kidoz-cdn.s3.amazonaws.com/media/Panel%20Github.jpeg" align="right" height="121" width="200" ></a>
