@@ -11,7 +11,7 @@ KIDOZ SDK + Sample App
   - Kidoz API now requires you to supply an Activity argument instead of a Context argument. Please make sure any Context 'this' argument you provide Kidoz is of the Activity type. If you're calling Kidoz from an Application class please move the call to your main Activity's onCreate event.
   - Kidoz Interstitial widget now requires you to determine if it's Rewarded or non-rewarded interstitial in constructor instead of in the loadAd() method.
 - The Kidoz SDK now provide sdk initialization callbacks, providing information on whether the SDK initialized succesfully or, if failed, for what reason.
-- Kidoz SDK and the sample App are compatible with Android 4.2 (API level 17) and above.
+- Kidoz SDK and the sample App are compatible with Android 4.2 (API level 17) and above, you can set your minSdkVersion to 17 if you experience an error using KidozSDK
 - Kidoz SDK version 0.8.1 is available for download through this Github page using the Download button above.
 
 
