@@ -2,6 +2,7 @@ package com.kidoz.sdk.sample.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -18,6 +19,9 @@ import com.kidoz.sdk.api.interfaces.KidozPlayerListener;
 import com.kidoz.sdk.api.interfaces.SDKEventListener;
 import com.kidoz.sdk.api.ui_views.flexi_view.FLEXI_POSITION;
 import com.kidoz.sdk.api.ui_views.interstitial.BaseInterstitial;
+import com.kidoz.sdk.api.ui_views.kidoz_banner.KidozBannerListener;
+import com.kidoz.sdk.api.ui_views.new_kidoz_banner.BANNER_POSITION;
+import com.kidoz.sdk.api.ui_views.new_kidoz_banner.KidozBannerView;
 
 /**
  * Created by KIDOZ.
@@ -44,6 +48,16 @@ public class SampleActivity extends Activity
      */
     private KidozInterstitial mKidozInterstitial;
 
+    /**
+     * Kidoz rewarded instance
+     */
+    private KidozInterstitial mKidozRewarded;
+
+    /**
+     * Kidoz banner instance
+     */
+    private KidozBannerView mKidozBannerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -69,22 +83,13 @@ public class SampleActivity extends Activity
         /** Interstitial Sample */
         initInterstitial();
 
-        findViewById(R.id.interstitialBtn).setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (mKidozInterstitial.isLoaded() == false)
-                {
-                    mKidozInterstitial.loadAd();
+        /** Rewarded Sample */
+        initRewarded();
 
-                    Toast.makeText(SampleActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
-                } else
-                {
-                    mKidozInterstitial.show();
-                }
-            }
-        });
+        /** Banner Sample */
+        initBanner();
+
+
     }
 
     private void initKidozSDK()
@@ -263,9 +268,6 @@ public class SampleActivity extends Activity
     {
         mKidozInterstitial = new KidozInterstitial(this, KidozInterstitial.AD_TYPE.INTERSTITIAL);
 
-        /** Invoke to load rewarded video interstitial */
-        // mKidozInterstitial = new KidozInterstitial(this, KidozInterstitial.AD_TYPE.REWARDED_VIDEO);
-
         mKidozInterstitial.setOnInterstitialEventListener(new BaseInterstitial.IOnInterstitialEventListener()
         {
             @Override
@@ -303,10 +305,72 @@ public class SampleActivity extends Activity
             }
         });
 
+        findViewById(R.id.interstitialBtn).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if (mKidozInterstitial.isLoaded() == false)
+                {
+                    mKidozInterstitial.loadAd();
+
+                    Toast.makeText(SampleActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
+                } else
+                {
+                    mKidozInterstitial.show();
+                }
+            }
+        });
+    }
+
+    /**
+     * Initiate Rewarded
+     */
+    private void initRewarded()
+    {
+        mKidozRewarded = new KidozInterstitial(this, KidozInterstitial.AD_TYPE.REWARDED_VIDEO);
+
+        mKidozRewarded.setOnInterstitialEventListener(new BaseInterstitial.IOnInterstitialEventListener()
+        {
+            @Override
+            public void onClosed()
+            {
+                Toast.makeText(SampleActivity.this, "Rewarded Closed",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onOpened()
+            {
+                Toast.makeText(SampleActivity.this, "Rewarded Opened",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onReady()
+            {
+                mKidozInterstitial.show();
+            }
+
+            @Override
+            public void onLoadFailed()
+            {
+                Toast.makeText(SampleActivity.this, "Rewarded Failed to load",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNoOffers()
+            {
+                Toast.makeText(SampleActivity.this, "Rewarded No Offers",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
         /**
          * Events that invoked for Rewarded  Video Interstitial
          */
-        mKidozInterstitial.setOnInterstitialRewardedEventListener(new BaseInterstitial.IOnInterstitialRewardedEventListener()
+        mKidozRewarded.setOnInterstitialRewardedEventListener(new BaseInterstitial.IOnInterstitialRewardedEventListener()
         {
             @Override
             public void onRewardReceived()
@@ -320,6 +384,69 @@ public class SampleActivity extends Activity
             {
                 Toast.makeText(SampleActivity.this, "Rewarded Video Started",
                         Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        findViewById(R.id.rewardedBtn).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if (mKidozRewarded.isLoaded() == false)
+                {
+                    mKidozRewarded.loadAd();
+
+                    Toast.makeText(SampleActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
+                } else
+                {
+                    mKidozRewarded.show();
+                }
+            }
+        });
+    }
+
+    /**
+     * Banner Rewarded
+     */
+    private void initBanner()
+    {
+        mKidozBannerView = KidozSDK.getKidozBanner(this);
+        mKidozBannerView.setBannerPosition(BANNER_POSITION.TOP);
+
+        mKidozBannerView.setKidozBannerListener(new KidozBannerListener()
+        {
+            @Override
+            public void onBannerViewAdded()
+            {
+                Log.d("sample", "onBannerViewAdded()");
+            }
+
+            @Override
+            public void onBannerReady()
+            {
+                Log.d("sample", "onBannerReady()");
+                mKidozBannerView.show();
+            }
+
+            @Override
+            public void onBannerError(String errorMsg)
+            {
+                Log.d("sample", "onBannerError(" + errorMsg + ")");
+            }
+
+            @Override
+            public void onBannerClose()
+            {
+                Log.d("sample", "onBannerClose()");
+            }
+        });
+
+        findViewById(R.id.bannerBtn).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                mKidozBannerView.load();
             }
         });
     }

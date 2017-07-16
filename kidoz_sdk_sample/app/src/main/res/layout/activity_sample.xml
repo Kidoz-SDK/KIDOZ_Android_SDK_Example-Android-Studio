@@ -11,24 +11,54 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"/>
 
-    <com.kidoz.sdk.api.KidozBanner
-        android:id="@+id/kidozBanner_view"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
-    </com.kidoz.sdk.api.KidozBanner>
-
-    <ImageButton
-        android:id="@+id/interstitialBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/kidozBanner_view"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="200dp"
         android:layout_marginTop="50dp"
-        android:src="@drawable/btn_selector"
-        android:scaleType="fitCenter"
-        android:background="@android:color/transparent"/>
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/interstitialBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:text="Interstitial"
+            android:textSize="28sp"
+            android:textColor="#FFFAFAFA"
+            android:background="#FF8080DA"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/rewardedBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kidozBanner_view"
+            android:scaleType="fitCenter"
+            android:text="Rewarded"
+            android:textSize="28sp"
+            android:textColor="#FFFAFAFA"
+            android:background="#FF8080DA"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/bannerBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kidozBanner_view"
+            android:scaleType="fitCenter"
+            android:text="Banner"
+            android:textSize="28sp"
+            android:textColor="#FFFAFAFA"
+            android:background="#FF8080DA"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+
 
     <com.kidoz.sdk.api.PanelView
         android:id="@+id/kidozPanel_view"
@@ -40,7 +70,7 @@
         android:id="@+id/kidozFlexi_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/kidozBtn_view" android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
     </com.kidoz.sdk.api.FlexiView>
