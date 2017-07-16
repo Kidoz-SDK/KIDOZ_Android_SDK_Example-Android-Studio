@@ -8,11 +8,11 @@ KIDOZ SDK + Sample App
 
 **General Notes**
 - The Folowing version of Kidoz SDK contains a few small integration breaking changes:
-  - Kidoz API now requires you to supply an Activity argument instead of a Context argument. Please make sure any Context 'this' argument you provide Kidoz is of the Activity type.
+  - Kidoz API now requires you to supply an Activity argument instead of a Context argument. Please make sure any Context 'this' argument you provide Kidoz is of the Activity type. If you're calling Kidoz from an Application class please move the call to your main Activity's onCreate event.
   - Kidoz Interstitial widget now requires you to determine if it's Rewarded or non-rewarded interstitial in constructor instead of in the loadAd() method.
 - The Kidoz SDK now provide sdk initialization callbacks, providing information on whether the SDK initialized succesfully or, if failed, for what reason.
-- Kidoz SDK and the sample App are compatible with Android 4.0 (API level 14) and above.
-- Kidoz SDK version 0.8.0 is available for download through this Github page using the Download button above.
+- Kidoz SDK and the sample App are compatible with Android 4.2 (API level 17) and above, you can set your minSdkVersion to 17 if you experience an error using KidozSDK
+- Kidoz SDK version 0.8.1 is available for download through this Github page using the Download button above.
 
 
 
@@ -30,7 +30,7 @@ _Recommended units_:
 + KIDOZ Interstitial View content tool - the `KidozInterstitial`content tool
 + KIDOZ Rewarded View content tool - the `KidozRewarded`
 
-** Note that you need to select either Interstital OR Rewarded during application lifetime.
+** Up to version 0.8.0.0: You need to select either Interstital OR Rewarded during application lifetime. From version 0.8.0.0 (included): You can use both Interstital AND Rewarded during application lifetime.
 
 _Deprecated units_:
 + KIDOZ Feed View content tool - the `FeedView`
@@ -80,7 +80,7 @@ Once the above 3 steps are correctly done the `FeedView` will be launched when t
 dependencies {
     compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     compile 'com.android.support:support-v4:23.0.+'
-    compile 'com.kidoz.sdk:KidozSDK:0.8.0.0@aar'
+    compile 'com.kidoz.sdk:KidozSDK:0.8.1.0@aar'
 }
 ``` 
 
@@ -196,7 +196,132 @@ protected void onCreate(Bundle savedInstanceState)
 	...
 }
 ```
+# KIDOZ Banner
 
+'KidozBannerView` is a view that shows banner ads.
+ 
+### Calling KidozBannerView Programmatically
+
+* Get a KidozBannerView instance from KidozSDK access point:
+```java
+KidozBannerView kidozBannerView = KidozSDK.getKidozBanner(<Activity>); 
+```
+
+* Set banner position:
+```java
+kidozBannerView.setBannerPosition(BANNER_POSITION.TOP / BOTTOM); 
+```
+
+* Set banner listener:
+```java 
+kidozBannerView.setKidozBannerListener(new KidozBannerListener()
+        {
+            @Override
+            public void onBannerViewAdded()
+            {
+                //onBannerViewAdded
+            }
+
+            @Override
+            public void onBannerReady()
+            {
+                //onBannerReady
+            }
+
+            @Override
+            public void onBannerError(String errorMsg)
+            {
+                //onBannerError
+            }
+
+            @Override
+            public void onBannerClose()
+            {
+                //onBannerClose
+            }
+        }); 
+```
+
+* Call banner load before showing:
+```java
+kidozBannerView.load(); 
+```
+
+* Call banner show (banner needs to be ready before showing):
+
+```java
+kidozBannerView.show(); 
+```
+
+* To hide banner:
+```java
+kidozBannerView.hide(); 
+```
+
+### Showing KidozBannerView in View Hierarchy
+* Add KidozBannerView to your layout (in xml):
+```xml
+            <com.kidoz.sdk.api.ui_views.new_kidoz_banner.KidozBannerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/<YOUR_ID_NAME>"/>
+```	
+
+* Find KidozBannerView instance in your layout by id:
+```java
+final KidozBannerView kidozBannerView = (KidozBannerView) findViewById(<your banner id>); 
+```
+
+* Set banner listener:
+```java
+kidozBannerView.setKidozBannerListener(new KidozBannerListener()
+        {
+            @Override
+            public void onBannerViewAdded()
+            {
+                //onBannerViewAdded
+            }
+
+            @Override
+            public void onBannerReady()
+            {
+                //onBannerReady
+            }
+
+            @Override
+            public void onBannerError(String errorMsg)
+            {
+                //onBannerError
+            }
+
+            @Override
+            public void onBannerClose()
+            {
+                onBannerClose
+            }
+        }); 
+```
+
+* Required (atm) - Set banner to not show on layout():
+```java
+kidozBannerView.setLayoutWithoutShowing(); 
+```
+
+* Call banner load before showing:
+```java
+kidozBannerView.load(); 
+```
+
+* Call banner show (banner needs to be ready before showing):
+
+```java
+kidozBannerView.show(); 
+```
+
+* To hide banner:
+```java
+kidozBannerView.hide(); 
+```
 
 # KIDOZ Panel
 <a href="url"><img src="http://kidoz-cdn.s3.amazonaws.com/media/Panel%20Github.jpeg" align="right" height="121" width="200" ></a>
