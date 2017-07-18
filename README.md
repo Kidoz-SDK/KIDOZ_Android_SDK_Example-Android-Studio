@@ -29,6 +29,7 @@ _Recommended units_:
 + KIDOZ Panel content tool - the `PanelView`
 + KIDOZ Interstitial View content tool - the `KidozInterstitial`content tool
 + KIDOZ Rewarded View content tool - the `KidozRewarded`
++ KIDOZ Banner - the `Banner`
 
 ** Up to version 0.8.0.0: You need to select either Interstital OR Rewarded during application lifetime. From version 0.8.0.0 (included): You can use both Interstital AND Rewarded during application lifetime.
 
