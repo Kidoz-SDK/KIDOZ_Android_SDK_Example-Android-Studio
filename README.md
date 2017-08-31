@@ -103,7 +103,7 @@ Also add the following permissions:
 ``` 
 
 ###### NOTICE!!!
-Starting from the 0.8.1.6 SDK vesion WRITE_EXTERNAL_STORAGE permission is not required.
+Starting from the 0.8.1.6 SDK version WRITE_EXTERNAL_STORAGE permission is not required.
 
 ###### IMPORTANT: Hardware Acceleration must be turned ON!
 ```groovy
