@@ -80,7 +80,7 @@ Once the above 3 steps are correctly done the `FeedView` will be launched when t
 dependencies {
     compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     compile 'com.android.support:support-v4:23.0.+'
-    compile 'com.kidoz.sdk:KidozSDK:0.8.1.6@aar' 
+    compile 'com.kidoz.sdk:KidozSDK:0.8.1.6@aar'
 }
 ``` 
 
@@ -103,25 +103,7 @@ Also add the following permissions:
 ``` 
 
 ###### NOTICE!!!
-In case external SD access is needed and requiered to apply/handle `Android 6.0` Permissions request flow,
-add `WRITE_EXTERNAL_STORAGE` permission in the following format in your application `AndroidMainifest.xml` file:
-
-```xml
- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  tools:node="replace"/>
- <!--  tools:node="replace" is used to replace default libray defenition--> 
-``` 
-To use `tools:node="replace"` add `xmlns:tools="http://schemas.android.com/tools"` in the `<manifest ...  >` tag of `AndroidMainifest.xml` file.
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="com.your.package"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:versionCode="1"
-    android:versionName="1">
-``` 
-
+Starting from the 0.8.1.6 SDK vesion WRITE_EXTERNAL_STORAGE permission is not required.
 
 ###### IMPORTANT: Hardware Acceleration must be turned ON!
 ```groovy
@@ -136,12 +118,6 @@ Example:
     
     <uses-permission android:name="android.permission.INTERNET" />
     
-     <!-- android:maxSdkVersion="19" is used to avoid permission handling in Android 6.0 and above. Note that as of version 19, this permission is not required to perform Kidoz relevant calls. --> 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="19"/>
-   
-    <!-- If you need to handle Android 6.0 permissions and access SD storage -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  tools:node="replace"/>
-
     <application android:hardwareAccelerated="true">
         <activity
             ...
