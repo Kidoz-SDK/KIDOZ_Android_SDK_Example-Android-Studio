@@ -80,7 +80,7 @@ Once the above 3 steps are correctly done the `FeedView` will be launched when t
 dependencies {
     compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     compile 'com.android.support:support-v4:23.0.+'
-    compile 'com.kidoz.sdk:KidozSDK:0.8.1.6@aar'
+    compile 'com.kidoz.sdk:KidozSDK:0.8.1.7@aar'
 }
 ``` 
 
@@ -404,7 +404,7 @@ Refer to the next section for a better look at `FeedView` and how you can call i
  - Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
 
 ```java
-FeedView mFeed = new FeedView.Builder(MainActivity.this).build();
+FeedView mFeed = new FeedView(MainActivity.this);
 ```
 
 You can implement `IOnFeedViewEventListener` interface if you want to be informed about `FeedView` events  by adding the following lines:
