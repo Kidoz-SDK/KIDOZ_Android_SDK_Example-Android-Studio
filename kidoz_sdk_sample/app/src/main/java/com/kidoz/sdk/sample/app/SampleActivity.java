@@ -6,16 +6,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.kidoz.sdk.api.FeedButton;
-import com.kidoz.sdk.api.FeedView;
 import com.kidoz.sdk.api.FlexiView;
 import com.kidoz.sdk.api.KidozInterstitial;
 import com.kidoz.sdk.api.KidozSDK;
 import com.kidoz.sdk.api.PanelView;
 import com.kidoz.sdk.api.interfaces.FlexiViewListener;
-import com.kidoz.sdk.api.interfaces.IOnFeedViewEventListener;
 import com.kidoz.sdk.api.interfaces.IOnPanelViewEventListener;
-import com.kidoz.sdk.api.interfaces.KidozPlayerListener;
 import com.kidoz.sdk.api.interfaces.SDKEventListener;
 import com.kidoz.sdk.api.ui_views.flexi_view.FLEXI_POSITION;
 import com.kidoz.sdk.api.ui_views.interstitial.BaseInterstitial;
@@ -28,10 +24,7 @@ import com.kidoz.sdk.api.ui_views.new_kidoz_banner.KidozBannerView;
  */
 public class SampleActivity extends Activity
 {
-    /**
-     * Kidoz Button instance
-     */
-    private FeedButton mFeedButton;
+
 
     /**
      * Kidoz Panel instance
@@ -71,9 +64,6 @@ public class SampleActivity extends Activity
          */
         initKidozSDK();
 
-        /** Initiate Button view */
-        initFeedButton();
-
         /** Initiate Panel view */
         initFeedPanel();
 
@@ -112,75 +102,7 @@ public class SampleActivity extends Activity
         KidozSDK.initialize(this, "5", "i0tnrdwdtq0dm36cqcpg6uyuwupkj76s");
     }
 
-    /**
-     * Initiate Button view
-     */
-    private void initFeedButton()
-    {
-        /** Get reference to KIDOZ Feed View button */
-        mFeedButton = (FeedButton) findViewById(R.id.kidozBtn_view);
 
-        /**
-         * To add view events listeners do the following... Also FeedView object
-         * can be used to open and close the FeedView view manually
-         * */
-        FeedView feedView = mFeedButton.getFeedView();
-        feedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
-        {
-            @Override
-            public void onDismissView()
-            {
-                /** View has been dismissed by user or action */
-                Toast.makeText(SampleActivity.this, "Feed View is dismissed",
-                        Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onReadyToShow()
-            {
-                /**
-                 * Event is launched moment before the view is opened, This
-                 * allows the developer to stop some process currently running
-                 * or make any additional actions...
-                 * */
-                Toast.makeText(SampleActivity.this,
-                        "Feed View is ready to be shown..", Toast.LENGTH_SHORT)
-                        .show();
-            }
-
-            @Override
-            public void onViewReady()
-            {
-                // TODO Auto-generated method stub
-                Toast.makeText(SampleActivity.this, "Feed View Ready",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        /**
-         * Add view listener for general events of player opened/closed
-         * can be added to each Widget type (View) separately
-         * */
-        feedView.setKidozPlayerListener(new KidozPlayerListener()
-        {
-            @Override
-            public void onPlayerOpen()
-            {
-                super.onPlayerOpen();
-
-                Toast.makeText(SampleActivity.this, "Player Opened",
-                        Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onPlayerClose()
-            {
-                super.onPlayerClose();
-
-                Toast.makeText(SampleActivity.this, "Player Closed", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     /**
      * Initiate Panel view

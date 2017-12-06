@@ -5,11 +5,7 @@
                 android:background="#520c22"
                 tools:context=".SampleActivity">
 
-    <com.kidoz.sdk.api.FeedButton
-        android:id="@+id/kidozBtn_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"/>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -19,7 +15,6 @@
         android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:gravity="center">
-
         <Button
             android:id="@+id/interstitialBtn"
             android:layout_width="wrap_content"
