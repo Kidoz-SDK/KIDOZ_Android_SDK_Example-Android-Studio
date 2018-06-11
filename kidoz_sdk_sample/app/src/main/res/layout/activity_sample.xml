@@ -61,14 +61,5 @@
         android:layout_height="match_parent"/>
 
 
-    <com.kidoz.sdk.api.FlexiView
-        android:id="@+id/kidozFlexi_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-
-    </com.kidoz.sdk.api.FlexiView>
-
 
 </RelativeLayout>

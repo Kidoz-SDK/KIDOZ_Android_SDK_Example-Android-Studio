@@ -6,14 +6,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.kidoz.sdk.api.FlexiView;
 import com.kidoz.sdk.api.KidozInterstitial;
 import com.kidoz.sdk.api.KidozSDK;
 import com.kidoz.sdk.api.PanelView;
-import com.kidoz.sdk.api.interfaces.FlexiViewListener;
 import com.kidoz.sdk.api.interfaces.IOnPanelViewEventListener;
 import com.kidoz.sdk.api.interfaces.SDKEventListener;
-import com.kidoz.sdk.api.ui_views.flexi_view.FLEXI_POSITION;
 import com.kidoz.sdk.api.ui_views.interstitial.BaseInterstitial;
 import com.kidoz.sdk.api.ui_views.kidoz_banner.KidozBannerListener;
 import com.kidoz.sdk.api.ui_views.new_kidoz_banner.BANNER_POSITION;
@@ -32,9 +29,6 @@ public class SampleActivity extends Activity
     private PanelView mPanelView;
 
     /**
-     * Flexi View instance
-     */
-    private FlexiView mFlexiView;
 
     /**
      * Kidoz interstitial instance
@@ -66,9 +60,6 @@ public class SampleActivity extends Activity
 
         /** Initiate Panel view */
         initFeedPanel();
-
-        /** Flexi Point view */
-        initFlexiView();
 
         /** Interstitial Sample */
         initInterstitial();
@@ -147,41 +138,7 @@ public class SampleActivity extends Activity
 
     }
 
-    /**
-     * Initiate Flexi Point view
-     */
-    private void initFlexiView()
-    {
-        mFlexiView = (FlexiView) findViewById(R.id.kidozFlexi_view);
-        mFlexiView.setAutoShow(true);
-        mFlexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
-        mFlexiView.setOnFlexiViewEventListener(new FlexiViewListener()
-        {
-            @Override
-            public void onViewReady()
-            {
-                super.onViewReady();
-                Toast.makeText(SampleActivity.this, "Flexi Ready",
-                        Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void onViewHidden()
-            {
-                super.onViewHidden();
-                Toast.makeText(SampleActivity.this, "Flexi Hidden",
-                        Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onViewVisible()
-            {
-                super.onViewVisible();
-                Toast.makeText(SampleActivity.this, "Flexi Visible",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     /**
      * Initiate Interstitial
