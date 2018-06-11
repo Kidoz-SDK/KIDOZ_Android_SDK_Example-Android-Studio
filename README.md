@@ -1,3 +1,4 @@
+
 KIDOZ SDK + Sample App
 =================================
 
@@ -13,6 +14,7 @@ KIDOZ SDK + Sample App
 - The Kidoz SDK now provide sdk initialization callbacks, providing information on whether the SDK initialized succesfully or, if failed, for what reason.
 - Kidoz SDK and the sample App are compatible with Android 4.2 (API level 17) and above, you can set your minSdkVersion to 17 if you experience an error using KidozSDK
 
+- Due to new regulation by Google Play Design for Family policy , all references to YouTube were removed from the SDK . 
 
 
 
@@ -32,28 +34,28 @@ _Recommended units_:
 
 ** Up to version 0.8.0.0: You need to select either Interstital OR Rewarded during application lifetime. From version 0.8.0.0 (included): You can use both Interstital AND Rewarded during application lifetime.
 
-_Deprecated units_:
+_Removed units_:
 + KIDOZ Feed View content tool - the `FeedView`
 + KIDOZ Flexi Point content tool - the `FlexiView`
 
 #### IMPORTANT
 This demo application uses `buildToolsVersion "23.0.3"`. If your `Android Studio` is not updated with this version you can follow one of these steps (or both):
 
- - 	Update `buildToolsVersion`
+ -  Update `buildToolsVersion`
 
 1. Inside `Android Studio` click the `SDK Manager` icon
 2. In the left side menu, navigate to `Appearance & Behavior` --> `System Settings` --> `Android SDK`
 3. Click the `SDK Tools` tab
 4. Check the `Android SDK Build Tools` and click `OK` 
 
- - 	Configure the demo application `build.gradle` `android` section with your `buildToolsVersion` 
+ -  Configure the demo application `build.gradle` `android` section with your `buildToolsVersion` 
 
 ```groovy
 android {
-	//Change this two parameters according to your buildToolsVersion 
-	//You can check which version is installed inside the SDK Manager settings
- 	compileSdkVersion 23 
- 	buildToolsVersion "23.0.3"
+    //Change this two parameters according to your buildToolsVersion 
+    //You can check which version is installed inside the SDK Manager settings
+    compileSdkVersion 23 
+    buildToolsVersion "23.0.3"
 }
 ``` 
 
@@ -62,7 +64,7 @@ android {
 KIDOZ SDK - Getting Started
 =================================
 
- - 	Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) website
+ -  Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) website
 
 The easiest way to use the SDK is following these 3 steps:
 
@@ -80,7 +82,7 @@ Once the above 3 steps are correctly done the `FeedView` will be launched when t
 dependencies {
     compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     compile 'com.android.support:support-v4:23.0.+'
-    compile 'com.kidoz.sdk:KidozSDK:0.8.3.2@aar'
+    compile 'com.kidoz.sdk:KidozSDK:0.8.5.1@aar'
 }
 ``` 
 
@@ -124,9 +126,9 @@ Example:
             android:configChanges="screenLayout|screenSize|orientation|keyboardHidden|keyboard"
             ...
           >
-	</activity>
-	
-	 <receiver android:name="com.kidoz.sdk.api.receivers.SdkReceiver" android:enabled="true" >
+    </activity>
+    
+     <receiver android:name="com.kidoz.sdk.api.receivers.SdkReceiver" android:enabled="true" >
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED"/>
                 <data android:scheme="package"/>
@@ -150,26 +152,26 @@ Initialize the SDK inside your Main Activity's onCreate.
 @Override 
 protected void onCreate(Bundle savedInstanceState)
 {
-	super.onCreate(savedInstanceState);
-	KidozSDK.setSDKListener(new SDKEventListener()
-		{
-		    @Override
-		    public void onInitSuccess()
-		    {
-			//SDK Init | Success().
-		    }
+    super.onCreate(savedInstanceState);
+    KidozSDK.setSDKListener(new SDKEventListener()
+        {
+            @Override
+            public void onInitSuccess()
+            {
+            //SDK Init | Success().
+            }
 
-		    @Override
-		    public void onInitError(String error)
-		    {
-			//SDK Init | Error
-		    }
-		});
-		KidozSDK.initialize(this, <publisherID>, <securityToken>);
-		
-	KidozSDK.initialize(this, <publisherID>, <securityToken>);
-	//the rest of your main activity onCreate
-	...
+            @Override
+            public void onInitError(String error)
+            {
+            //SDK Init | Error
+            }
+        });
+        KidozSDK.initialize(this, <publisherID>, <securityToken>);
+        
+    KidozSDK.initialize(this, <publisherID>, <securityToken>);
+    //the rest of your main activity onCreate
+    ...
 }
 ```
 # KIDOZ Banner
@@ -241,7 +243,7 @@ kidozBannerView.hide();
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/<YOUR_ID_NAME>"/>
-```	
+``` 
 
 * Find KidozBannerView instance in your layout by id:
 ```java
@@ -331,7 +333,7 @@ For NO handle at all use:
         android:id="@+id/kidozPanel_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-	
+    
 ```
 The `PanelView` should be added on top of the existing layout for the correct flow.
 
@@ -350,12 +352,12 @@ The `PanelView` should be added on top of the existing layout for the correct fl
         mPanelView.setOnPanelViewEventListener(new IOnPanelViewEventListener() {
             @Override
             public void onPanelViewCollapsed() {
-		/** Function invoked when the panel view is collapsed */
+        /** Function invoked when the panel view is collapsed */
             }
 
             @Override
             public void onPanelViewExpanded() {
-		/** Function invoked when the panel view is expanded */
+        /** Function invoked when the panel view is expanded */
             }
             
              @Override
@@ -394,215 +396,6 @@ yourViewGroup.addView(mPanelView);
 ```
 </br>
 
-# KIDOZ Feed
-
-KIDOZ `FeedView` is a view that is opened full screen.
- 
-### Calling FeedView Programmatically  
-
-Refer to the next section for a better look at `FeedView` and how you can call it without using a button from within your own code.
- - Inside your `Activity` or `Fragment` create an instance of `FeedView` by adding the following lines:
-
-```java
-FeedView mFeed = new FeedView(MainActivity.this);
-```
-
-You can implement `IOnFeedViewEventListener` interface if you want to be informed about `FeedView` events  by adding the following lines:
-
-```java
-mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
-{
-	@Override public void onDismissView()
-	{
-		// Will be called when the FeedView is closed
-		// This is a good time to resume your game
-	}
-	
-	@Override public void onReadyToShow()
-	{
-		// Will be called when the FeedView is about to open
-		// This is a good time to pause your game
-	}
-	
-	@Override public void onViewReady() 
-	{
-	       	// Will be called when the FeedView object is ready
-		// This is a good time interact with the object
-	}
-});
-```
-
- - Your Main Activity should now look similar to this:
-
-> MainActivity.java
-
-```java
-public class MainActivity extends FragmentActivity
-{
-	//Feed View reference
-	private FeedView mFeedView;
-	
-	@Override 
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-		KidozSDK.initialize(getApplicationContext(), "publisherID", "securityToken");
-		// For a cleaner code init the FeedView in a saperated method
-		initFeedView();
-		//the rest of your main activity onCreate
-		...
-	}
-	
-	private void initFeedView()
-	{
-		mFeedView = new FeedView.Builder(MainActivity.this).build();
-		mFeedView.setOnFeedViewEventListener(new IOnFeedViewEventListener()
-		{
-			@Override public void onDismissView()
-			{
-				// Will be called when the FeedView is closed
-				// This is a good time to resume your game
-			}
-		
-			@Override public void onReadyToShow()
-			{
-				// Will be called when the FeedView is about to open
-				// This is a good time to pause your game
-			}
-			
-			@Override public void onViewReady() 
-			{
-			       	// Will be called when the FeedView object is ready
-				// This is a good time interact with the object
-			}
-		});
-	}
-}
-```
-
-#### Launching the Feed View
-The `FeedView` can be launched by calling the method `showView()` on the `FeedView` instance:
-```java
-	mFeedView.showView();
-```
-
-You can call the `showView()` method from anywhere inside your Main Activity depending on your app's flow,for example: when a game is stopped or when a user clicks a button.
-
-##Adding the KIDOZ FeedButton
-<a href="url"><img src="https://kidoz-cdn.s3.amazonaws.com/sdk/btn_animation.gif" align="right" height="96" width="96" ></a>
-You can also call the `FeedView` by adding the `FeedButton` - in this case the `FeedView` will be shown following a click on the `FeedButton`. 
-You can add the `FeedButton` either by adding it to your xml layout file OR by creating a new instance programmatically.
-
- - Add `FeedButton` directly inside xml:
- 
-> main_activity_layout.xml
-
-```xml
-	<com.kidoz.sdk.api.FeedButton
-	android:id="@+id/kidozBtn_view"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"/>
-	
-```
- - Add `FeedButton` programmatically:
-  	
-> MainActivity.java
-
-```java
-FeedButton mFeedButton = new FeedButton(MainActivity.this);
-yourViewGroup.addView(mFeedButton);
-```
-
-For advanced use of the `FeedView` you can get a reference to `FeedView` class by calling this method on the `FeedButton` reference:
-
-```java
-FeedView mFeedView = mFeedButton.getFeedView();
-```
-
-We recommend using KIDOZ default button - the `FeedButton` - which is a customizable animated button.
-
-
-# KIDOZ Flexi Point View
-<a href="url"><img src="https://s3.amazonaws.com/kidoz-cdn/sdk/flexi_sample_preview.png" align="right" height="300" width="300" ></a>
-`FlexiView` is a small interactable single content view, which hovers over the screen content.  
-
-You can add the `FlexiView` either by adding it to your xml layout file OR by creating a new instance programmatically and adding it to the Main layout view.
-
- - Add `FlexiView` directly inside xml:
-
-> main_activity_layout.xml
-
-```xml
-    <com.kidoz.sdk.api.FlexiView
-        android:id="@+id/kidozFlexi_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.kidoz.sdk.api.FlexiView>
-	
-```
-
- - Add `FlexiView` programmatically:
-  	
-```java
-FlexiView mFlexiView = new FlexiView(this);
-yourViewGroup.addView(mFlexiView);
-```
- 
-> MainActivity.java
-
-```java
-mFlexiView = (FlexiView) findViewById(R.id.kidozFlexi_view);
-```
- 
-- To show Flexi view automatically as soon as it becomes ready add the following line:
-```java
-// Auto show Flexi View on View initiation ready
-mFlexiView.setAutoShow(true);
-``` 
- 
-- To set Flexi view initial anchor position add the following line:
-```java
-// Set flexi view initial anchor position
-flexiView.setFlexiViewInitialPosition(FLEXI_POSITION.TOP_START);
-```
-
-- To Show/Hide Flexi view use the following lines:
-```java
- // Show flexi view
- flexiView.showFlexiView();
- 
- // Hide flexi view
- flexiView.hideFlexiView();
-```
- 
-- To add event listeners to Flexi View use:
-```java 	
- mFlexiView.setOnFlexiViewEventListener(new FlexiViewListener() {
-    @Override
-    public void onViewReady() {
-        super.onViewReady();
-        
-        // Will be called when the FlexiView object is ready
-        // This is a good time interact with the object , show it or hide it
-    }
-
-    @Override
-    public void onViewHidden() {
-        super.onViewHidden();
-
-        // Will be called when the FlexiView become INVISIBLE
-        // On User or code actions
-    }
-
-    @Override
-    public void onViewVisible() {
-        super.onViewVisible();
-
-        // Will be called when the FlexiView become VISIBLE
-    }
-});
-```
-
 # KIDOZ Interstitial View
 `KidozInterstitial` is a full screen single ad unit.
 
@@ -617,7 +410,7 @@ AD_TYPE = {KidozInterstitial.AD_TYPE.INTERSTITIAL, KidozInterstitial.AD_TYPE.REW
 For interstitial/rewarded view to work correctly, add the following lines to `AndroidMainifest.xml`  file (MUST):
 
 ```xml
- <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"                  	android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+ <activity android:name="com.kidoz.sdk.api.ui_views.interstitial.KidozAdActivity"                   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
  />
 ``` 
 
@@ -643,13 +436,13 @@ You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if 
         @Override
         public void onClosed()
         {
-	   //Informs when interstitial ad view has been close	
+       //Informs when interstitial ad view has been close   
         }
 
         @Override
         public void onOpened()
         {
-            //Informs when interstitial ad view has been opened	
+            //Informs when interstitial ad view has been opened 
         }
         
         @Override
@@ -662,7 +455,7 @@ You can implement `KidozInterstitial.IOnInterstitialEventListener` interface if 
         @Override
         public void onLoadFailed()
         {
-            //Informs when interstitial ad view has failed to load	
+            //Informs when interstitial ad view has failed to load  
         }
     });
 ```
@@ -674,13 +467,13 @@ mKidozInterstitial.setOnInterstitialRewardedEventListener(new BaseInterstitial.I
     @Override
     public void onRewardReceived()
     {
-    	//Informs when interstitial rewarded event is invoked (Rewarded video is completed)	
+        //Informs when interstitial rewarded event is invoked (Rewarded video is completed) 
     }
 
     @Override
     public void onRewardedStarted()
     {
-    	//Informs when interstitial rewarded video started event
+        //Informs when interstitial rewarded video started event
     }
 });
 ```
