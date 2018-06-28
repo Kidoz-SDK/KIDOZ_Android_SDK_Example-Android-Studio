@@ -1,4 +1,5 @@
 
+
 KIDOZ SDK + Sample App
 =================================
 
@@ -82,7 +83,7 @@ Once the above 3 steps are correctly done the `FeedView` will be launched when t
 dependencies {
     compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     compile 'com.android.support:support-v4:23.0.+'
-    compile 'com.kidoz.sdk:KidozSDK:0.8.5.1@aar'
+    compile 'com.kidoz.sdk:KidozSDK:0.8.5.3@aar'
 }
 ``` 
 
@@ -167,7 +168,6 @@ protected void onCreate(Bundle savedInstanceState)
             //SDK Init | Error
             }
         });
-        KidozSDK.initialize(this, <publisherID>, <securityToken>);
         
     KidozSDK.initialize(this, <publisherID>, <securityToken>);
     //the rest of your main activity onCreate
