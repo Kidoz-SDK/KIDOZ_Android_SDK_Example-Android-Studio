@@ -1,5 +1,6 @@
 
 
+
 KIDOZ SDK + Sample App
 =================================
 
@@ -83,7 +84,7 @@ Once the above 3 steps are correctly done the `FeedView` will be launched when t
 dependencies {
     compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     compile 'com.android.support:support-v4:23.0.+'
-    compile 'com.kidoz.sdk:KidozSDK:0.8.5.3@aar'
+    compile 'com.kidoz.sdk:KidozSDK:0.8.5.5@aar'
 }
 ``` 
 
@@ -250,35 +251,7 @@ kidozBannerView.hide();
 final KidozBannerView kidozBannerView = (KidozBannerView) findViewById(<your banner id>); 
 ```
 
-* Set banner listener:
-```java
-kidozBannerView.setKidozBannerListener(new KidozBannerListener()
-        {
-            @Override
-            public void onBannerViewAdded()
-            {
-                //onBannerViewAdded
-            }
 
-            @Override
-            public void onBannerReady()
-            {
-                //onBannerReady
-            }
-
-            @Override
-            public void onBannerError(String errorMsg)
-            {
-                //onBannerError
-            }
-
-            @Override
-            public void onBannerClose()
-            {
-                onBannerClose
-            }
-        }); 
-```
 
 * Required (atm) - Set banner to not show on layout():
 ```java
