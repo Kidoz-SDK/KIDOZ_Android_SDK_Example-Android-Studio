@@ -318,6 +318,12 @@ public class SampleActivity extends Activity
             {
                 Log.d("sample", "onBannerClose()");
             }
+
+            @Override
+            public void onBannerNoOffers()
+            {
+                Log.d("sample", "onBannerNoOffers()");
+            }
         });
 
         findViewById(R.id.bannerBtn).setOnClickListener(new View.OnClickListener()

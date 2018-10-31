@@ -1,6 +1,7 @@
 
 
 
+
 KIDOZ SDK + Sample App
 =================================
 
@@ -11,6 +12,9 @@ KIDOZ SDK + Sample App
 
 **General Notes**
 - The Folowing version of Kidoz SDK contains a few small integration breaking changes:
+
+  -  **  In the 0.8.6.0 Kidoz SDK version onBannerNoOffers() callback was added to Banner.
+
   - Kidoz API now requires you to supply an Activity argument instead of a Context argument. Please make sure any Context 'this' argument you provide Kidoz is of the Activity type. If you're calling Kidoz from an Application class please move the call to your main Activity's onCreate event.
   - Kidoz Interstitial widget now requires you to determine if it's Rewarded or non-rewarded interstitial in constructor instead of in the loadAd() method.
 - The Kidoz SDK now provide sdk initialization callbacks, providing information on whether the SDK initialized succesfully or, if failed, for what reason.
@@ -34,7 +38,7 @@ _Recommended units_:
 + KIDOZ Rewarded View content tool - the `KidozRewarded`
 + KIDOZ Banner - the `Banner`
 
-** Up to version 0.8.0.0: You need to select either Interstital OR Rewarded during application lifetime. From version 0.8.0.0 (included): You can use both Interstital AND Rewarded during application lifetime.
+** Up to version 0.8.0.0: You need to select either Interstitial OR Rewarded during application lifetime. From version 0.8.0.0 (included): You can use both Interstitial AND Rewarded during application lifetime.
 
 _Removed units_:
 + KIDOZ Feed View content tool - the `FeedView`
@@ -84,7 +88,7 @@ Once the above 3 steps are correctly done the `FeedView` will be launched when t
 dependencies {
     compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     compile 'com.android.support:support-v4:23.0.+'
-    compile 'com.kidoz.sdk:KidozSDK:0.8.5.5@aar'
+    compile 'com.kidoz.sdk:KidozSDK:0.8.6.0@aar'
 }
 ``` 
 
@@ -217,6 +221,12 @@ kidozBannerView.setKidozBannerListener(new KidozBannerListener()
             public void onBannerClose()
             {
                 //onBannerClose
+            }
+            
+            @Override  
+            public void onBannerNoOffers()  
+            {  
+            //onBannerNoOffers
             }
         }); 
 ```
