@@ -36,7 +36,7 @@ This Android application project provides an example of the [KIDOZ](http://www.k
 The example application contains the following creative tools:
 
 _Recommended units_:
-+ KIDOZ Panel content tool - the `PanelView`
++ KIDOZ Panel content tool - the `PanelView` (Will be deprecated by Dec 2019)
 + KIDOZ Interstitial View content tool - the `KidozInterstitial`content tool
 + KIDOZ Rewarded View content tool - the `KidozRewarded`
 + KIDOZ Banner - the `Banner`
@@ -287,7 +287,7 @@ kidozBannerView.show();
 kidozBannerView.hide(); 
 ```
 
-# KIDOZ Panel
+# KIDOZ Panel (Will be deprecated by Dec 2019)
 <a href="url"><img src="http://kidoz-cdn.s3.amazonaws.com/media/Panel%20Github.jpeg" align="right" height="121" width="200" ></a>
 
 `PanelView` is a customized special view that can slide in/out of the screen with minimal interference to user experience.
