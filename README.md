@@ -287,7 +287,7 @@ kidozBannerView.show();
 kidozBannerView.hide(); 
 ```
 
-# KIDOZ Panel (Will be deprecated by Dec 2019)
+# KIDOZ Panel (will be deprecated by Dec 2019)
 <a href="url"><img src="http://kidoz-cdn.s3.amazonaws.com/media/Panel%20Github.jpeg" align="right" height="121" width="200" ></a>
 
 `PanelView` is a customized special view that can slide in/out of the screen with minimal interference to user experience.
