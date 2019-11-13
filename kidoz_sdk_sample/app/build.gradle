@@ -12,8 +12,23 @@ android {
         versionName "1.0.0"
     }
 
+    signingConfigs {
+        release {
+            storeFile file('/Users/orikam/dev/plasticscm/kidozkeystore')
+            storePassword "numberoneapp"
+            keyAlias "keystore"
+            keyPassword "numberoneapp"
+        }
+        debug {
+        }
+    }
+
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
+            debuggable true
+
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -23,15 +38,17 @@ android {
             debuggable true
         }
     }
+
+
+
+
 }
 
 dependencies {
-
     //compile fileTree(dir: 'libs', include: ['*.jar'])
-
     compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     compile 'com.android.support:support-v4:23.0.+'
-    compile 'com.kidoz.sdk:KidozSDK:0.8.8.3@aar'
+    compile 'com.kidoz.sdk:KidozSDK:0.8.8.4@aar'
 }
 
 configurations.all {
