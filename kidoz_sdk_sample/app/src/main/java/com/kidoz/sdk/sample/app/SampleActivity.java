@@ -29,8 +29,7 @@ public class SampleActivity extends Activity
     private PanelView mPanelView;
 
     /**
-
-    /**
+     /**
      * Kidoz interstitial instance
      */
     private KidozInterstitial mKidozInterstitial;
