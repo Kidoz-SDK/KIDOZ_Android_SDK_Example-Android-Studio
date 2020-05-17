@@ -73,7 +73,7 @@ android {
 KIDOZ SDK - Getting Started
 =================================
 
- -  Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) website
+ -  Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](https://docsend.com/view/aj9rvk4x5ku5a2as) website
 
 The easiest way to use the SDK is following these 3 steps:
 
@@ -584,7 +584,7 @@ android {
 KIDOZ SDK - Getting Started
 =================================
 
- -  Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](http://kidoz.net/marketing/newsletter/sdk/SDK.pdf) website
+ -  Read the full KIDOZ SDK documentation and `Best Practices` on [KIDOZ SDK](https://docsend.com/view/aj9rvk4x5ku5a2as) website
 
 The easiest way to use the SDK is following these 3 steps:
 
