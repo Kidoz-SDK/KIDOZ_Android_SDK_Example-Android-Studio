@@ -23,6 +23,15 @@ android {
         }
     }
 
+    productFlavors {
+
+        kidoz_sdk_sample{
+            resValue "string", "APPLICATION_NAME", "KIDOZ SDK SAMPLE"
+            applicationId "kidoz.sdk.sample"
+        }
+
+    }
+
 
     buildTypes {
         release {
@@ -48,7 +57,7 @@ dependencies {
     //compile fileTree(dir: 'libs', include: ['*.jar'])
     compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     compile 'com.android.support:support-v4:23.0.+'
-    compile 'com.kidoz.sdk:KidozSDK:0.8.8.7@aar'
+    compile 'com.kidoz.sdk:KidozSDK:0.8.8.8@aar'
 
 }
 
