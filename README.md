@@ -8,7 +8,7 @@ KIDOZ SDK + Sample App
 
 <a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="72" width="72" ></a>
 
-[<img src="https://kidoz-cdn.s3.amazonaws.com/wordpress/kidoz_small.gif" width="533px" height="300px">](https://www.youtube.com/watch?v=-ljFjRn7jeM)
+[<img src="https://cdn.kidoz.net/new/sdk/GITHUB_GRAPHICS/KIDOZ_SDK_Documentaions/kidoz_small.gif" width="533px" height="300px">](https://www.youtube.com/watch?v=-ljFjRn7jeM)
 
 
 **General Notes**
@@ -32,7 +32,7 @@ Note that only secured external and internal events are supported from this vers
 2. Launch `Android Studio`, click `File` --> `Open`, navigate to `kidoz_sdk_sample` project and click `OK`
 3. Once the project has finished syncing click the `Run` button
 
-This Android application project provides an example of the [KIDOZ](http://www.kidoz.net) SDK integration.
+This Android application project provides an example of the [KIDOZ](https://www.kidoz.net) SDK integration.
 The example application contains the following creative tools:
 
 _Recommended units_:
@@ -288,7 +288,7 @@ kidozBannerView.hide();
 ```
 
 # KIDOZ Panel (deprecated since JAN 2020)
-<a href="url"><img src="http://kidoz-cdn.s3.amazonaws.com/media/Panel%20Github.jpeg" align="right" height="121" width="200" ></a>
+<a href="url"><img src="https://cdn.kidoz.net/media/Panel%20Github.jpeg" align="right" height="121" width="200" ></a>
 
 `PanelView` is a customized special view that can slide in/out of the screen with minimal interference to user experience.
 The `PanelView` can be placed on Top or Bottom of the activity screen: 
@@ -521,7 +521,7 @@ KIDOZ SDK + Sample App
 
 <a href="url"><img src="https://github.com/Kidoz-SDK/Kidoz_Android_SDK_Example/blob/master/graphics/App%20icon.png" align="left" height="72" width="72" ></a>
 
-[<img src="https://kidoz-cdn.s3.amazonaws.com/wordpress/kidoz_small.gif" width="533px" height="300px">](https://www.youtube.com/watch?v=-ljFjRn7jeM)
+[<img src="https://cdn.kidoz.net/new/sdk/GITHUB_GRAPHICS/KIDOZ_SDK_Documentaions/kidoz_small.gif" width="533px" height="300px">](https://www.youtube.com/watch?v=-ljFjRn7jeM)
 
 
 **General Notes**
@@ -799,7 +799,7 @@ kidozBannerView.hide();
 ```
 
 # KIDOZ Panel
-<a href="url"><img src="http://kidoz-cdn.s3.amazonaws.com/media/Panel%20Github.jpeg" align="right" height="121" width="200" ></a>
+<a href="url"><img src="https://cdn.kidoz.net/media/Panel%20Github.jpeg" align="right" height="121" width="200" ></a>
 
 `PanelView` is a customized special view that can slide in/out of the screen with minimal interference to user experience.
 The `PanelView` can be placed on Top or Bottom of the activity screen: 
