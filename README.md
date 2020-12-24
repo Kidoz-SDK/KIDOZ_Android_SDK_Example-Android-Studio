@@ -91,7 +91,7 @@ Once the above 3 steps are correctly done the `FeedView` will be launched when t
 dependencies {
     compile group: 'org.greenrobot', name: 'eventbus', version: '3.0.0'
     compile 'com.android.support:support-v4:23.0.+'
-    compile 'com.kidoz.sdk:KidozSDK:0.8.8.8@aar'
+    compile 'com.kidoz.sdk:KidozSDK:8.9.0@aar'
 }
 ``` 
 

@@ -55,12 +55,5 @@
     </LinearLayout>
 
 
-    <com.kidoz.sdk.api.PanelView
-        android:id="@+id/kidozPanel_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-
-
 </RelativeLayout>
 

@@ -21,14 +21,6 @@ import com.kidoz.sdk.api.ui_views.new_kidoz_banner.KidozBannerView;
  */
 public class SampleActivity extends Activity
 {
-
-
-    /**
-     * Kidoz Panel instance
-     */
-    private PanelView mPanelView;
-
-    /**
      /**
      * Kidoz interstitial instance
      */
@@ -56,9 +48,6 @@ public class SampleActivity extends Activity
          * Initiate kidoz sdk with valid publisher id and security token
          */
         initKidozSDK();
-
-        /** Initiate Panel view */
-        initFeedPanel();
 
         /** Interstitial Sample */
         initInterstitial();
@@ -92,50 +81,6 @@ public class SampleActivity extends Activity
         KidozSDK.initialize(this, "5", "i0tnrdwdtq0dm36cqcpg6uyuwupkj76s");
     }
 
-
-
-    /**
-     * Initiate Panel view
-     */
-    private void initFeedPanel()
-    {
-        /** Get reference to KIDOZ Panel View */
-        mPanelView = (PanelView) findViewById(R.id.kidozPanel_view);
-        //mPanelView.setPanelConfiguration(PANEL_TYPE.TOP, HANDLE_POSITION.START);
-
-        /**
-         * To add view events listeners do the following...
-         * */
-        mPanelView.setOnPanelViewEventListener(new IOnPanelViewEventListener()
-        {
-            @Override
-            public void onPanelViewCollapsed()
-            {
-                /** Panel View Collapsed by user or action */
-                Toast.makeText(SampleActivity.this, "PanelView Collapsed",
-                        Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onPanelViewExpanded()
-            {
-                /** Panel View Expanded by user or action */
-                Toast.makeText(SampleActivity.this, "PanelView Expanded",
-                        Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onPanelReady()
-            {
-                /** Panel View Ready action */
-                Toast.makeText(SampleActivity.this, "PanelView View Ready",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        /** Set panel configuration to a different layout style */
-
-    }
 
 
 
